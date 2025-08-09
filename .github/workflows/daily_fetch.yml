@@ -3,14 +3,10 @@ name: Daily BlackholeDex Fetch
 on:
   schedule:
     - cron: '0 4 * * *'   # Run daily at 04:00 UTC (midnight Eastern)
-  workflow_dispatch:       # Allow manual runs from the Actions tab
+  workflow_dispatch:
 
 permissions:
-  contents: write          # Needed to push updated files back to the repo
-
-concurrency:
-  group: daily-blackhole-fetch
-  cancel-in-progress: false
+  contents: write
 
 jobs:
   run-daily-fetch:
@@ -20,12 +16,13 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # get full history so we can fast-forward/push
+          fetch-depth: 0
 
       - name: 📥 Sync with remote main
         run: |
           git fetch origin main
-          git reset --hard origin/main
+          git checkout main
+          git pull origin main
 
       - name: 🐍 Set up Python
         uses: actions/setup-python@v5
@@ -38,8 +35,7 @@ jobs:
           pip install pandas requests
 
       - name: ⚙️ Run fetch script
-        run: |
-          python scripts/api_fetch.py
+        run: python scripts/api_fetch.py
 
       - name: ⬆️ Commit and push updated data
         run: |
