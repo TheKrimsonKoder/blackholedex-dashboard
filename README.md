@@ -25,20 +25,4 @@ Example of a daily summary tweet:
 
 ---
 
-## ⚙️ How It Works
-```mermaid
-graph LR
-A[DexScreener API] --> B[api_fetch.py]
-B --> C[black_data.csv]
-B --> D[daily_summary.txt]
-C --> E[GitHub Actions Daily Update]
-D --> F[Twitter Bot / Zapier Post]
-
-git clone https://github.com/TheKrimsonKoder/blackholedex-dashboard.git
-cd blackholedex-dashboard
-
-pip install pandas requests
-
-python scripts/api_fetch.py
----
 
