@@ -1,181 +1,141 @@
-# === scripts/api_fetch.py ===
-import os
-import sys
-import json
+# === scripts/api_fetch.py (DefiLlama + share %) ===
 import math
-import time
 from pathlib import Path
 from datetime import datetime, timezone
 
 import requests
 import pandas as pd
 
-# -----------------------------
-# Settings
-# -----------------------------
-CHAIN = "avalanche"
-TARGET_DEX = "blackholedex"
-ROOT = Path(__file__).resolve().parents[1]  # repo root
+ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 CSV_PATH = DATA_DIR / "black_data.csv"
 SUMMARY_PATH = DATA_DIR / "daily_summary.txt"
-API_URL = f"https://api.dexscreener.com/latest/dex/pairs/{CHAIN}"
 
-# -----------------------------
-# Helpers
-# -----------------------------
-def to_float(x):
-    try:
-        if x is None or x == "":
-            return None
-        return float(x)
-    except Exception:
-        return None
-
-def utc_now():
-    return datetime.now(timezone.utc)
-
-def utc_midnight(dt=None):
-    dt = dt or utc_now()
-    return dt.replace(hour=0, minute=0, second=0, microsecond=0)
-
-def safe_get(dct, *keys, default=None):
-    cur = dct
-    for k in keys:
-        if not isinstance(cur, dict) or k not in cur:
-            return default
-        cur = cur[k]
-    return cur
+# DefiLlama open API: DEX overview for Avalanche (volumes)
+API = "https://api.llama.fi/overview/dexs/chain/avalanche?dataType=volumes"
 
 def ensure_dirs():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-# -----------------------------
-# Fetch
-# -----------------------------
-def fetch_pairs():
-    print(f"📡 Fetching pairs from {API_URL}")
-    r = requests.get(API_URL, timeout=30)
-    if r.status_code != 200:
-        raise RuntimeError(f"DexScreener HTTP {r.status_code}: {r.text[:200]}")
-    payload = r.json()
-    pairs = payload.get("pairs", []) or []
-    print(f"Fetched {len(pairs)} total Avalanche pairs.")
-    return pairs
+def utc_now():
+    return datetime.now(timezone.utc)
 
-# -----------------------------
-# Filter + Normalize
-# -----------------------------
-def normalize_blackhole_pairs(pairs):
-    target = []
-    for p in pairs:
-        dex_id = (p.get("dexId") or "").lower()
-        if dex_id != TARGET_DEX:
+def fetch_llama():
+    r = requests.get(API, timeout=30)
+    r.raise_for_status()
+    return r.json()
+
+def build_blackhole_df(payload):
+    """Return dataframe of Blackhole daily volumes."""
+    protos = payload.get("protocols", []) or []
+    rows = []
+    for p in protos:
+        if (p.get("name") or "").lower() != "blackhole":
             continue
+        dv = p.get("dailyVolume") or {}
+        for day, vol in dv.items():
+            rows.append({"date": day, "volume_usd": float(vol) if vol is not None else None})
+    df = pd.DataFrame(rows).sort_values("date")
+    return df
 
-        base = p.get("baseToken") or {}
-        quote = p.get("quoteToken") or {}
-        volume = p.get("volume") or {}
-        liq = p.get("liquidity") or {}
-        txns = p.get("txns") or {}
-
-        row = {
-            "token_name": base.get("name"),
-            "symbol": base.get("symbol"),
-            "quote_symbol": quote.get("symbol"),
-            "price_usd": to_float(p.get("priceUsd")),
-            "volume_24h_usd": to_float(volume.get("h24")),
-            "liquidity_usd": to_float(liq.get("usd")),
-            "fdv_usd": to_float(p.get("fdv")),
-            "pair_address": p.get("pairAddress"),
-            "dex": p.get("dexId"),
-            "chain": CHAIN,
-            "txns_24h_buys": safe_get(txns, "h24", "buys", default=None),
-            "txns_24h_sells": safe_get(txns, "h24", "sells", default=None),
-            "price_change_24h_pct": safe_get(p, "priceChange", "h24", default=None),
-            "pair_created_at": None,
-        }
-
-        # pairCreatedAt is ms epoch; store as ISO UTC
-        created_ms = p.get("pairCreatedAt")
-        if isinstance(created_ms, (int, float)):
+def build_chain_totals_df(payload):
+    """Sum daily volume of all protocols on Avalanche to get chain totals."""
+    protos = payload.get("protocols", []) or []
+    totals = {}
+    for p in protos:
+        dv = p.get("dailyVolume") or {}
+        for day, vol in dv.items():
+            if vol is None:
+                continue
             try:
-                row["pair_created_at"] = datetime.fromtimestamp(created_ms / 1000, tz=timezone.utc).isoformat()
+                totals[day] = totals.get(day, 0.0) + float(vol)
             except Exception:
-                row["pair_created_at"] = None
+                pass
+    rows = [{"date": d, "chain_volume_usd": v} for d, v in totals.items()]
+    df = pd.DataFrame(rows).sort_values("date")
+    return df
 
-        target.append(row)
+def finalize_dataframe(black_df, chain_df):
+    """Merge and compute share %."""
+    if black_df.empty and chain_df.empty:
+        return pd.DataFrame(columns=["date","dex","chain","volume_usd","chain_volume_usd","share_pct"])
+    df = pd.merge(black_df, chain_df, on="date", how="outer", validate="one_to_one")
+    df["dex"] = "Blackhole"
+    df["chain"] = "Avalanche"
+    # Compute share
+    def calc_share(row):
+        v = row.get("volume_usd")
+        t = row.get("chain_volume_usd")
+        if v is None or t is None or t == 0 or (isinstance(t, float) and math.isnan(t)):
+            return None
+        try:
+            return 100.0 * float(v) / float(t)
+        except Exception:
+            return None
+    df["share_pct"] = df.apply(calc_share, axis=1)
+    # Sort by date and tidy types
+    df = df.sort_values("date").reset_index(drop=True)
+    return df[["date","dex","chain","volume_usd","chain_volume_usd","share_pct"]]
 
-    print(f"Filtered {len(target)} BlackholeDex pairs.")
-    return pd.DataFrame(target)
-
-# -----------------------------
-# Summary / Tweet text
-# -----------------------------
 def write_summary(df: pd.DataFrame):
-    today_utc_mid = utc_midnight()
-    # Count new listings since UTC midnight
-    new_listings = 0
-    if not df.empty and "pair_created_at" in df.columns:
-        def _is_new(iso):
-            if not iso:
-                return False
-            try:
-                dt = datetime.fromisoformat(iso)
-                return dt >= today_utc_mid
-            except Exception:
-                return False
-        new_listings = int(df["pair_created_at"].apply(_is_new).sum())
+    if df.empty:
+        SUMMARY_PATH.write_text("⚠️ No Blackhole volume data available today.", encoding="utf-8")
+        return
 
-    total_pairs = int(len(df))
-    total_vol = 0.0 if df.empty else float(df["volume_24h_usd"].fillna(0).sum())
+    # Latest available day with volume
+    latest = df.dropna(subset=["volume_usd"]).tail(1)
+    if latest.empty:
+        SUMMARY_PATH.write_text("⚠️ No Blackhole volume data available today.", encoding="utf-8")
+        return
 
-    top_token_line = "N/A"
-    if not df.empty:
-        df_sorted = df.sort_values(["volume_24h_usd"], ascending=[False], na_position="last")
-        top = df_sorted.iloc[0]
-        sym = top.get("symbol") or "N/A"
-        liq = top.get("liquidity_usd")
-        liq_str = f"${liq:,.0f}" if isinstance(liq, (int, float)) and not math.isnan(liq) else "N/A"
-        top_token_line = f"${sym} (liquidity {liq_str})"
+    latest_row = latest.iloc[0]
+    date_label = datetime.strptime(latest_row["date"], "%Y-%m-%d").strftime("%B %d")
+    vol_24h = float(latest_row["volume_usd"])
+    share = latest_row["share_pct"]
+    share_str = f"{share:.2f}%" if pd.notna(share) else "N/A"
 
-    date_str = utc_now().strftime("%B %d")
+    # 7-day share trend (average share of last 7 vs previous 7)
+    df_share = df.dropna(subset=["share_pct"]).copy()
+    trend_line = ""
+    if len(df_share) >= 14:
+        last7 = df_share["share_pct"].tail(7).mean()
+        prev7 = df_share["share_pct"].tail(14).head(7).mean()
+        if pd.notna(last7) and pd.notna(prev7):
+            delta = last7 - prev7
+            arrow = "🔺" if delta >= 0 else "🔻"
+            trend_line = f"\n🔹 7d Share Avg: {last7:.2f}% ({arrow}{abs(delta):.2f} pts vs prior 7d)"
+    elif len(df_share) >= 7:
+        last7 = df_share["share_pct"].tail(7).mean()
+        trend_line = f"\n🔹 7d Share Avg: {last7:.2f}%"
+
     summary = (
-        f"📊 BlackholeDex Daily Stats ({date_str})\n\n"
-        f"🔸 Total Pairs: {total_pairs}\n"
-        f"🔸 24h Volume: ${total_vol:,.0f}\n"
-        f"🔸 Top Token: {top_token_line}\n"
-        f"🔸 New Listings: {new_listings}\n\n"
-        f"Track it live → https://github.com/TheKrimsonKoder/blackholedex-dashboard\n\n"
+        f"📊 BlackholeDex Daily Stats ({date_label})\n\n"
+        f"🔸 24h DEX Volume: ${vol_24h:,.0f}\n"
+        f"🔸 Avalanche Share: {share_str}{trend_line}\n\n"
+        f"Track it live → https://defillama.com/dexs/chain/avalanche\n\n"
         f"#Crypto #DEX #BlackholeDex"
     )
-
     SUMMARY_PATH.write_text(summary, encoding="utf-8")
     print(f"📝 Wrote daily summary → {SUMMARY_PATH}")
 
-# -----------------------------
-# Main
-# -----------------------------
 def main():
     ensure_dirs()
-
     try:
-        pairs = fetch_pairs()
+        payload = fetch_llama()
     except Exception as e:
-        print(f"❌ Fetch failed: {e}", file=sys.stderr)
-        # Still write empty CSV/summary so the workflow can proceed
+        print(f"❌ Fetch failed: {e}")
         pd.DataFrame().to_csv(CSV_PATH, index=False)
-        SUMMARY_PATH.write_text("⚠️ No BlackholeDex data available today.", encoding="utf-8")
-        sys.exit(0)
+        SUMMARY_PATH.write_text("⚠️ No Blackhole volume data available today.", encoding="utf-8")
+        return
 
-    df = normalize_blackhole_pairs(pairs)
+    black_df = build_blackhole_df(payload)
+    chain_df = build_chain_totals_df(payload)
+    final_df = finalize_dataframe(black_df, chain_df)
 
-    # Save CSV
-    df.to_csv(CSV_PATH, index=False)
-    print(f"✅ Saved {len(df)} rows → {CSV_PATH}")
+    final_df.to_csv(CSV_PATH, index=False)
+    print(f"✅ Saved {len(final_df)} rows → {CSV_PATH}")
 
-    # Write tweet summary
-    write_summary(df)
+    write_summary(final_df)
 
 if __name__ == "__main__":
     main()
