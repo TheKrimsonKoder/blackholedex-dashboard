@@ -1,1 +1,1 @@
-⚠️ API fetch failed. See workflow logs.
+⚠️ Fetch Blackhole failed: 'date'
