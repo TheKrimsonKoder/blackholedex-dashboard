@@ -85,4 +85,4 @@ def merge_and_share(black_df, chain_df):
         f"🔸 Avalanche Share: {share_str}{trend_line}\n\n"
         f"Track it live → https://defillama.com/dexs/chain/avalanche\n\n"
         f"#Crypto #DEX #BlackholeDex",
-        encoding="utf-8",
+        encoding="utf-8")
