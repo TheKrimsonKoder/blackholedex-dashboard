@@ -16,13 +16,3 @@ You’ll get:
 - **Full pair data** including price, liquidity, and FDV
 
 ---
-
-## 📊 Live Data
-- **CSV**: [black_data.csv](data/black_data.csv)  
-- **Daily Tweet**: [@metherferee](https://x.com/metherferee)  
-
-Example of a daily summary tweet:  
-
----
-
-
