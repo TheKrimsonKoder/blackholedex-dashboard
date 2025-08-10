@@ -93,33 +93,19 @@ def from_slug_summary():
     return pd.DataFrame(rows)
 
 def from_overview_fallback():
-    """Fallback: use Avalanche overview and sum all protocols that match 'blackhole'."""
+    """Fallback: list all protocol names/slugs from Avalanche overview."""
     p = fetch_json(AVAX_OVERVIEW_URL)
     protos = p.get("protocols", []) or []
 
-    matched = []
-    totals = {}
+    lines = []
     for proto in protos:
-        name = (proto.get("name") or "").lower()
-        slug = (proto.get("slug") or proto.get("id") or "").lower()
-        if "blackhole" in name or "blackhole" in slug:
-            matched.append(proto.get("name") or slug or "unknown")
-            for day, vol in (proto.get("dailyVolume") or {}).items():
-                if vol is None: 
-                    continue
-                try:
-                    totals[day] = totals.get(day, 0.0) + float(vol)
-                except:
-                    pass
+        lines.append(f"{proto.get('name')} | {proto.get('slug')} | {proto.get('id')}")
+    
+    # Save the list of all available protocols in Avalanche overview
+    MATCHED_PATH.write_text("\n".join(lines), encoding="utf-8")
 
-    MATCHED_PATH.write_text("\n".join(matched) or "NO MATCHES", encoding="utf-8")
-
-    if not totals:
-        return pd.DataFrame()
-
-    rows = [{"date": d, "dex": "Blackhole", "chain": "Avalanche", "volume_usd": v}
-            for d, v in sorted(totals.items())]
-    return pd.DataFrame(rows)
+    # Return empty DataFrame so downstream steps won't fail
+    return pd.DataFrame()
 
 def avalanche_totals_df():
     """Chain-wide Avalanche DEX totals via overview (best-effort)."""
