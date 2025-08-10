@@ -5,8 +5,8 @@ on:
     - cron: "0 14 * * *"  # Runs every day at 14:00 UTC
   workflow_dispatch:
 
-  permissions:
-    contents: write
+permissions:
+  contents: write
 
 jobs:
   fetch-and-commit:
