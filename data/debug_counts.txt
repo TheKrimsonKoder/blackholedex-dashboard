@@ -1,1 +1,24 @@
-date=2025-08-10, matched_pairs=21, pairs_returned=30, total24=9487893.48, rows_after_upsert=1
+{
+  "date": "2025-08-10",
+  "matched_pairs": {
+    "Blackhole": 21,
+    "Trader Joe": 6,
+    "Pangolin": 10
+  },
+  "pairs_returned": {
+    "Blackhole": 30,
+    "Trader Joe": 30,
+    "Pangolin": 30
+  },
+  "volumes_24h": {
+    "Blackhole": 7857575.560000001,
+    "Trader Joe": 171895.91999999998,
+    "Pangolin": 68428.93
+  },
+  "tvls": {
+    "Blackhole": 269089283.76645404,
+    "Trader Joe": null,
+    "Pangolin": 5594679.963267594
+  },
+  "rows_after_upsert": 3
+}
