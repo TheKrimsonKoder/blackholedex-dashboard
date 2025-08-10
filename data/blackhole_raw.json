@@ -1,1 +1,1514 @@
-{"id": "parent#blackhole", "name": "Blackhole", "url": "https://blackhole.xyz/", "description": "Blackhole is a next-generation decentralized exchange (DEX) built on the Avalanche blockchain", "logo": "https://icons.llama.fi/blackhole.jpg", "gecko_id": "blackhole", "cmcId": "37396", "chains": ["Avalanche"], "twitter": "BlackholeDex", "symbol": "BLACK", "childProtocols": [{"name": "Blackhole AMM", "defillamaId": "6430", "displayName": "Blackhole AMM", "module": "blackhole", "category": "Dexs", "logo": "https://icons.llamao.fi/icons/protocols/blackhole-amm.jpg", "chains": ["avax"], "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/blackhole.ts", "methodology": {"UserFees": "All swap fees paid by users.", "Fees": "All swap fees paid by users.", "Revenue": "Fees collected and distributed to staked LPs.", "ProtocolRevenue": "No protocol revenue", "HoldersRevenue": "Fees collected and distributed to veBlack holders.", "SupplySideRevenue": "Unstake LPs receive 100% fee of each swap."}, "gecko_id": null, "twitter": "BlackholeDex", "audits": "0", "description": "Blackhole is a next-generation decentralized exchange (DEX) built on the Avalanche blockchain.", "address": null, "url": "https://blackhole.xyz/", "audit_links": [], "cmcId": null, "id": "6430", "parentProtocol": "parent#blackhole"}, {"name": "Blackhole CLMM", "defillamaId": "6431", "displayName": "Blackhole CLMM", "module": "blackhole-CL", "category": "Dexs", "logo": "https://icons.llamao.fi/icons/protocols/blackhole-clmm.jpg", "chains": ["avax"], "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/blackhole-CL.ts", "methodology": {"UserFees": "All swap fees paid by users.", "Fees": "All swap fees paid by users.", "Revenue": "All swap fees are revenue.", "ProtocolRevenue": "Protocol makes no revenue.", "HoldersRevenue": "All revenue are distributed to veBlack holders.", "SupplySideRevenue": "No fees distributed to LPs."}, "gecko_id": null, "twitter": "BlackholeDex", "audits": "0", "description": "Blackhole is a next-generation decentralized exchange (DEX) built on the Avalanche blockchain.", "address": null, "url": "https://blackhole.xyz/", "audit_links": [], "cmcId": null, "id": "6431", "parentProtocol": "parent#blackhole"}], "linkedProtocols": ["Blackhole", "Blackhole AMM", "Blackhole CLMM"], "defillamaId": "parent#blackhole", "displayName": "Blackhole", "module": null, "category": null, "methodologyURL": null, "methodology": null, "forkedFrom": null, "audits": null, "address": null, "audit_links": null, "versionKey": null, "github": null, "governanceID": null, "treasury": null, "parentProtocol": null, "previousNames": null, "hallmarks": null, "defaultChartView": null, "slug": "blackhole", "protocolType": "protocol", "total24h": 200856101, "total48hto24h": 252606548, "total7d": 1160284009, "total30d": 3621874393, "totalAllTime": 3842838039, "totalDataChart": [[1745539200, 0], [1745625600, 0], [1745712000, 0], [1745798400, 0], [1745884800, 0], [1745971200, 0], [1746057600, 0], [1746144000, 0], [1746230400, 0], [1746316800, 0], [1746403200, 0], [1746489600, 0], [1746576000, 0], [1746662400, 0], [1746748800, 0], [1746835200, 0], [1746921600, 0], [1747008000, 0], [1747094400, 0], [1747180800, 0], [1747267200, 0], [1747353600, 0], [1747440000, 0], [1747526400, 0], [1747612800, 0], [1747699200, 0], [1747785600, 0], [1747872000, 0], [1747958400, 0], [1748044800, 0], [1748131200, 0], [1748217600, 0], [1748304000, 0], [1748390400, 0], [1748476800, 0], [1748563200, 0], [1748649600, 0], [1748736000, 0], [1748822400, 0], [1748908800, 0], [1748995200, 0], [1749081600, 0], [1749168000, 0], [1749254400, 0], [1749340800, 0], [1749427200, 0], [1749513600, 0], [1749600000, 0], [1749686400, 0], [1749772800, 0], [1749859200, 0], [1749945600, 0], [1750032000, 0], [1750118400, 0], [1750204800, 0], [1750291200, 0], [1750377600, 0], [1750464000, 0], [1750550400, 0], [1750636800, 0], [1750723200, 0], [1750809600, 0], [1750896000, 0], [1750982400, 0], [1751068800, 0], [1751155200, 0], [1751241600, 0], [1751328000, 0], [1751414400, 0], [1751500800, 0], [1751587200, 0], [1751673600, 0], [1751760000, 0], [1751846400, 0], [1751932800, 0], [1752019200, 0], [1752105600, 354869], [1752192000, 4087729], [1752278400, 3459603], [1752364800, 3441356], [1752451200, 3757273], [1752537600, 8570309], [1752624000, 26042748], [1752710400, 35851125], [1752796800, 70508805], [1752883200, 82179355], [1752969600, 72982778], [1753056000, 92007704], [1753142400, 175276933], [1753228800, 121331679], [1753315200, 141532717], [1753401600, 158455754], [1753488000, 134673533], [1753574400, 142257832], [1753660800, 250339360], [1753747200, 162274227], [1753833600, 186857907], [1753920000, 175388020], [1754006400, 264250437], [1754092800, 146063200], [1754179200, 130230001], [1754265600, 152237345], [1754352000, 125117561], [1754438400, 164671493], [1754524800, 134564960], [1754611200, 252606548], [1754697600, 200856101], [1754784000, 220608777]], "totalDataChartBreakdown": [[1745539200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1745625600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1745712000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1745798400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1745884800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1745971200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746057600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746144000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746230400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746316800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746403200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746489600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746576000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746662400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746748800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746835200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1746921600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747008000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747094400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747180800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747267200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747353600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747440000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747526400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747612800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747699200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747785600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747872000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1747958400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748044800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748131200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748217600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748304000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748390400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748476800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748563200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748649600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748736000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748822400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748908800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1748995200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749081600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749168000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749254400, {"Avalanche": {"Blackhole CLMM": 0}}], [1749340800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749427200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749513600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749600000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749686400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749772800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749859200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1749945600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750032000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750118400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750204800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750291200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750377600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750464000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750550400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750636800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750723200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750809600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750896000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1750982400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751068800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751155200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751241600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751328000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751414400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751500800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751587200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751673600, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751760000, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751846400, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1751932800, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1752019200, {"Avalanche": {"Blackhole AMM": 0, "Blackhole CLMM": 0}}], [1752105600, {"Avalanche": {"Blackhole AMM": 26909, "Blackhole CLMM": 327960}}], [1752192000, {"Avalanche": {"Blackhole AMM": 619548, "Blackhole CLMM": 3468181}}], [1752278400, {"Avalanche": {"Blackhole AMM": 311259, "Blackhole CLMM": 3148344}}], [1752364800, {"Avalanche": {"Blackhole AMM": 293749, "Blackhole CLMM": 3147607}}], [1752451200, {"Avalanche": {"Blackhole AMM": 241951, "Blackhole CLMM": 3515322}}], [1752537600, {"Avalanche": {"Blackhole AMM": 387930, "Blackhole CLMM": 8182379}}], [1752624000, {"Avalanche": {"Blackhole AMM": 14555267, "Blackhole CLMM": 11487481}}], [1752710400, {"Avalanche": {"Blackhole AMM": 9135874, "Blackhole CLMM": 26715251}}], [1752796800, {"Avalanche": {"Blackhole AMM": 12999787, "Blackhole CLMM": 57509018}}], [1752883200, {"Avalanche": {"Blackhole AMM": 7722819, "Blackhole CLMM": 74456536}}], [1752969600, {"Avalanche": {"Blackhole AMM": 8083254, "Blackhole CLMM": 64899524}}], [1753056000, {"Avalanche": {"Blackhole AMM": 9402992, "Blackhole CLMM": 82604712}}], [1753142400, {"Avalanche": {"Blackhole AMM": 11644000, "Blackhole CLMM": 163632933}}], [1753228800, {"Avalanche": {"Blackhole AMM": 10570316, "Blackhole CLMM": 110761363}}], [1753315200, {"Avalanche": {"Blackhole AMM": 11403715, "Blackhole CLMM": 130129002}}], [1753401600, {"Avalanche": {"Blackhole AMM": 6657128, "Blackhole CLMM": 151798626}}], [1753488000, {"Avalanche": {"Blackhole AMM": 6428528, "Blackhole CLMM": 128245005}}], [1753574400, {"Avalanche": {"Blackhole AMM": 6303640, "Blackhole CLMM": 135954192}}], [1753660800, {"Avalanche": {"Blackhole AMM": 11568104, "Blackhole CLMM": 238771256}}], [1753747200, {"Avalanche": {"Blackhole AMM": 7814247, "Blackhole CLMM": 154459980}}], [1753833600, {"Avalanche": {"Blackhole AMM": 14909424, "Blackhole CLMM": 171948483}}], [1753920000, {"Avalanche": {"Blackhole AMM": 7921839, "Blackhole CLMM": 167466181}}], [1754006400, {"Avalanche": {"Blackhole AMM": 6347550, "Blackhole CLMM": 257902887}}], [1754092800, {"Avalanche": {"Blackhole AMM": 3398627, "Blackhole CLMM": 142664573}}], [1754179200, {"Avalanche": {"Blackhole AMM": 2185789, "Blackhole CLMM": 128044212}}], [1754265600, {"Avalanche": {"Blackhole AMM": 3584647, "Blackhole CLMM": 148652698}}], [1754352000, {"Avalanche": {"Blackhole AMM": 3112871, "Blackhole CLMM": 122004690}}], [1754438400, {"Avalanche": {"Blackhole AMM": 3637698, "Blackhole CLMM": 161033795}}], [1754524800, {"Avalanche": {"Blackhole AMM": 5332511, "Blackhole CLMM": 129232449}}], [1754611200, {"Avalanche": {"Blackhole AMM": 5050452, "Blackhole CLMM": 247556096}}], [1754697600, {"Avalanche": {"Blackhole AMM": 10644221, "Blackhole CLMM": 190211880}}], [1754784000, {"Avalanche": {"Blackhole AMM": 7045811, "Blackhole CLMM": 213562966}}]], "change_1d": -20.49}
+{
+  "id": "parent#blackhole",
+  "name": "Blackhole",
+  "url": "https://blackhole.xyz/",
+  "description": "Blackhole is a next-generation decentralized exchange (DEX) built on the Avalanche blockchain",
+  "logo": "https://icons.llama.fi/blackhole.jpg",
+  "gecko_id": "blackhole",
+  "cmcId": "37396",
+  "chains": [
+    "Avalanche"
+  ],
+  "twitter": "BlackholeDex",
+  "symbol": "BLACK",
+  "childProtocols": [
+    {
+      "name": "Blackhole AMM",
+      "defillamaId": "6430",
+      "displayName": "Blackhole AMM",
+      "module": "blackhole",
+      "category": "Dexs",
+      "logo": "https://icons.llamao.fi/icons/protocols/blackhole-amm.jpg",
+      "chains": [
+        "avax"
+      ],
+      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/blackhole.ts",
+      "methodology": {
+        "UserFees": "All swap fees paid by users.",
+        "Fees": "All swap fees paid by users.",
+        "Revenue": "Fees collected and distributed to staked LPs.",
+        "ProtocolRevenue": "No protocol revenue",
+        "HoldersRevenue": "Fees collected and distributed to veBlack holders.",
+        "SupplySideRevenue": "Unstake LPs receive 100% fee of each swap."
+      },
+      "gecko_id": null,
+      "twitter": "BlackholeDex",
+      "audits": "0",
+      "description": "Blackhole is a next-generation decentralized exchange (DEX) built on the Avalanche blockchain.",
+      "address": null,
+      "url": "https://blackhole.xyz/",
+      "audit_links": [],
+      "cmcId": null,
+      "id": "6430",
+      "parentProtocol": "parent#blackhole"
+    },
+    {
+      "name": "Blackhole CLMM",
+      "defillamaId": "6431",
+      "displayName": "Blackhole CLMM",
+      "module": "blackhole-CL",
+      "category": "Dexs",
+      "logo": "https://icons.llamao.fi/icons/protocols/blackhole-clmm.jpg",
+      "chains": [
+        "avax"
+      ],
+      "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/blackhole-CL.ts",
+      "methodology": {
+        "UserFees": "All swap fees paid by users.",
+        "Fees": "All swap fees paid by users.",
+        "Revenue": "All swap fees are revenue.",
+        "ProtocolRevenue": "Protocol makes no revenue.",
+        "HoldersRevenue": "All revenue are distributed to veBlack holders.",
+        "SupplySideRevenue": "No fees distributed to LPs."
+      },
+      "gecko_id": null,
+      "twitter": "BlackholeDex",
+      "audits": "0",
+      "description": "Blackhole is a next-generation decentralized exchange (DEX) built on the Avalanche blockchain.",
+      "address": null,
+      "url": "https://blackhole.xyz/",
+      "audit_links": [],
+      "cmcId": null,
+      "id": "6431",
+      "parentProtocol": "parent#blackhole"
+    }
+  ],
+  "linkedProtocols": [
+    "Blackhole",
+    "Blackhole AMM",
+    "Blackhole CLMM"
+  ],
+  "defillamaId": "parent#blackhole",
+  "displayName": "Blackhole",
+  "module": null,
+  "category": null,
+  "methodologyURL": null,
+  "methodology": null,
+  "forkedFrom": null,
+  "audits": null,
+  "address": null,
+  "audit_links": null,
+  "versionKey": null,
+  "github": null,
+  "governanceID": null,
+  "treasury": null,
+  "parentProtocol": null,
+  "previousNames": null,
+  "hallmarks": null,
+  "defaultChartView": null,
+  "slug": "blackhole",
+  "protocolType": "protocol",
+  "total24h": 200856101,
+  "total48hto24h": 252606548,
+  "total7d": 1160284009,
+  "total30d": 3621874393,
+  "totalAllTime": 3842838039,
+  "totalDataChart": [
+    [
+      1745539200,
+      0
+    ],
+    [
+      1745625600,
+      0
+    ],
+    [
+      1745712000,
+      0
+    ],
+    [
+      1745798400,
+      0
+    ],
+    [
+      1745884800,
+      0
+    ],
+    [
+      1745971200,
+      0
+    ],
+    [
+      1746057600,
+      0
+    ],
+    [
+      1746144000,
+      0
+    ],
+    [
+      1746230400,
+      0
+    ],
+    [
+      1746316800,
+      0
+    ],
+    [
+      1746403200,
+      0
+    ],
+    [
+      1746489600,
+      0
+    ],
+    [
+      1746576000,
+      0
+    ],
+    [
+      1746662400,
+      0
+    ],
+    [
+      1746748800,
+      0
+    ],
+    [
+      1746835200,
+      0
+    ],
+    [
+      1746921600,
+      0
+    ],
+    [
+      1747008000,
+      0
+    ],
+    [
+      1747094400,
+      0
+    ],
+    [
+      1747180800,
+      0
+    ],
+    [
+      1747267200,
+      0
+    ],
+    [
+      1747353600,
+      0
+    ],
+    [
+      1747440000,
+      0
+    ],
+    [
+      1747526400,
+      0
+    ],
+    [
+      1747612800,
+      0
+    ],
+    [
+      1747699200,
+      0
+    ],
+    [
+      1747785600,
+      0
+    ],
+    [
+      1747872000,
+      0
+    ],
+    [
+      1747958400,
+      0
+    ],
+    [
+      1748044800,
+      0
+    ],
+    [
+      1748131200,
+      0
+    ],
+    [
+      1748217600,
+      0
+    ],
+    [
+      1748304000,
+      0
+    ],
+    [
+      1748390400,
+      0
+    ],
+    [
+      1748476800,
+      0
+    ],
+    [
+      1748563200,
+      0
+    ],
+    [
+      1748649600,
+      0
+    ],
+    [
+      1748736000,
+      0
+    ],
+    [
+      1748822400,
+      0
+    ],
+    [
+      1748908800,
+      0
+    ],
+    [
+      1748995200,
+      0
+    ],
+    [
+      1749081600,
+      0
+    ],
+    [
+      1749168000,
+      0
+    ],
+    [
+      1749254400,
+      0
+    ],
+    [
+      1749340800,
+      0
+    ],
+    [
+      1749427200,
+      0
+    ],
+    [
+      1749513600,
+      0
+    ],
+    [
+      1749600000,
+      0
+    ],
+    [
+      1749686400,
+      0
+    ],
+    [
+      1749772800,
+      0
+    ],
+    [
+      1749859200,
+      0
+    ],
+    [
+      1749945600,
+      0
+    ],
+    [
+      1750032000,
+      0
+    ],
+    [
+      1750118400,
+      0
+    ],
+    [
+      1750204800,
+      0
+    ],
+    [
+      1750291200,
+      0
+    ],
+    [
+      1750377600,
+      0
+    ],
+    [
+      1750464000,
+      0
+    ],
+    [
+      1750550400,
+      0
+    ],
+    [
+      1750636800,
+      0
+    ],
+    [
+      1750723200,
+      0
+    ],
+    [
+      1750809600,
+      0
+    ],
+    [
+      1750896000,
+      0
+    ],
+    [
+      1750982400,
+      0
+    ],
+    [
+      1751068800,
+      0
+    ],
+    [
+      1751155200,
+      0
+    ],
+    [
+      1751241600,
+      0
+    ],
+    [
+      1751328000,
+      0
+    ],
+    [
+      1751414400,
+      0
+    ],
+    [
+      1751500800,
+      0
+    ],
+    [
+      1751587200,
+      0
+    ],
+    [
+      1751673600,
+      0
+    ],
+    [
+      1751760000,
+      0
+    ],
+    [
+      1751846400,
+      0
+    ],
+    [
+      1751932800,
+      0
+    ],
+    [
+      1752019200,
+      0
+    ],
+    [
+      1752105600,
+      354869
+    ],
+    [
+      1752192000,
+      4087729
+    ],
+    [
+      1752278400,
+      3459603
+    ],
+    [
+      1752364800,
+      3441356
+    ],
+    [
+      1752451200,
+      3757273
+    ],
+    [
+      1752537600,
+      8570309
+    ],
+    [
+      1752624000,
+      26042748
+    ],
+    [
+      1752710400,
+      35851125
+    ],
+    [
+      1752796800,
+      70508805
+    ],
+    [
+      1752883200,
+      82179355
+    ],
+    [
+      1752969600,
+      72982778
+    ],
+    [
+      1753056000,
+      92007704
+    ],
+    [
+      1753142400,
+      175276933
+    ],
+    [
+      1753228800,
+      121331679
+    ],
+    [
+      1753315200,
+      141532717
+    ],
+    [
+      1753401600,
+      158455754
+    ],
+    [
+      1753488000,
+      134673533
+    ],
+    [
+      1753574400,
+      142257832
+    ],
+    [
+      1753660800,
+      250339360
+    ],
+    [
+      1753747200,
+      162274227
+    ],
+    [
+      1753833600,
+      186857907
+    ],
+    [
+      1753920000,
+      175388020
+    ],
+    [
+      1754006400,
+      264250437
+    ],
+    [
+      1754092800,
+      146063200
+    ],
+    [
+      1754179200,
+      130230001
+    ],
+    [
+      1754265600,
+      152237345
+    ],
+    [
+      1754352000,
+      125117561
+    ],
+    [
+      1754438400,
+      164671493
+    ],
+    [
+      1754524800,
+      134564960
+    ],
+    [
+      1754611200,
+      252606548
+    ],
+    [
+      1754697600,
+      200856101
+    ],
+    [
+      1754784000,
+      220608777
+    ]
+  ],
+  "totalDataChartBreakdown": [
+    [
+      1745539200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1745625600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1745712000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1745798400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1745884800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1745971200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746057600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746144000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746230400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746316800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746403200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746489600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746576000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746662400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746748800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746835200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1746921600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747008000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747094400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747180800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747267200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747353600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747440000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747526400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747612800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747699200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747785600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747872000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1747958400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748044800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748131200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748217600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748304000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748390400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748476800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748563200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748649600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748736000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748822400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748908800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1748995200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749081600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749168000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749254400,
+      {
+        "Avalanche": {
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749340800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749427200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749513600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749600000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749686400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749772800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749859200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1749945600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750032000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750118400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750204800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750291200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750377600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750464000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750550400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750636800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750723200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750809600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750896000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1750982400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751068800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751155200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751241600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751328000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751414400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751500800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751587200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751673600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751760000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751846400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1751932800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1752019200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 0,
+          "Blackhole CLMM": 0
+        }
+      }
+    ],
+    [
+      1752105600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 26909,
+          "Blackhole CLMM": 327960
+        }
+      }
+    ],
+    [
+      1752192000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 619548,
+          "Blackhole CLMM": 3468181
+        }
+      }
+    ],
+    [
+      1752278400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 311259,
+          "Blackhole CLMM": 3148344
+        }
+      }
+    ],
+    [
+      1752364800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 293749,
+          "Blackhole CLMM": 3147607
+        }
+      }
+    ],
+    [
+      1752451200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 241951,
+          "Blackhole CLMM": 3515322
+        }
+      }
+    ],
+    [
+      1752537600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 387930,
+          "Blackhole CLMM": 8182379
+        }
+      }
+    ],
+    [
+      1752624000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 14555267,
+          "Blackhole CLMM": 11487481
+        }
+      }
+    ],
+    [
+      1752710400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 9135874,
+          "Blackhole CLMM": 26715251
+        }
+      }
+    ],
+    [
+      1752796800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 12999787,
+          "Blackhole CLMM": 57509018
+        }
+      }
+    ],
+    [
+      1752883200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 7722819,
+          "Blackhole CLMM": 74456536
+        }
+      }
+    ],
+    [
+      1752969600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 8083254,
+          "Blackhole CLMM": 64899524
+        }
+      }
+    ],
+    [
+      1753056000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 9402992,
+          "Blackhole CLMM": 82604712
+        }
+      }
+    ],
+    [
+      1753142400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 11644000,
+          "Blackhole CLMM": 163632933
+        }
+      }
+    ],
+    [
+      1753228800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 10570316,
+          "Blackhole CLMM": 110761363
+        }
+      }
+    ],
+    [
+      1753315200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 11403715,
+          "Blackhole CLMM": 130129002
+        }
+      }
+    ],
+    [
+      1753401600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 6657128,
+          "Blackhole CLMM": 151798626
+        }
+      }
+    ],
+    [
+      1753488000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 6428528,
+          "Blackhole CLMM": 128245005
+        }
+      }
+    ],
+    [
+      1753574400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 6303640,
+          "Blackhole CLMM": 135954192
+        }
+      }
+    ],
+    [
+      1753660800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 11568104,
+          "Blackhole CLMM": 238771256
+        }
+      }
+    ],
+    [
+      1753747200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 7814247,
+          "Blackhole CLMM": 154459980
+        }
+      }
+    ],
+    [
+      1753833600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 14909424,
+          "Blackhole CLMM": 171948483
+        }
+      }
+    ],
+    [
+      1753920000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 7921839,
+          "Blackhole CLMM": 167466181
+        }
+      }
+    ],
+    [
+      1754006400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 6347550,
+          "Blackhole CLMM": 257902887
+        }
+      }
+    ],
+    [
+      1754092800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 3398627,
+          "Blackhole CLMM": 142664573
+        }
+      }
+    ],
+    [
+      1754179200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 2185789,
+          "Blackhole CLMM": 128044212
+        }
+      }
+    ],
+    [
+      1754265600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 3584647,
+          "Blackhole CLMM": 148652698
+        }
+      }
+    ],
+    [
+      1754352000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 3112871,
+          "Blackhole CLMM": 122004690
+        }
+      }
+    ],
+    [
+      1754438400,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 3637698,
+          "Blackhole CLMM": 161033795
+        }
+      }
+    ],
+    [
+      1754524800,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 5332511,
+          "Blackhole CLMM": 129232449
+        }
+      }
+    ],
+    [
+      1754611200,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 5050452,
+          "Blackhole CLMM": 247556096
+        }
+      }
+    ],
+    [
+      1754697600,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 10644221,
+          "Blackhole CLMM": 190211880
+        }
+      }
+    ],
+    [
+      1754784000,
+      {
+        "Avalanche": {
+          "Blackhole AMM": 7045811,
+          "Blackhole CLMM": 213562966
+        }
+      }
+    ]
+  ],
+  "change_1d": -20.49
+}

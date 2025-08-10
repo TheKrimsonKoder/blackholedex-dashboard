@@ -1,1 +1,1 @@
-⚠️ Fetch Blackhole failed: 'date'
+⚠️ No rows parsed from DefiLlama.
