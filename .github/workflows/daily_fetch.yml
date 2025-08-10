@@ -3,42 +3,70 @@ name: Daily BlackholeDex Fetch
 on:
   schedule:
     - cron: "0 5 * * *"  # Runs daily at 05:00 UTC (1:00 AM Eastern)
-  workflow_dispatch:     # Allow manual runs
+  workflow_dispatch:       # Allow manual runs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-blackhole-fetch
+  cancel-in-progress: true
 
 jobs:
   fetch-and-commit:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v3
+      - name: ⬇️ Checkout repo (main, full history)
+        uses: actions/checkout@v4
         with:
           ref: main
-
-      - name: 🐍 Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
-
-      - name: 📦 Install dependencies
-        run: |
-          pip install requests pandas
+          fetch-depth: 0
 
       - name: 👀 Print first lines of script (sanity)
         run: |
-          sed -n '1,40p' scripts/api_fetch.py
-          echo "---- grep for bad URL ----"
-          grep -n "summary/dexs/avalanche" -n scripts/api_fetch.py || echo "OK: no bad URL"
+          echo "---- scripts/api_fetch.py (lines 1-60) ----"
+          sed -n '1,60p' scripts/api_fetch.py || true
+          echo "---- grep for old bad URL ----"
+          grep -n "summary/dexs/avalanche" scripts/api_fetch.py || echo "OK: no bad URL present"
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas
 
       - name: ⚙️ Run fetch script
         run: python scripts/api_fetch.py
+
+      - name: 🐛 Debug data dump
+        run: |
+          echo "---- Directory tree of ./data ----"
+          ls -R data || true
+          echo
+          for file in data/* 2>/dev/null; do
+            echo "---- Preview: $file ----"
+            head -n 20 "$file" || true
+            echo
+          done
+
+      - name: 📄 Quick output preview
+        run: |
+          echo "---- daily_summary.txt ----"; cat data/daily_summary.txt || true
+          echo "---- black_data.csv (tail) ----"; tail -n 10 data/black_data.csv || true
 
       - name: ⬆️ Commit and push updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f data/black_data.csv data/daily_summary.txt || true
-          if [ -n "$(git status --porcelain)" ]; then
+          # Add generated artifacts even if .gitignore would exclude them
+          git add -f data/*.csv data/*.txt data/*.json || true
+          # Only commit if something is staged
+          if ! git diff --cached --quiet; then
             git commit -m "📈 Daily update: $(date -u +'%Y-%m-%d %H:%M UTC')"
             git pull --rebase origin main
             git push
