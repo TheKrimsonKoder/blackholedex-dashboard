@@ -24,6 +24,12 @@ jobs:
         run: |
           pip install requests pandas
 
+      - name: 👀 Print first lines of script (sanity)
+        run: |
+          sed -n '1,40p' scripts/api_fetch.py
+          echo "---- grep for bad URL ----"
+          grep -n "summary/dexs/avalanche" -n scripts/api_fetch.py || echo "OK: no bad URL"
+
       - name: ⚙️ Run fetch script
         run: python scripts/api_fetch.py
 
