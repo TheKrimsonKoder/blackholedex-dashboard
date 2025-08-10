@@ -17,49 +17,50 @@
           "name": "USD Coin",
           "symbol": "USDC"
         },
-        "priceNative": "0.6811",
-        "priceUsd": "0.6811",
+        "priceNative": "0.6808",
+        "priceUsd": "0.6808",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 54
           },
           "h1": {
-            "buys": 0,
-            "sells": 829
+            "buys": 4,
+            "sells": 828
           },
           "h6": {
-            "buys": 30,
-            "sells": 4688
+            "buys": 24,
+            "sells": 4725
           },
           "h24": {
-            "buys": 106,
-            "sells": 16188
+            "buys": 103,
+            "sells": 16474
           }
         },
         "volume": {
-          "h24": 256376.14,
-          "h6": 40212.44,
-          "h1": 4456.85,
-          "m5": 59.61
+          "h24": 255018.69,
+          "h6": 17964.84,
+          "h1": 1947.45,
+          "m5": 107.99
         },
         "priceChange": {
-          "h1": -0.33,
-          "h6": -0.88,
-          "h24": -8.67
+          "m5": -0.01,
+          "h1": -0.04,
+          "h6": -0.28,
+          "h24": -8.62
         },
         "liquidity": {
-          "usd": 5388593.05,
-          "base": 3955649,
-          "quote": 2694296
+          "usd": 5379428.18,
+          "base": 3950293,
+          "quote": 2689708
         },
-        "fdv": 81333951,
-        "marketCap": 81428928,
+        "fdv": 81305872,
+        "marketCap": 81146094,
         "pairCreatedAt": 1752627708000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -101,50 +102,50 @@
           "name": "Wrapped AVAX",
           "symbol": "WAVAX"
         },
-        "priceNative": "0.02865",
-        "priceUsd": "0.6782",
+        "priceNative": "0.02862",
+        "priceUsd": "0.6802",
         "txns": {
           "m5": {
-            "buys": 2,
-            "sells": 104
+            "buys": 1,
+            "sells": 98
           },
           "h1": {
-            "buys": 17,
-            "sells": 1472
+            "buys": 6,
+            "sells": 1522
           },
           "h6": {
-            "buys": 51,
-            "sells": 8247
+            "buys": 42,
+            "sells": 8411
           },
           "h24": {
-            "buys": 164,
-            "sells": 29546
+            "buys": 163,
+            "sells": 30059
           }
         },
         "volume": {
-          "h24": 182340.21,
-          "h6": 27884.24,
-          "h1": 4322.77,
-          "m5": 812.47
+          "h24": 179338.79,
+          "h6": 24846.49,
+          "h1": 3062.76,
+          "m5": 336.55
         },
         "priceChange": {
-          "m5": 0.04,
-          "h1": -0.02,
-          "h6": -1.06,
-          "h24": -9.24
+          "m5": 0.01,
+          "h1": 0.34,
+          "h6": -0.29,
+          "h24": -8.15
         },
         "liquidity": {
-          "usd": 4920924.71,
-          "base": 3627400,
-          "quote": 103946
+          "usd": 4938608.01,
+          "base": 3629818,
+          "quote": 103916
         },
-        "fdv": 80996308,
-        "marketCap": 81090890,
+        "fdv": 81233676,
+        "marketCap": 81074040,
         "pairCreatedAt": 1752628233000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -190,44 +191,43 @@
         "priceUsd": "0.6782",
         "txns": {
           "m5": {
-            "buys": 1,
+            "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 7,
+            "buys": 2,
             "sells": 0
           },
           "h6": {
-            "buys": 29,
+            "buys": 21,
             "sells": 89
           },
           "h24": {
-            "buys": 280,
-            "sells": 736
+            "buys": 278,
+            "sells": 694
           }
         },
         "volume": {
-          "h24": 2504588.42,
-          "h6": 177883.77,
-          "h1": 11754.17,
-          "m5": 501.18
+          "h24": 2460931.21,
+          "h6": 158568.69,
+          "h1": 716.04,
+          "m5": 0
         },
         "priceChange": {
-          "h1": -0.04,
-          "h6": -1.13,
-          "h24": -9.86
+          "h6": -0.68,
+          "h24": -8.33
         },
         "liquidity": {
-          "usd": 1187722.34,
-          "base": 1191345,
-          "quote": 16039
+          "usd": 1187726.39,
+          "base": 1191030,
+          "quote": 16048
         },
-        "fdv": 80993661,
-        "marketCap": 81088240,
+        "fdv": 80994067,
+        "marketCap": 80834902,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -274,32 +274,31 @@
         "txns": {
           "m5": {
             "buys": 0,
-            "sells": 2
+            "sells": 0
           },
           "h1": {
             "buys": 0,
-            "sells": 32
+            "sells": 2
           },
           "h6": {
             "buys": 12,
-            "sells": 186
+            "sells": 184
           },
           "h24": {
-            "buys": 195,
-            "sells": 692
+            "buys": 182,
+            "sells": 681
           }
         },
         "volume": {
-          "h24": 1687662.81,
-          "h6": 177944.36,
-          "h1": 42529.37,
-          "m5": 5131
+          "h24": 1650081.89,
+          "h6": 171033.86,
+          "h1": 5131,
+          "m5": 0
         },
         "priceChange": {
-          "m5": -0.03,
-          "h1": -0.28,
-          "h6": -0.31,
-          "h24": -8.66
+          "h1": -0.03,
+          "h6": -0.26,
+          "h24": -8.49
         },
         "liquidity": {
           "usd": 537838,
@@ -307,11 +306,94 @@
           "quote": 136521
         },
         "fdv": 81367584,
-        "marketCap": 81462600,
+        "marketCap": 81207685,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
+          "websites": [
+            {
+              "label": "Website",
+              "url": "https://blackhole.xyz"
+            },
+            {
+              "label": "Docs",
+              "url": "https://docs.blackhole.xyz"
+            },
+            {
+              "label": "Blog",
+              "url": "https://paragraph.com/@blackholedex"
+            }
+          ],
+          "socials": [
+            {
+              "type": "twitter",
+              "url": "https://x.com/BlackholeDEX"
+            },
+            {
+              "type": "discord",
+              "url": "https://discord.gg/blackholedex"
+            }
+          ]
+        }
+      },
+      {
+        "chainId": "avalanche",
+        "dexId": "blackhole",
+        "url": "https://dexscreener.com/avalanche/0xf310d010964b2a8e6d5cac11e2089b63c582865a",
+        "pairAddress": "0xF310d010964B2a8E6d5CaC11E2089b63C582865a",
+        "baseToken": {
+          "address": "0xcd94a87696FAC69Edae3a70fE5725307Ae1c43f6",
+          "name": "BLACKHOLE",
+          "symbol": "BLACK"
+        },
+        "quoteToken": {
+          "address": "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
+          "name": "Wrapped Ether",
+          "symbol": "WETH.e"
+        },
+        "priceNative": "0.0001613",
+        "priceUsd": "0.6842",
+        "txns": {
+          "m5": {
+            "buys": 1,
+            "sells": 6
+          },
+          "h1": {
+            "buys": 15,
+            "sells": 41
+          },
+          "h6": {
+            "buys": 109,
+            "sells": 72
+          },
+          "h24": {
+            "buys": 425,
+            "sells": 691
+          }
+        },
+        "volume": {
+          "h24": 710954.63,
+          "h6": 37227.22,
+          "h1": 9452.64,
+          "m5": 412.95
+        },
+        "priceChange": {
+          "h1": 0.68,
+          "h6": -0.14,
+          "h24": -8.22
+        },
+        "liquidity": {
+          "usd": 356979.91,
+          "base": 339748,
+          "quote": 29.3485
+        },
+        "fdv": 81711795,
+        "marketCap": 81551219,
+        "info": {
+          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
+          "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -354,7 +436,7 @@
           "symbol": "SUPER"
         },
         "priceNative": "0.8701",
-        "priceUsd": "0.6853",
+        "priceUsd": "0.6852",
         "txns": {
           "m5": {
             "buys": 0,
@@ -362,39 +444,39 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 1
+            "sells": 2
           },
           "h6": {
             "buys": 1,
-            "sells": 49
+            "sells": 42
           },
           "h24": {
-            "buys": 3,
-            "sells": 366
+            "buys": 2,
+            "sells": 367
           }
         },
         "volume": {
-          "h24": 150695.15,
-          "h6": 11609.97,
-          "h1": 2.52,
-          "m5": 2.52
+          "h24": 150672.71,
+          "h6": 5422.65,
+          "h1": 48.79,
+          "m5": 46.27
         },
         "priceChange": {
-          "h6": 0.12,
+          "h6": -0.16,
           "h24": -7.77
         },
         "liquidity": {
-          "usd": 9951340.13,
-          "base": 7260508,
-          "quote": 6317903
+          "usd": 9961142.39,
+          "base": 7267795,
+          "quote": 6324126
         },
-        "fdv": 81833054,
-        "marketCap": 81928613,
+        "fdv": 81831533,
+        "marketCap": 81670723,
         "pairCreatedAt": 1752627581000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -424,145 +506,60 @@
       {
         "chainId": "avalanche",
         "dexId": "blackhole",
-        "url": "https://dexscreener.com/avalanche/0xf310d010964b2a8e6d5cac11e2089b63c582865a",
-        "pairAddress": "0xF310d010964B2a8E6d5CaC11E2089b63C582865a",
+        "url": "https://dexscreener.com/avalanche/0xc11baec71ed3290825bdaee51f2d23f2ba882467",
+        "pairAddress": "0xC11BaeC71ed3290825BdAeE51F2D23f2Ba882467",
         "baseToken": {
           "address": "0xcd94a87696FAC69Edae3a70fE5725307Ae1c43f6",
           "name": "BLACKHOLE",
           "symbol": "BLACK"
         },
         "quoteToken": {
-          "address": "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
-          "name": "Wrapped Ether",
-          "symbol": "WETH.e"
+          "address": "0x152b9d0FdC40C096757F570A51E494bd4b943E50",
+          "name": "Bitcoin",
+          "symbol": "BTC.b"
         },
-        "priceNative": "0.0001614",
-        "priceUsd": "0.6810",
-        "txns": {
-          "m5": {
-            "buys": 1,
-            "sells": 0
-          },
-          "h1": {
-            "buys": 23,
-            "sells": 0
-          },
-          "h6": {
-            "buys": 106,
-            "sells": 60
-          },
-          "h24": {
-            "buys": 434,
-            "sells": 661
-          }
-        },
-        "volume": {
-          "h24": 729200.13,
-          "h6": 57529.22,
-          "h1": 4733.15,
-          "m5": 27.48
-        },
-        "priceChange": {
-          "m5": 0.2,
-          "h1": 0.38,
-          "h6": -0.58,
-          "h24": -9.39
-        },
-        "liquidity": {
-          "usd": 278196.88,
-          "base": 256145,
-          "quote": 24.594
-        },
-        "fdv": 81321375,
-        "marketCap": 81416336,
-        "info": {
-          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
-          "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
-          "websites": [
-            {
-              "label": "Website",
-              "url": "https://blackhole.xyz"
-            },
-            {
-              "label": "Docs",
-              "url": "https://docs.blackhole.xyz"
-            },
-            {
-              "label": "Blog",
-              "url": "https://paragraph.com/@blackholedex"
-            }
-          ],
-          "socials": [
-            {
-              "type": "twitter",
-              "url": "https://x.com/BlackholeDEX"
-            },
-            {
-              "type": "discord",
-              "url": "https://discord.gg/blackholedex"
-            }
-          ]
-        }
-      },
-      {
-        "chainId": "avalanche",
-        "dexId": "pharaoh",
-        "url": "https://dexscreener.com/avalanche/0xe2262ed35f2bc65fc7c0d0e537f5ec934bf0fa00",
-        "pairAddress": "0xe2262Ed35F2BC65fC7c0D0E537F5ec934bF0fa00",
-        "baseToken": {
-          "address": "0xcd94a87696FAC69Edae3a70fE5725307Ae1c43f6",
-          "name": "BLACKHOLE",
-          "symbol": "BLACK"
-        },
-        "quoteToken": {
-          "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
-          "name": "Wrapped AVAX",
-          "symbol": "WAVAX"
-        },
-        "priceNative": "0.02870",
-        "priceUsd": "0.6794",
+        "priceNative": "0.000005744",
+        "priceUsd": "0.6816",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 14,
-            "sells": 21
+            "buys": 0,
+            "sells": 92
           },
           "h6": {
-            "buys": 80,
-            "sells": 200
+            "buys": 9,
+            "sells": 168
           },
           "h24": {
-            "buys": 387,
-            "sells": 780
+            "buys": 111,
+            "sells": 721
           }
         },
         "volume": {
-          "h24": 242300.63,
-          "h6": 41120.15,
-          "h1": 4573.51,
+          "h24": 957722.03,
+          "h6": 63674.35,
+          "h1": 25022.15,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.02,
-          "h6": -1.09,
-          "h24": -8.74
+          "h1": -0.26,
+          "h6": -0.17,
+          "h24": -8.78
         },
         "liquidity": {
-          "usd": 873648.85,
-          "base": 642909,
-          "quote": 18454
+          "usd": 247367.66,
+          "base": 266473,
+          "quote": 0.5538
         },
-        "fdv": 81133759,
-        "marketCap": 81228501,
-        "pairCreatedAt": 1753880195000,
+        "fdv": 81397730,
+        "marketCap": 81237771,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -613,31 +610,31 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 6
+            "sells": 0
           },
           "h6": {
             "buys": 0,
-            "sells": 20
+            "sells": 18
           },
           "h24": {
-            "buys": 118,
-            "sells": 50
+            "buys": 113,
+            "sells": 47
           }
         },
         "volume": {
-          "h24": 24041.53,
-          "h6": 2291.43,
-          "h1": 677.67,
+          "h24": 17359.32,
+          "h6": 1843.66,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.17,
-          "h24": -7.4
+          "h6": -0.23,
+          "h24": -6.9
         },
         "liquidity": {
-          "usd": 2075719.8,
-          "base": 1438444103,
-          "quote": 1514445
+          "usd": 2076146.28,
+          "base": 1438739651,
+          "quote": 1514757
         },
         "fdv": 6809266,
         "marketCap": 6809266,
@@ -645,7 +642,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x34a528da3b2ea5c6ad1796eba756445d1299a577.png?key=717f00",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x34a528da3b2ea5c6ad1796eba756445d1299a577/header.png?key=717f00",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x34a528da3b2ea5c6ad1796eba756445d1299a577?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x34a528da3b2ea5c6ad1796eba756445d1299a577?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -666,62 +663,63 @@
       },
       {
         "chainId": "avalanche",
-        "dexId": "blackhole",
-        "url": "https://dexscreener.com/avalanche/0xc11baec71ed3290825bdaee51f2d23f2ba882467",
-        "pairAddress": "0xC11BaeC71ed3290825BdAeE51F2D23f2Ba882467",
+        "dexId": "pharaoh",
+        "url": "https://dexscreener.com/avalanche/0xe2262ed35f2bc65fc7c0d0e537f5ec934bf0fa00",
+        "pairAddress": "0xe2262Ed35F2BC65fC7c0D0E537F5ec934bF0fa00",
         "baseToken": {
           "address": "0xcd94a87696FAC69Edae3a70fE5725307Ae1c43f6",
           "name": "BLACKHOLE",
           "symbol": "BLACK"
         },
         "quoteToken": {
-          "address": "0x152b9d0FdC40C096757F570A51E494bd4b943E50",
-          "name": "Bitcoin",
-          "symbol": "BTC.b"
+          "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+          "name": "Wrapped AVAX",
+          "symbol": "WAVAX"
         },
-        "priceNative": "0.000005757",
-        "priceUsd": "0.6831",
+        "priceNative": "0.02867",
+        "priceUsd": "0.6813",
         "txns": {
           "m5": {
             "buys": 0,
-            "sells": 11
+            "sells": 2
           },
           "h1": {
-            "buys": 0,
-            "sells": 80
+            "buys": 7,
+            "sells": 17
           },
           "h6": {
-            "buys": 19,
-            "sells": 87
+            "buys": 76,
+            "sells": 191
           },
           "h24": {
-            "buys": 112,
-            "sells": 653
+            "buys": 376,
+            "sells": 772
           }
         },
         "volume": {
-          "h24": 943017.32,
-          "h6": 47729.34,
-          "h1": 17312.1,
-          "m5": 3048.05
+          "h24": 238340.92,
+          "h6": 41445.32,
+          "h1": 3995.71,
+          "m5": 101.9
         },
         "priceChange": {
-          "m5": -0.03,
-          "h1": -0.18,
-          "h6": 0.13,
-          "h24": -8.64
+          "m5": -0.05,
+          "h1": 0.28,
+          "h6": -0.3,
+          "h24": -8.41
         },
         "liquidity": {
-          "usd": 247568.25,
-          "base": 234088,
-          "quote": 0.7385
+          "usd": 876562.25,
+          "base": 643272,
+          "quote": 18444
         },
-        "fdv": 81581273,
-        "marketCap": 81676538,
+        "fdv": 81358303,
+        "marketCap": 81198423,
+        "pairCreatedAt": 1753880195000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -764,46 +762,46 @@
           "symbol": "SUPER"
         },
         "priceNative": "0.8701",
-        "priceUsd": "0.6853",
+        "priceUsd": "0.6852",
         "txns": {
           "m5": {
             "buys": 0,
-            "sells": 1
+            "sells": 0
           },
           "h1": {
-            "buys": 0,
-            "sells": 9
+            "buys": 1,
+            "sells": 4
           },
           "h6": {
-            "buys": 4,
+            "buys": 3,
             "sells": 51
           },
           "h24": {
-            "buys": 30,
+            "buys": 28,
             "sells": 604
           }
         },
         "volume": {
-          "h24": 712422.46,
-          "h6": 112935.01,
-          "h1": 457.3,
-          "m5": 4.25
+          "h24": 722302.21,
+          "h6": 69913.19,
+          "h1": 19203.08,
+          "m5": 0
         },
         "priceChange": {
-          "h6": 0.9,
-          "h24": -7.76
+          "h6": -0.16,
+          "h24": -7.79
         },
         "liquidity": {
-          "usd": 741079.08,
-          "base": 872353,
-          "quote": 181876
+          "usd": 741703.03,
+          "base": 874327,
+          "quote": 180975
         },
-        "fdv": 81834845,
-        "marketCap": 81930406,
+        "fdv": 81832231,
+        "marketCap": 81671419,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -845,8 +843,8 @@
           "name": "TetherToken",
           "symbol": "USDt"
         },
-        "priceNative": "0.6816",
-        "priceUsd": "0.6816",
+        "priceNative": "0.6814",
+        "priceUsd": "0.6814",
         "txns": {
           "m5": {
             "buys": 0,
@@ -854,39 +852,39 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 50
+            "sells": 4
           },
           "h6": {
-            "buys": 17,
-            "sells": 104
+            "buys": 13,
+            "sells": 94
           },
           "h24": {
-            "buys": 113,
-            "sells": 443
+            "buys": 107,
+            "sells": 425
           }
         },
         "volume": {
-          "h24": 513190.75,
-          "h6": 77321.44,
-          "h1": 15342.35,
+          "h24": 506150.79,
+          "h6": 47418.32,
+          "h1": 1523.77,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.24,
-          "h6": -0.17,
-          "h24": -8.61
+          "h1": -0.03,
+          "h6": -0.12,
+          "h24": -8.51
         },
         "liquidity": {
-          "usd": 101574.52,
-          "base": 116821,
-          "quote": 21942
+          "usd": 118825.78,
+          "base": 139125,
+          "quote": 24020
         },
-        "fdv": 81396597,
-        "marketCap": 81491647,
+        "fdv": 81371709,
+        "marketCap": 81211802,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -928,49 +926,49 @@
           "name": "BLACKHOLE",
           "symbol": "BLACK"
         },
-        "priceNative": "0.2521",
-        "priceUsd": "0.1728",
+        "priceNative": "0.2518",
+        "priceUsd": "0.1725",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 4,
-            "sells": 3
+            "buys": 0,
+            "sells": 5
           },
           "h6": {
-            "buys": 58,
-            "sells": 24
+            "buys": 51,
+            "sells": 21
           },
           "h24": {
-            "buys": 268,
-            "sells": 86
+            "buys": 267,
+            "sells": 89
           }
         },
         "volume": {
-          "h24": 83267.49,
-          "h6": 15374.12,
-          "h1": 1514.98,
+          "h24": 80947.33,
+          "h6": 13509.52,
+          "h1": 576.97,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.11,
-          "h6": -0.43,
-          "h24": -5.85
+          "h1": -0.13,
+          "h6": -0.82,
+          "h24": -5.4
         },
         "liquidity": {
-          "usd": 1808059.25,
-          "base": 5231171,
-          "quote": 1319160
+          "usd": 1806915.1,
+          "base": 5234545,
+          "quote": 1318327
         },
-        "fdv": 172809491,
-        "marketCap": 172809491,
+        "fdv": 172588805,
+        "marketCap": 172588805,
         "pairCreatedAt": 1753717551000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xffff003a6bad9b743d658048742935fffe2b6ed7.png?key=179bcc",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xffff003a6bad9b743d658048742935fffe2b6ed7/header.png?key=179bcc",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xffff003a6bad9b743d658048742935fffe2b6ed7?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xffff003a6bad9b743d658048742935fffe2b6ed7?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -1016,19 +1014,19 @@
             "sells": 5
           },
           "h24": {
-            "buys": 65,
-            "sells": 23
+            "buys": 63,
+            "sells": 22
           }
         },
         "volume": {
-          "h24": 5183.64,
+          "h24": 4982.77,
           "h6": 715.31,
           "h1": 0,
           "m5": 0
         },
         "priceChange": {
           "h6": 1.11,
-          "h24": -4.83
+          "h24": -4.77
         },
         "liquidity": {
           "usd": 199278.66,
@@ -1041,7 +1039,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x5ddc8d968a94cf95cfeb7379f8372d858b9c797d.png?key=30680f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x5ddc8d968a94cf95cfeb7379f8372d858b9c797d/header.png?key=30680f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x5ddc8d968a94cf95cfeb7379f8372d858b9c797d?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x5ddc8d968a94cf95cfeb7379f8372d858b9c797d?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -1087,28 +1085,27 @@
             "sells": 0
           },
           "h1": {
-            "buys": 10,
-            "sells": 2
+            "buys": 0,
+            "sells": 0
           },
           "h6": {
-            "buys": 15,
-            "sells": 13
+            "buys": 14,
+            "sells": 8
           },
           "h24": {
             "buys": 74,
-            "sells": 34
+            "sells": 29
           }
         },
         "volume": {
-          "h24": 5707.42,
-          "h6": 1814.07,
-          "h1": 695.53,
+          "h24": 4839.36,
+          "h6": 1538.53,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": 1.78,
-          "h6": 1.84,
-          "h24": -7.29
+          "h6": 1.3,
+          "h24": -5.07
         },
         "liquidity": {
           "usd": 119685.91,
@@ -1121,7 +1118,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x9209e7ebd056d72c5996220e99df6049253debcf.png?key=7b9916",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x9209e7ebd056d72c5996220e99df6049253debcf/header.png?key=7b9916",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x9209e7ebd056d72c5996220e99df6049253debcf?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x9209e7ebd056d72c5996220e99df6049253debcf?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -1155,7 +1152,7 @@
           "name": "BLACKHOLE",
           "symbol": "BLACK"
         },
-        "priceNative": "3.6814",
+        "priceNative": "3.6828",
         "priceUsd": "2.52",
         "txns": {
           "m5": {
@@ -1163,40 +1160,41 @@
             "sells": 0
           },
           "h1": {
-            "buys": 0,
+            "buys": 2,
             "sells": 0
           },
           "h6": {
-            "buys": 1,
+            "buys": 3,
             "sells": 0
           },
           "h24": {
-            "buys": 37,
+            "buys": 39,
             "sells": 1
           }
         },
         "volume": {
-          "h24": 1208.86,
-          "h6": 10.28,
-          "h1": 0,
+          "h24": 1222.28,
+          "h6": 23.7,
+          "h1": 13.42,
           "m5": 0
         },
         "priceChange": {
-          "h6": 0.63,
+          "h1": 0.01,
+          "h6": 0.64,
           "h24": -4.62
         },
         "liquidity": {
-          "usd": 138812.88,
-          "base": 27502,
-          "quote": 101246
+          "usd": 138796.68,
+          "base": 27496,
+          "quote": 101266
         },
-        "fdv": 510494,
-        "marketCap": 33883587,
+        "fdv": 510532,
+        "marketCap": 33886142,
         "pairCreatedAt": 1753703808000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c.png?key=853e85",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c/header.png?key=853e85",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -1238,8 +1236,8 @@
           "name": "Fantom Bomb",
           "symbol": "fBOMB"
         },
-        "priceNative": "14.7531",
-        "priceUsd": "0.6763",
+        "priceNative": "14.7529",
+        "priceUsd": "0.6789",
         "txns": {
           "m5": {
             "buys": 0,
@@ -1251,36 +1249,36 @@
           },
           "h6": {
             "buys": 1,
-            "sells": 19
+            "sells": 23
           },
           "h24": {
             "buys": 6,
-            "sells": 86
+            "sells": 90
           }
         },
         "volume": {
-          "h24": 8627.77,
-          "h6": 24.01,
-          "h1": 0.14,
+          "h24": 8628.18,
+          "h6": 24.43,
+          "h1": 0.41,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.05,
-          "h6": -1.37,
-          "h24": -9.92
+          "h1": 0.39,
+          "h6": -0.99,
+          "h24": -9.58
         },
         "liquidity": {
-          "usd": 100577.08,
-          "base": 74354,
+          "usd": 100966.14,
+          "base": 74355,
           "quote": 1096965
         },
-        "fdv": 80761858,
-        "marketCap": 80856167,
+        "fdv": 81072941,
+        "marketCap": 80913621,
         "pairCreatedAt": 1752829681000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -1322,50 +1320,49 @@
           "name": "BLACKHOLE",
           "symbol": "BLACK"
         },
-        "priceNative": "0.01159",
-        "priceUsd": "0.007943",
+        "priceNative": "0.01158",
+        "priceUsd": "0.007941",
         "txns": {
           "m5": {
-            "buys": 1,
+            "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 1,
-            "sells": 0
+            "buys": 3,
+            "sells": 1
           },
           "h6": {
-            "buys": 2,
-            "sells": 8
+            "buys": 4,
+            "sells": 7
           },
           "h24": {
-            "buys": 80,
-            "sells": 35
+            "buys": 82,
+            "sells": 36
           }
         },
         "volume": {
-          "h24": 9832.9,
-          "h6": 649.44,
-          "h1": 21.42,
-          "m5": 21.42
+          "h24": 10011.3,
+          "h6": 789.6,
+          "h1": 199.82,
+          "m5": 0
         },
         "priceChange": {
-          "m5": -0.07,
-          "h1": -0.07,
-          "h6": -0.42,
-          "h24": -3.86
+          "h1": -0.09,
+          "h6": -0.99,
+          "h24": -3.88
         },
         "liquidity": {
-          "usd": 200410.83,
-          "base": 12615095,
-          "quote": 146219
+          "usd": 200386.83,
+          "base": 12616606,
+          "quote": 146202
         },
-        "fdv": 79431510,
-        "marketCap": 22822196,
+        "fdv": 79412487,
+        "marketCap": 22816731,
         "pairCreatedAt": 1753717742000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xb8d7710f7d8349a506b75dd184f05777c82dad0c.png?key=02d35b",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xb8d7710f7d8349a506b75dd184f05777c82dad0c/header.png?key=02d35b",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xb8d7710f7d8349a506b75dd184f05777c82dad0c?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xb8d7710f7d8349a506b75dd184f05777c82dad0c?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -1395,49 +1392,49 @@
           "name": "BLACKHOLE",
           "symbol": "BLACK"
         },
-        "priceNative": "0.008798",
-        "priceUsd": "0.006029",
+        "priceNative": "0.008772",
+        "priceUsd": "0.006012",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 2,
-            "sells": 0
+            "buys": 0,
+            "sells": 1
           },
           "h6": {
             "buys": 6,
-            "sells": 20
+            "sells": 21
           },
           "h24": {
-            "buys": 49,
-            "sells": 74
+            "buys": 47,
+            "sells": 64
           }
         },
         "volume": {
-          "h24": 6061.98,
-          "h6": 871.75,
-          "h1": 118.19,
+          "h24": 4677.35,
+          "h6": 935.25,
+          "h1": 63.49,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.51,
-          "h6": -1.82,
-          "h24": -17.26
+          "h1": -0.29,
+          "h6": -2.1,
+          "h24": -12.57
         },
         "liquidity": {
-          "usd": 87301.1,
-          "base": 7239300,
-          "quote": 63694
+          "usd": 87361.29,
+          "base": 7265419,
+          "quote": 63738
         },
-        "fdv": 1846570,
-        "marketCap": 781721,
+        "fdv": 1841200,
+        "marketCap": 779418,
         "pairCreatedAt": 1753876848000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x46b9144771cb3195d66e4eda643a7493fadcaf9d.png?key=6dd7f8",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x46b9144771cb3195d66e4eda643a7493fadcaf9d/header.png?key=6dd7f8",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x46b9144771cb3195d66e4eda643a7493fadcaf9d?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x46b9144771cb3195d66e4eda643a7493fadcaf9d?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -1484,7 +1481,7 @@
           },
           "h6": {
             "buys": 0,
-            "sells": 5
+            "sells": 3
           },
           "h24": {
             "buys": 22,
@@ -1493,12 +1490,12 @@
         },
         "volume": {
           "h24": 1463.15,
-          "h6": 156.07,
+          "h6": 135.74,
           "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h6": 0.43,
+          "h6": -0.66,
           "h24": -4.01
         },
         "liquidity": {
@@ -1512,7 +1509,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x9b3a8159e119eb09822115ae08ee1526849e1116.png?key=b2b329",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x9b3a8159e119eb09822115ae08ee1526849e1116/header.png?key=b2b329",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x9b3a8159e119eb09822115ae08ee1526849e1116?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x9b3a8159e119eb09822115ae08ee1526849e1116?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -1565,49 +1562,50 @@
           "name": "Wrapped AVAX",
           "symbol": "WAVAX"
         },
-        "priceNative": "0.02866",
-        "priceUsd": "0.6784",
+        "priceNative": "0.02860",
+        "priceUsd": "0.6796",
         "txns": {
           "m5": {
-            "buys": 1,
-            "sells": 2
+            "buys": 0,
+            "sells": 5
           },
           "h1": {
-            "buys": 113,
-            "sells": 165
+            "buys": 62,
+            "sells": 81
           },
           "h6": {
-            "buys": 763,
-            "sells": 1116
+            "buys": 711,
+            "sells": 1034
           },
           "h24": {
-            "buys": 3733,
-            "sells": 4991
+            "buys": 3687,
+            "sells": 4909
           }
         },
         "volume": {
-          "h24": 274127.15,
-          "h6": 67532.35,
-          "h1": 10058.94,
-          "m5": 107.41
+          "h24": 268689.82,
+          "h6": 63353.7,
+          "h1": 5351.06,
+          "m5": 71.09
         },
         "priceChange": {
-          "h1": 0.03,
-          "h6": -1.35,
-          "h24": -8.98
+          "m5": -0.1,
+          "h1": 0.19,
+          "h6": -0.37,
+          "h24": -8.59
         },
         "liquidity": {
-          "usd": 6754.23,
-          "base": 5859.01198,
-          "quote": 117.4191
+          "usd": 6775.9,
+          "base": 6372.2114,
+          "quote": 102.8862
         },
-        "fdv": 81010675,
-        "marketCap": 81105163,
+        "fdv": 81150675,
+        "marketCap": 81002330,
         "pairCreatedAt": 1752427986000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -1649,44 +1647,44 @@
           "name": "Wrapped Merit Circle",
           "symbol": "WMC"
         },
-        "priceNative": "2826.6675",
-        "priceUsd": "23.74",
+        "priceNative": "2818.07621",
+        "priceUsd": "23.82",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 4,
-            "sells": 0
+            "buys": 0,
+            "sells": 4
           },
           "h6": {
             "buys": 45,
-            "sells": 74
+            "sells": 69
           },
           "h24": {
-            "buys": 80,
-            "sells": 111
+            "buys": 72,
+            "sells": 114
           }
         },
         "volume": {
-          "h24": 20703.22,
-          "h6": 16245.93,
-          "h1": 654.82,
+          "h24": 20532.48,
+          "h6": 15746.29,
+          "h1": 209.74,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.11,
-          "h6": -1.02,
-          "h24": -3.84
+          "h1": 0.35,
+          "h6": -0.06,
+          "h24": -1.54
         },
         "liquidity": {
-          "usd": 275390.63,
-          "base": 5799.3033,
-          "quote": 16392702
+          "usd": 276781.61,
+          "base": 5808.1498,
+          "quote": 16367809
         },
-        "fdv": 216173,
-        "marketCap": 216173,
+        "fdv": 216934,
+        "marketCap": 216934,
         "pairCreatedAt": 1699003855000
       },
       {
@@ -1704,8 +1702,8 @@
           "name": "BLACKHOLE",
           "symbol": "BLACK"
         },
-        "priceNative": "0.01142",
-        "priceUsd": "0.007831",
+        "priceNative": "0.01143",
+        "priceUsd": "0.007835",
         "txns": {
           "m5": {
             "buys": 0,
@@ -1716,87 +1714,33 @@
             "sells": 0
           },
           "h6": {
-            "buys": 38,
+            "buys": 35,
             "sells": 0
           },
           "h24": {
-            "buys": 172,
-            "sells": 20
+            "buys": 174,
+            "sells": 18
           }
         },
         "volume": {
-          "h24": 29924.14,
-          "h6": 2320.82,
-          "h1": 82.31,
+          "h24": 29905.1,
+          "h6": 2137.09,
+          "h1": 140.59,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.03,
-          "h6": 1.34,
-          "h24": -2.74
+          "h1": 0.05,
+          "h6": 0.66,
+          "h24": -2.71
         },
         "liquidity": {
-          "usd": 1041914.85,
-          "base": 66522443,
-          "quote": 760181
+          "usd": 1043441.69,
+          "base": 66584309,
+          "quote": 761296
         },
-        "fdv": 2060864,
-        "marketCap": 7035111,
+        "fdv": 2061966,
+        "marketCap": 7038875,
         "pairCreatedAt": 1752694338000
-      },
-      {
-        "chainId": "avalanche",
-        "dexId": "blackhole",
-        "url": "https://dexscreener.com/avalanche/0xc2582deaa593bf8ef800ee980609824d412b6cbd",
-        "pairAddress": "0xC2582DeaA593BF8EF800ee980609824d412b6cBd",
-        "baseToken": {
-          "address": "0x9B9fd410d5F01a6A60acF4678a5A99D8027FA5A7",
-          "name": "Mythos",
-          "symbol": "MYTH"
-        },
-        "quoteToken": {
-          "address": "0xcd94a87696FAC69Edae3a70fE5725307Ae1c43f6",
-          "name": "BLACKHOLE",
-          "symbol": "BLACK"
-        },
-        "priceNative": "0.1492",
-        "priceUsd": "0.1024",
-        "txns": {
-          "m5": {
-            "buys": 0,
-            "sells": 0
-          },
-          "h1": {
-            "buys": 0,
-            "sells": 0
-          },
-          "h6": {
-            "buys": 2,
-            "sells": 0
-          },
-          "h24": {
-            "buys": 41,
-            "sells": 9
-          }
-        },
-        "volume": {
-          "h24": 2708.24,
-          "h6": 68.95,
-          "h1": 0,
-          "m5": 0
-        },
-        "priceChange": {
-          "h6": 1,
-          "h24": -2.99
-        },
-        "liquidity": {
-          "usd": 105272.25,
-          "base": 513908,
-          "quote": 76683
-        },
-        "fdv": 235797,
-        "marketCap": 81571438,
-        "pairCreatedAt": 1753876428000
       },
       {
         "chainId": "base",
@@ -1817,7 +1761,7 @@
           "symbol": "WETH"
         },
         "priceNative": "0.005635",
-        "priceUsd": "23.77",
+        "priceUsd": "23.84",
         "txns": {
           "m5": {
             "buys": 0,
@@ -1825,35 +1769,35 @@
           },
           "h1": {
             "buys": 1,
-            "sells": 1
+            "sells": 0
           },
           "h6": {
             "buys": 17,
             "sells": 2
           },
           "h24": {
-            "buys": 56,
-            "sells": 87
+            "buys": 57,
+            "sells": 85
           }
         },
         "volume": {
-          "h24": 6627.26,
-          "h6": 180.9,
-          "h1": 27.42,
+          "h24": 6271.12,
+          "h6": 178.71,
+          "h1": 0.47,
           "m5": 0
         },
         "priceChange": {
-          "h1": -1.24,
-          "h6": -0.74,
-          "h24": -2.61
+          "h1": 0.28,
+          "h6": -0.77,
+          "h24": -1.73
         },
         "liquidity": {
-          "usd": 163236.06,
-          "base": 3414.2034,
-          "quote": 19.4451
+          "usd": 163692.08,
+          "base": 3414.1836,
+          "quote": 19.4452
         },
-        "fdv": 103747,
-        "marketCap": 103747,
+        "fdv": 104037,
+        "marketCap": 104037,
         "pairCreatedAt": 1739569463000
       },
       {
@@ -1880,27 +1824,26 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 1
+            "sells": 0
           },
           "h6": {
             "buys": 7,
             "sells": 1
           },
           "h24": {
-            "buys": 22,
-            "sells": 74
+            "buys": 20,
+            "sells": 70
           }
         },
         "volume": {
-          "h24": 31820.09,
+          "h24": 29698.44,
           "h6": 59.92,
-          "h1": 26.09,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": -1.5,
           "h6": 0.37,
-          "h24": -4.67
+          "h24": -4.38
         },
         "liquidity": {
           "usd": 148757.7,
@@ -1981,50 +1924,49 @@
           "name": "Wrapped AVAX",
           "symbol": "WAVAX"
         },
-        "priceNative": "0.02883",
-        "priceUsd": "0.6825",
+        "priceNative": "0.02878",
+        "priceUsd": "0.6814",
         "txns": {
           "m5": {
             "buys": 0,
-            "sells": 4
+            "sells": 0
           },
           "h1": {
-            "buys": 8,
-            "sells": 22
+            "buys": 1,
+            "sells": 5
           },
           "h6": {
-            "buys": 16,
-            "sells": 45
+            "buys": 15,
+            "sells": 41
           },
           "h24": {
             "buys": 53,
-            "sells": 128
+            "sells": 127
           }
         },
         "volume": {
-          "h24": 37521.58,
-          "h6": 4465.26,
-          "h1": 1930.76,
-          "m5": 58.19
+          "h24": 37431.64,
+          "h6": 3526.6,
+          "h1": 242.37,
+          "m5": 0
         },
         "priceChange": {
-          "m5": -0.79,
-          "h1": 0.54,
-          "h6": -1.03,
-          "h24": -9.03
+          "h1": -0.95,
+          "h6": -0.91,
+          "h24": -7.41
         },
         "liquidity": {
-          "usd": 32234.04,
-          "base": 45736,
-          "quote": 42.9241
+          "usd": 32184.43,
+          "base": 45752,
+          "quote": 42.4699
         },
-        "fdv": 81505883,
-        "marketCap": 81601060,
+        "fdv": 81374735,
+        "marketCap": 81214822,
         "pairCreatedAt": 1752631654000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -2132,7 +2074,7 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 1
+            "sells": 0
           },
           "h6": {
             "buys": 0,
@@ -2140,19 +2082,18 @@
           },
           "h24": {
             "buys": 0,
-            "sells": 3
+            "sells": 2
           }
         },
         "volume": {
-          "h24": 96.48,
+          "h24": 59.96,
           "h6": 59.96,
-          "h1": 22.33,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": -1.72,
-          "h6": -4.53,
-          "h24": -4.53
+          "h6": -1.72,
+          "h24": -1.72
         },
         "liquidity": {
           "usd": 141123.24,
@@ -2213,6 +2154,91 @@
         "fdv": 3423655,
         "marketCap": 3416302,
         "pairCreatedAt": 1754404074000
+      },
+      {
+        "chainId": "avalanche",
+        "dexId": "uniswap",
+        "url": "https://dexscreener.com/avalanche/0x40f4928332584198d5c68f3f39631245dda5c200",
+        "pairAddress": "0x40f4928332584198D5C68f3F39631245dDa5c200",
+        "baseToken": {
+          "address": "0xcd94a87696FAC69Edae3a70fE5725307Ae1c43f6",
+          "name": "BLACKHOLE",
+          "symbol": "BLACK"
+        },
+        "quoteToken": {
+          "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+          "name": "Wrapped AVAX",
+          "symbol": "WAVAX"
+        },
+        "priceNative": "0.02876",
+        "priceUsd": "0.6835",
+        "txns": {
+          "m5": {
+            "buys": 1,
+            "sells": 0
+          },
+          "h1": {
+            "buys": 2,
+            "sells": 3
+          },
+          "h6": {
+            "buys": 26,
+            "sells": 73
+          },
+          "h24": {
+            "buys": 113,
+            "sells": 286
+          }
+        },
+        "volume": {
+          "h24": 72011.82,
+          "h6": 22129.1,
+          "h1": 1740.31,
+          "m5": 615.18
+        },
+        "priceChange": {
+          "m5": 0.36,
+          "h1": 0.09,
+          "h6": -0.48,
+          "h24": -7.98
+        },
+        "liquidity": {
+          "usd": 19714.88,
+          "base": 20741,
+          "quote": 232.9851
+        },
+        "fdv": 81626140,
+        "marketCap": 81465733,
+        "pairCreatedAt": 1752629190000,
+        "info": {
+          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6.png?key=48eaeb",
+          "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6/header.png?key=48eaeb",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xcd94a87696fac69edae3a70fe5725307ae1c43f6?timestamp=1754868000000",
+          "websites": [
+            {
+              "label": "Website",
+              "url": "https://blackhole.xyz"
+            },
+            {
+              "label": "Docs",
+              "url": "https://docs.blackhole.xyz"
+            },
+            {
+              "label": "Blog",
+              "url": "https://paragraph.com/@blackholedex"
+            }
+          ],
+          "socials": [
+            {
+              "type": "twitter",
+              "url": "https://x.com/BlackholeDEX"
+            },
+            {
+              "type": "discord",
+              "url": "https://discord.gg/blackholedex"
+            }
+          ]
+        }
       }
     ]
   },
@@ -2247,7 +2273,7 @@
           },
           "h6": {
             "buys": 0,
-            "sells": 1
+            "sells": 0
           },
           "h24": {
             "buys": 0,
@@ -2256,7 +2282,7 @@
         },
         "volume": {
           "h24": 1440.4,
-          "h6": 1440.4,
+          "h6": 0,
           "h1": 0,
           "m5": 0
         },
@@ -2288,49 +2314,49 @@
           "name": "Wrapped SOL",
           "symbol": "SOL"
         },
-        "priceNative": "0.000002878",
-        "priceUsd": "0.0005276",
+        "priceNative": "0.000002800",
+        "priceUsd": "0.0005117",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 11,
-            "sells": 14
+            "buys": 6,
+            "sells": 7
           },
           "h6": {
-            "buys": 66,
-            "sells": 50
+            "buys": 60,
+            "sells": 51
           },
           "h24": {
-            "buys": 465,
-            "sells": 416
+            "buys": 441,
+            "sells": 412
           }
         },
         "volume": {
-          "h24": 87658.86,
-          "h6": 16179.89,
-          "h1": 7988.55,
+          "h24": 85643.5,
+          "h6": 15606.87,
+          "h1": 892.92,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.56,
-          "h6": -2.11,
-          "h24": 0.28
+          "h1": -3.01,
+          "h6": -6.58,
+          "h24": -3.2
         },
         "liquidity": {
-          "usd": 112239.83,
-          "base": 106355831,
-          "quote": 306.1643
+          "usd": 110366.12,
+          "base": 107823517,
+          "quote": 302.008887
         },
-        "fdv": 527662,
-        "marketCap": 527662,
+        "fdv": 511791,
+        "marketCap": 511791,
         "pairCreatedAt": 1752607871000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/6TUJXvuUrS4rnnm8LmG23AZYsWQavY9SpeAG3Cdjbonk.png?key=e6f692",
           "header": "https://dd.dexscreener.com/ds-data/tokens/solana/6TUJXvuUrS4rnnm8LmG23AZYsWQavY9SpeAG3Cdjbonk/header.png?key=e6f692",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/6TUJXvuUrS4rnnm8LmG23AZYsWQavY9SpeAG3Cdjbonk?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/6TUJXvuUrS4rnnm8LmG23AZYsWQavY9SpeAG3Cdjbonk?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -2367,49 +2393,50 @@
           "name": "Wrapped BNB",
           "symbol": "WBNB"
         },
-        "priceNative": "0.00002544",
-        "priceUsd": "0.02038",
+        "priceNative": "0.00002533",
+        "priceUsd": "0.02037",
         "txns": {
           "m5": {
             "buys": 0,
-            "sells": 0
-          },
-          "h1": {
-            "buys": 1,
             "sells": 1
           },
+          "h1": {
+            "buys": 0,
+            "sells": 2
+          },
           "h6": {
-            "buys": 38,
+            "buys": 10,
             "sells": 10
           },
           "h24": {
-            "buys": 662,
-            "sells": 877
+            "buys": 640,
+            "sells": 869
           }
         },
         "volume": {
-          "h24": 81260.69,
-          "h6": 3647.63,
-          "h1": 28.55,
-          "m5": 0
+          "h24": 80518.39,
+          "h6": 3358.89,
+          "h1": 1262.79,
+          "m5": 5.33
         },
         "priceChange": {
-          "h1": 0.13,
-          "h6": 0.95,
-          "h24": 0.45
+          "m5": 0.28,
+          "h1": -0.01,
+          "h6": 0.36,
+          "h24": 0.89
         },
         "liquidity": {
-          "usd": 814859.5,
-          "base": 20455977,
-          "quote": 496.795
+          "usd": 816548.72,
+          "base": 20517983,
+          "quote": 495.2211
         },
-        "fdv": 20380542,
-        "marketCap": 20380542,
+        "fdv": 20378743,
+        "marketCap": 20378743,
         "pairCreatedAt": 1750332910000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/bsc/0xbfe78de7d1c51e0868501d5fa3e88e674c79acdd.png?key=3967fb",
           "header": "https://dd.dexscreener.com/ds-data/tokens/bsc/0xbfe78de7d1c51e0868501d5fa3e88e674c79acdd/header.png?key=3967fb",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/bsc/0xbfe78de7d1c51e0868501d5fa3e88e674c79acdd?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/bsc/0xbfe78de7d1c51e0868501d5fa3e88e674c79acdd?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -2474,50 +2501,49 @@
           "name": "Virtual Protocol",
           "symbol": "VIRTUAL"
         },
-        "priceNative": "0.0006369",
-        "priceUsd": "0.0009174",
+        "priceNative": "0.0006412",
+        "priceUsd": "0.0009302",
         "txns": {
           "m5": {
             "buys": 0,
-            "sells": 1
+            "sells": 0
           },
           "h1": {
-            "buys": 1,
+            "buys": 2,
             "sells": 2
           },
           "h6": {
-            "buys": 16,
-            "sells": 35
+            "buys": 17,
+            "sells": 31
           },
           "h24": {
             "buys": 110,
-            "sells": 133
+            "sells": 128
           }
         },
         "volume": {
-          "h24": 47623.12,
-          "h6": 11076.37,
-          "h1": 260.66,
-          "m5": 0.07
+          "h24": 47321.11,
+          "h6": 11223.05,
+          "h1": 867.88,
+          "m5": 0
         },
         "priceChange": {
-          "m5": 0.58,
-          "h1": 0.01,
-          "h6": 7.31,
-          "h24": -4.27
+          "h1": 1.98,
+          "h6": 5.4,
+          "h24": 0.38
         },
         "liquidity": {
-          "usd": 233804.32,
-          "base": 127424337,
-          "quote": 81157
+          "usd": 236266.11,
+          "base": 126996561,
+          "quote": 81432
         },
-        "fdv": 863501,
-        "marketCap": 863501,
+        "fdv": 875532,
+        "marketCap": 875532,
         "pairCreatedAt": 1732540943000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/base/0x2676e4e0e2eb58d9bdb5078358ff8a3a964cedf5.png?key=610949",
           "header": "https://dd.dexscreener.com/ds-data/tokens/base/0x2676e4e0e2eb58d9bdb5078358ff8a3a964cedf5/header.png?key=610949",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0x2676e4e0e2eb58d9bdb5078358ff8a3a964cedf5?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0x2676e4e0e2eb58d9bdb5078358ff8a3a964cedf5?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -2554,49 +2580,49 @@
           "name": "Wrapped BNB",
           "symbol": "WBNB"
         },
-        "priceNative": "0.002212",
-        "priceUsd": "1.77",
+        "priceNative": "0.002198",
+        "priceUsd": "1.76",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 2,
-            "sells": 2
+            "buys": 1,
+            "sells": 4
           },
           "h6": {
             "buys": 7,
-            "sells": 2
+            "sells": 6
           },
           "h24": {
-            "buys": 25,
-            "sells": 26
+            "buys": 24,
+            "sells": 30
           }
         },
         "volume": {
-          "h24": 1681.8,
-          "h6": 457.9,
-          "h1": 257.23,
+          "h24": 1962.27,
+          "h6": 703.3,
+          "h1": 285.46,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.2,
-          "h6": 1.67,
-          "h24": -3.82
+          "h1": -0.22,
+          "h6": 1.18,
+          "h24": -3.67
         },
         "liquidity": {
-          "usd": 60637.82,
-          "base": 17122,
-          "quote": 37.8795
+          "usd": 60697.16,
+          "base": 17176,
+          "quote": 37.7614
         },
-        "fdv": 1673137,
-        "marketCap": 1673137,
+        "fdv": 1669513,
+        "marketCap": 1669513,
         "pairCreatedAt": 1714484085000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/bsc/0x86da4b72f0ce7a9d263263f521f37b3aa9a996d4.png?key=71d1ed",
           "header": "https://dd.dexscreener.com/ds-data/tokens/bsc/0x86da4b72f0ce7a9d263263f521f37b3aa9a996d4/header.png?key=71d1ed",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/bsc/0x86da4b72f0ce7a9d263263f521f37b3aa9a996d4?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/bsc/0x86da4b72f0ce7a9d263263f521f37b3aa9a996d4?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -2637,50 +2663,49 @@
           "name": "Wrapped Ether",
           "symbol": "WETH"
         },
-        "priceNative": "0.00001273",
-        "priceUsd": "0.05379",
+        "priceNative": "0.00001274",
+        "priceUsd": "0.05406",
         "txns": {
           "m5": {
-            "buys": 1,
-            "sells": 1
+            "buys": 0,
+            "sells": 0
           },
           "h1": {
-            "buys": 13,
+            "buys": 4,
             "sells": 4
           },
           "h6": {
-            "buys": 41,
-            "sells": 30
+            "buys": 39,
+            "sells": 25
           },
           "h24": {
-            "buys": 192,
-            "sells": 214
+            "buys": 184,
+            "sells": 209
           }
         },
         "volume": {
-          "h24": 1080962.48,
-          "h6": 187455.68,
-          "h1": 12274.82,
-          "m5": 589.54
+          "h24": 1061200.76,
+          "h6": 191978.3,
+          "h1": 20957.58,
+          "m5": 0
         },
         "priceChange": {
-          "m5": 0.06,
-          "h1": 0.55,
-          "h6": -6.08,
-          "h24": -1.92
+          "h1": 0.56,
+          "h6": -6.5,
+          "h24": 3.36
         },
         "liquidity": {
-          "usd": 4757385.4,
-          "base": 44216090,
-          "quote": 563.3053
+          "usd": 4780995.09,
+          "base": 44211931,
+          "quote": 563.3728
         },
-        "fdv": 53796984,
-        "marketCap": 53796984,
+        "fdv": 54069051,
+        "marketCap": 54069051,
         "pairCreatedAt": 1697051723000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/ethereum/0x76e222b07c53d28b89b0bac18602810fc22b49a8.png?key=431820",
           "header": "https://dd.dexscreener.com/ds-data/tokens/ethereum/0x76e222b07c53d28b89b0bac18602810fc22b49a8/header.png?key=431820",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/ethereum/0x76e222b07c53d28b89b0bac18602810fc22b49a8?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/ethereum/0x76e222b07c53d28b89b0bac18602810fc22b49a8?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -2762,7 +2787,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/base/0xe74731ba9d1da6fd3c8c60ff363732bebac5273e.png?key=4e400a",
           "header": "https://dd.dexscreener.com/ds-data/tokens/base/0xe74731ba9d1da6fd3c8c60ff363732bebac5273e/header.png?key=4e400a",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0xe74731ba9d1da6fd3c8c60ff363732bebac5273e?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0xe74731ba9d1da6fd3c8c60ff363732bebac5273e?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -2815,7 +2840,7 @@
             "sells": 0
           },
           "h1": {
-            "buys": 1,
+            "buys": 0,
             "sells": 0
           },
           "h6": {
@@ -2824,19 +2849,18 @@
           },
           "h24": {
             "buys": 3,
-            "sells": 19
+            "sells": 16
           }
         },
         "volume": {
-          "h24": 179.8,
+          "h24": 165.63,
           "h6": 17.69,
-          "h1": 2.05,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.11,
           "h6": 0.97,
-          "h24": -4.63
+          "h24": -4.03
         },
         "liquidity": {
           "usd": 7377.28,
@@ -2849,7 +2873,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/bsc/0x86da4b72f0ce7a9d263263f521f37b3aa9a996d4.png?key=71d1ed",
           "header": "https://dd.dexscreener.com/ds-data/tokens/bsc/0x86da4b72f0ce7a9d263263f521f37b3aa9a996d4/header.png?key=71d1ed",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/bsc/0x86da4b72f0ce7a9d263263f521f37b3aa9a996d4?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/bsc/0x86da4b72f0ce7a9d263263f521f37b3aa9a996d4?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -2896,7 +2920,7 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 1
+            "sells": 0
           },
           "h6": {
             "buys": 3,
@@ -2904,19 +2928,18 @@
           },
           "h24": {
             "buys": 4,
-            "sells": 7
+            "sells": 6
           }
         },
         "volume": {
-          "h24": 1338.75,
+          "h24": 1336.08,
           "h6": 1319.83,
-          "h1": 9.49,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.67,
           "h6": 5.8,
-          "h24": 6.72
+          "h24": 4.07
         },
         "liquidity": {
           "usd": 110571.45,
@@ -2929,7 +2952,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/5SKLS8gvhJgAtmtmRr7SQg7NjoehutwK3vAzYPAYpump.png?key=ed52fe",
           "header": "https://dd.dexscreener.com/ds-data/tokens/solana/5SKLS8gvhJgAtmtmRr7SQg7NjoehutwK3vAzYPAYpump/header.png?key=ed52fe",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/5SKLS8gvhJgAtmtmRr7SQg7NjoehutwK3vAzYPAYpump?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/5SKLS8gvhJgAtmtmRr7SQg7NjoehutwK3vAzYPAYpump?timestamp=1754868000000",
           "websites": [
             {
               "label": "Cobie",
@@ -2966,49 +2989,49 @@
           "name": "Wrapped AVAX",
           "symbol": "WAVAX"
         },
-        "priceNative": "0.007014",
-        "priceUsd": "0.1658",
+        "priceNative": "0.007003",
+        "priceUsd": "0.1662",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 1,
+            "buys": 0,
             "sells": 3
           },
           "h6": {
-            "buys": 41,
-            "sells": 19
+            "buys": 34,
+            "sells": 20
           },
           "h24": {
-            "buys": 198,
-            "sells": 143
+            "buys": 192,
+            "sells": 146
           }
         },
         "volume": {
-          "h24": 18640.45,
-          "h6": 1470.72,
-          "h1": 56.41,
+          "h24": 18564.6,
+          "h6": 842.11,
+          "h1": 53.51,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.71,
-          "h6": 0.26,
-          "h24": -2.32
+          "h1": 0.25,
+          "h6": 0.55,
+          "h24": -0.86
         },
         "liquidity": {
-          "usd": 257027.88,
-          "base": 1519411,
-          "quote": 215.5615
+          "usd": 257669.35,
+          "base": 1519733,
+          "quote": 213.3066
         },
-        "fdv": 82856179,
-        "marketCap": 66015174,
+        "fdv": 83060476,
+        "marketCap": 66177946,
         "pairCreatedAt": 1682325863000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd.png?key=e54c05",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/header.png?key=e54c05",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -3050,48 +3073,48 @@
           "name": "Wrapped AVAX",
           "symbol": "WAVAX"
         },
-        "priceNative": "0.007007",
-        "priceUsd": "0.1656",
+        "priceNative": "0.007002",
+        "priceUsd": "0.1663",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 2,
-            "sells": 5
+            "buys": 0,
+            "sells": 2
           },
           "h6": {
-            "buys": 60,
-            "sells": 19
+            "buys": 48,
+            "sells": 20
           },
           "h24": {
-            "buys": 196,
-            "sells": 144
+            "buys": 188,
+            "sells": 139
           }
         },
         "volume": {
-          "h24": 81363.02,
-          "h6": 13923.28,
-          "h1": 1349.37,
+          "h24": 79785.85,
+          "h6": 12465.44,
+          "h1": 249.47,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.3,
-          "h6": 0.29,
-          "h24": -2.61
+          "h1": 0.45,
+          "h6": 0.75,
+          "h24": -0.68
         },
         "liquidity": {
-          "usd": 1380338.21,
-          "base": 4166587,
-          "quote": 29197
+          "usd": 1387081.03,
+          "base": 4168094,
+          "quote": 29186
         },
-        "fdv": 82773484,
-        "marketCap": 65949287,
+        "fdv": 83147756,
+        "marketCap": 66247486,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd.png?key=e54c05",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/header.png?key=e54c05",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -3133,8 +3156,8 @@
           "name": "USD Coin",
           "symbol": "USDC.e"
         },
-        "priceNative": "0.1656",
-        "priceUsd": "0.1656",
+        "priceNative": "0.1658",
+        "priceUsd": "0.1658",
         "txns": {
           "m5": {
             "buys": 0,
@@ -3142,40 +3165,40 @@
           },
           "h1": {
             "buys": 4,
-            "sells": 3
+            "sells": 0
           },
           "h6": {
-            "buys": 27,
-            "sells": 30
+            "buys": 30,
+            "sells": 28
           },
           "h24": {
             "buys": 136,
-            "sells": 160
+            "sells": 146
           }
         },
         "volume": {
-          "h24": 48612.08,
-          "h6": 6959.47,
-          "h1": 785.74,
+          "h24": 46140.04,
+          "h6": 6937.63,
+          "h1": 236.08,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.2,
-          "h6": 0.44,
-          "h24": -2.6
+          "h1": 0.16,
+          "h6": 0.48,
+          "h24": -1.2
         },
         "liquidity": {
-          "usd": 599926.43,
-          "base": 1811245,
-          "quote": 299963
+          "usd": 600398.6,
+          "base": 1809824,
+          "quote": 300199
         },
-        "fdv": 82757441,
-        "marketCap": 65936505,
+        "fdv": 82887567,
+        "marketCap": 66040182,
         "pairCreatedAt": 1629932403000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd.png?key=e54c05",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/header.png?key=e54c05",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -3225,41 +3248,41 @@
             "sells": 0
           },
           "h1": {
-            "buys": 0,
-            "sells": 1
+            "buys": 1,
+            "sells": 0
           },
           "h6": {
-            "buys": 10,
+            "buys": 11,
             "sells": 10
           },
           "h24": {
-            "buys": 58,
-            "sells": 53
+            "buys": 59,
+            "sells": 46
           }
         },
         "volume": {
-          "h24": 8550.34,
-          "h6": 1107.69,
-          "h1": 61.41,
+          "h24": 8180.23,
+          "h6": 1113.71,
+          "h1": 6.02,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.2,
-          "h6": 0.68,
-          "h24": -2.48
+          "h1": 0.02,
+          "h6": 0.7,
+          "h24": -1.23
         },
         "liquidity": {
-          "usd": 123346,
-          "base": 371921,
-          "quote": 61673
+          "usd": 123358.05,
+          "base": 371885,
+          "quote": 61679
         },
-        "fdv": 82862910,
-        "marketCap": 66020537,
+        "fdv": 82879075,
+        "marketCap": 66033416,
         "pairCreatedAt": 1629056839000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd.png?key=e54c05",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/header.png?key=e54c05",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -3282,6 +3305,82 @@
             {
               "type": "discord",
               "url": "https://discord.gg/lfj"
+            }
+          ]
+        }
+      },
+      {
+        "chainId": "solana",
+        "dexId": "pumpswap",
+        "url": "https://dexscreener.com/solana/3ezhhhnexahjtcdpjoeuxq3kggyqxbx5t4r774t5jpzd",
+        "pairAddress": "3EzhhhnexahJtcdpjoEuXq3kGGYqXbX5t4R774t5JpzD",
+        "baseToken": {
+          "address": "yRcSaCyujTwnAA2mdZXB3ykJ9UjPjWKH6EAu15apump",
+          "name": "UGLY DOG",
+          "symbol": "UDOG"
+        },
+        "quoteToken": {
+          "address": "So11111111111111111111111111111111111111112",
+          "name": "Wrapped SOL",
+          "symbol": "SOL"
+        },
+        "priceNative": "0.0000009338",
+        "priceUsd": "0.0001710",
+        "txns": {
+          "m5": {
+            "buys": 0,
+            "sells": 0
+          },
+          "h1": {
+            "buys": 1,
+            "sells": 0
+          },
+          "h6": {
+            "buys": 5,
+            "sells": 8
+          },
+          "h24": {
+            "buys": 93,
+            "sells": 66
+          }
+        },
+        "volume": {
+          "h24": 26728.75,
+          "h6": 1082.09,
+          "h1": 1.82,
+          "m5": 0
+        },
+        "priceChange": {
+          "h1": -0.11,
+          "h6": -6.54,
+          "h24": 50.27
+        },
+        "liquidity": {
+          "usd": 47660.12,
+          "base": 139414626,
+          "quote": 129.9447
+        },
+        "fdv": 171094,
+        "marketCap": 171094,
+        "pairCreatedAt": 1754640992000,
+        "info": {
+          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/yRcSaCyujTwnAA2mdZXB3ykJ9UjPjWKH6EAu15apump.png?key=abd143",
+          "header": "https://dd.dexscreener.com/ds-data/tokens/solana/yRcSaCyujTwnAA2mdZXB3ykJ9UjPjWKH6EAu15apump/header.png?key=abd143",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/yRcSaCyujTwnAA2mdZXB3ykJ9UjPjWKH6EAu15apump?timestamp=1754868000000",
+          "websites": [
+            {
+              "label": "Website",
+              "url": "https://udog.meme/"
+            }
+          ],
+          "socials": [
+            {
+              "type": "twitter",
+              "url": "https://x.com/uglydogcult"
+            },
+            {
+              "type": "telegram",
+              "url": "https://t.me/uglydogcult"
             }
           ]
         }
@@ -3313,27 +3412,26 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 6
+            "sells": 0
           },
           "h6": {
-            "buys": 11,
+            "buys": 9,
             "sells": 8
           },
           "h24": {
-            "buys": 60,
-            "sells": 61
+            "buys": 57,
+            "sells": 44
           }
         },
         "volume": {
-          "h24": 121317.12,
-          "h6": 9582.64,
-          "h1": 3031.65,
+          "h24": 103913.95,
+          "h6": 8383.91,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": -1.06,
-          "h6": 1.34,
-          "h24": -5.36
+          "h6": 0.89,
+          "h24": -4.31
         },
         "liquidity": {
           "usd": 626084.84,
@@ -3346,7 +3444,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/CortexFv3fRcLKTgACr7aLqckGh5eP7TP3z9JHoKqMc6.png?key=3c874b",
           "header": "https://dd.dexscreener.com/ds-data/tokens/solana/CortexFv3fRcLKTgACr7aLqckGh5eP7TP3z9JHoKqMc6/header.png?key=3c874b",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/CortexFv3fRcLKTgACr7aLqckGh5eP7TP3z9JHoKqMc6?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/CortexFv3fRcLKTgACr7aLqckGh5eP7TP3z9JHoKqMc6?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -3374,77 +3472,77 @@
         }
       },
       {
-        "chainId": "solana",
-        "dexId": "pumpswap",
-        "url": "https://dexscreener.com/solana/3ezhhhnexahjtcdpjoeuxq3kggyqxbx5t4r774t5jpzd",
-        "pairAddress": "3EzhhhnexahJtcdpjoEuXq3kGGYqXbX5t4R774t5JpzD",
+        "chainId": "xrpl",
+        "dexId": "xrpl",
+        "url": "https://dexscreener.com/xrpl/4a6f657900000000000000000000000000000000.rn6cxs6j7wdh8miq2c2cre6w7jipc55ut_xrp",
+        "pairAddress": "4A6F657900000000000000000000000000000000.rN6CXs6J7WDh8miq2C2cre6w7jipc55Ut_XRP",
         "baseToken": {
-          "address": "yRcSaCyujTwnAA2mdZXB3ykJ9UjPjWKH6EAu15apump",
-          "name": "UGLY DOG",
-          "symbol": "UDOG"
+          "address": "4A6F657900000000000000000000000000000000.rN6CXs6J7WDh8miq2C2cre6w7jipc55Ut",
+          "name": "Joey",
+          "symbol": "Joey"
         },
         "quoteToken": {
-          "address": "So11111111111111111111111111111111111111112",
-          "name": "Wrapped SOL",
-          "symbol": "SOL"
+          "address": "XRP",
+          "name": "XRP",
+          "symbol": "XRP"
         },
-        "priceNative": "0.0000009337",
-        "priceUsd": "0.0001712",
+        "priceNative": "0.0002482",
+        "priceUsd": "0.0007905",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 2,
-            "sells": 0
+            "buys": 0,
+            "sells": 1
           },
           "h6": {
-            "buys": 7,
-            "sells": 14
+            "buys": 0,
+            "sells": 2
           },
           "h24": {
-            "buys": 92,
-            "sells": 67
+            "buys": 2,
+            "sells": 6
           }
         },
         "volume": {
-          "h24": 26935.41,
-          "h6": 2112.98,
-          "h1": 1.83,
+          "h24": 101.51,
+          "h6": 75.6,
+          "h1": 72.97,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.77,
-          "h6": -8.32,
-          "h24": 46.84
+          "h1": 0.49,
+          "h6": -0.64,
+          "h24": -2.42
         },
         "liquidity": {
-          "usd": 47716.31,
-          "base": 139425313,
-          "quote": 129.9347
+          "usd": 117206.46,
+          "base": 74128019,
+          "quote": 18403
         },
-        "fdv": 171282,
-        "marketCap": 171282,
-        "pairCreatedAt": 1754640992000,
+        "fdv": 553344,
+        "marketCap": 553344,
+        "pairCreatedAt": 1744514002000,
         "info": {
-          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/yRcSaCyujTwnAA2mdZXB3ykJ9UjPjWKH6EAu15apump.png?key=abd143",
-          "header": "https://dd.dexscreener.com/ds-data/tokens/solana/yRcSaCyujTwnAA2mdZXB3ykJ9UjPjWKH6EAu15apump/header.png?key=abd143",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/yRcSaCyujTwnAA2mdZXB3ykJ9UjPjWKH6EAu15apump?timestamp=1754864700000",
+          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/xrpl/4a6f657900000000000000000000000000000000.rn6cxs6j7wdh8miq2c2cre6w7jipc55ut.png?key=8e8a26",
+          "header": "https://dd.dexscreener.com/ds-data/tokens/xrpl/4a6f657900000000000000000000000000000000.rn6cxs6j7wdh8miq2c2cre6w7jipc55ut/header.png?key=8e8a26",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/xrpl/4a6f657900000000000000000000000000000000.rn6cxs6j7wdh8miq2c2cre6w7jipc55ut?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
-              "url": "https://udog.meme/"
+              "url": "https://joeyxrp.com/"
             }
           ],
           "socials": [
             {
               "type": "twitter",
-              "url": "https://x.com/uglydogcult"
+              "url": "https://x.com/JoeyXRP_"
             },
             {
               "type": "telegram",
-              "url": "https://t.me/uglydogcult"
+              "url": "https://t.me/joeyxrp"
             }
           ]
         }
@@ -3483,19 +3581,19 @@
             "sells": 5
           },
           "h24": {
-            "buys": 5,
+            "buys": 3,
             "sells": 8
           }
         },
         "volume": {
-          "h24": 51.85,
+          "h24": 47.3,
           "h6": 10.67,
           "h1": 0,
           "m5": 0
         },
         "priceChange": {
           "h6": -1.45,
-          "h24": -6
+          "h24": -1.92
         },
         "liquidity": {
           "usd": 110657.39,
@@ -3508,7 +3606,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/EJPtJEDogxzDbvM8qvAsqYbLmPj5n1vQeqoAzj9Yfv3q.png?key=ccd98f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/solana/EJPtJEDogxzDbvM8qvAsqYbLmPj5n1vQeqoAzj9Yfv3q/header.png?key=ccd98f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/EJPtJEDogxzDbvM8qvAsqYbLmPj5n1vQeqoAzj9Yfv3q?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/EJPtJEDogxzDbvM8qvAsqYbLmPj5n1vQeqoAzj9Yfv3q?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -3560,83 +3658,6 @@
         }
       },
       {
-        "chainId": "xrpl",
-        "dexId": "xrpl",
-        "url": "https://dexscreener.com/xrpl/4a6f657900000000000000000000000000000000.rn6cxs6j7wdh8miq2c2cre6w7jipc55ut_xrp",
-        "pairAddress": "4A6F657900000000000000000000000000000000.rN6CXs6J7WDh8miq2C2cre6w7jipc55Ut_XRP",
-        "baseToken": {
-          "address": "4A6F657900000000000000000000000000000000.rN6CXs6J7WDh8miq2C2cre6w7jipc55Ut",
-          "name": "Joey",
-          "symbol": "Joey"
-        },
-        "quoteToken": {
-          "address": "XRP",
-          "name": "XRP",
-          "symbol": "XRP"
-        },
-        "priceNative": "0.0002482",
-        "priceUsd": "0.0007905",
-        "txns": {
-          "m5": {
-            "buys": 0,
-            "sells": 1
-          },
-          "h1": {
-            "buys": 0,
-            "sells": 2
-          },
-          "h6": {
-            "buys": 1,
-            "sells": 4
-          },
-          "h24": {
-            "buys": 2,
-            "sells": 6
-          }
-        },
-        "volume": {
-          "h24": 101.51,
-          "h6": 84.08,
-          "h1": 75.6,
-          "m5": 72.97
-        },
-        "priceChange": {
-          "m5": 0.49,
-          "h1": -0.64,
-          "h6": 0.44,
-          "h24": -2.42
-        },
-        "liquidity": {
-          "usd": 117206.46,
-          "base": 74128019,
-          "quote": 18403
-        },
-        "fdv": 553344,
-        "marketCap": 553344,
-        "pairCreatedAt": 1744514002000,
-        "info": {
-          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/xrpl/4a6f657900000000000000000000000000000000.rn6cxs6j7wdh8miq2c2cre6w7jipc55ut.png?key=8e8a26",
-          "header": "https://dd.dexscreener.com/ds-data/tokens/xrpl/4a6f657900000000000000000000000000000000.rn6cxs6j7wdh8miq2c2cre6w7jipc55ut/header.png?key=8e8a26",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/xrpl/4a6f657900000000000000000000000000000000.rn6cxs6j7wdh8miq2c2cre6w7jipc55ut?timestamp=1754864700000",
-          "websites": [
-            {
-              "label": "Website",
-              "url": "https://joeyxrp.com/"
-            }
-          ],
-          "socials": [
-            {
-              "type": "twitter",
-              "url": "https://x.com/JoeyXRP_"
-            },
-            {
-              "type": "telegram",
-              "url": "https://t.me/joeyxrp"
-            }
-          ]
-        }
-      },
-      {
         "chainId": "base",
         "dexId": "uniswap",
         "url": "https://dexscreener.com/base/0x069812b38fd4a5490580a463b10523314a04f096",
@@ -3670,19 +3691,19 @@
             "sells": 1
           },
           "h24": {
-            "buys": 3,
-            "sells": 6
+            "buys": 2,
+            "sells": 4
           }
         },
         "volume": {
-          "h24": 884.04,
+          "h24": 778.92,
           "h6": 2.58,
           "h1": 0,
           "m5": 0
         },
         "priceChange": {
           "h6": -0.01,
-          "h24": 1.22
+          "h24": 0.45
         },
         "liquidity": {
           "usd": 97538.55,
@@ -3695,7 +3716,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/base/0x706e1963ba410a548673b46d694104391fb7dca5.png?key=0fc90d",
           "header": "https://dd.dexscreener.com/ds-data/tokens/base/0x706e1963ba410a548673b46d694104391fb7dca5/header.png?key=0fc90d",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0x706e1963ba410a548673b46d694104391fb7dca5?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0x706e1963ba410a548673b46d694104391fb7dca5?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -3773,7 +3794,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/base/0x6d5d854063114c18dadc54fe052d75c1c4f34b46.png?key=0a2fa9",
           "header": "https://dd.dexscreener.com/ds-data/tokens/base/0x6d5d854063114c18dadc54fe052d75c1c4f34b46/header.png?key=0a2fa9",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0x6d5d854063114c18dadc54fe052d75c1c4f34b46?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/base/0x6d5d854063114c18dadc54fe052d75c1c4f34b46?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -3784,77 +3805,6 @@
             {
               "type": "twitter",
               "url": "https://x.com/NemesisAIF"
-            }
-          ]
-        }
-      },
-      {
-        "chainId": "solana",
-        "dexId": "meteora",
-        "url": "https://dexscreener.com/solana/b7jo5zlpt16kkzkunn9farlsjoedbyctdtjxjmakg3as",
-        "pairAddress": "B7Jo5ZLpt16kKZkUnn9fArLSJoeDbyCTdtjXJmAkG3as",
-        "labels": [
-          "DLMM"
-        ],
-        "baseToken": {
-          "address": "ESBCnCXtEZDmX8QnHU6qMZXd9mvjSAZVoYaLKKADBAGS",
-          "name": "BUY THE HAT",
-          "symbol": "BTH"
-        },
-        "quoteToken": {
-          "address": "So11111111111111111111111111111111111111112",
-          "name": "Wrapped SOL",
-          "symbol": "SOL"
-        },
-        "priceNative": "0.00008223",
-        "priceUsd": "0.01510",
-        "txns": {
-          "m5": {
-            "buys": 5,
-            "sells": 0
-          },
-          "h1": {
-            "buys": 30,
-            "sells": 10
-          },
-          "h6": {
-            "buys": 94,
-            "sells": 96
-          },
-          "h24": {
-            "buys": 631,
-            "sells": 813
-          }
-        },
-        "volume": {
-          "h24": 142006.88,
-          "h6": 26205.89,
-          "h1": 5291.66,
-          "m5": 544.48
-        },
-        "priceChange": {
-          "m5": 2.25,
-          "h1": 12.14,
-          "h6": 4.71,
-          "h24": 40.91
-        },
-        "liquidity": {
-          "usd": 46018.41,
-          "base": 539475,
-          "quote": 206.2286
-        },
-        "fdv": 15100936,
-        "marketCap": 15100936,
-        "pairCreatedAt": 1754569431000,
-        "info": {
-          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/ESBCnCXtEZDmX8QnHU6qMZXd9mvjSAZVoYaLKKADBAGS.png?key=582484",
-          "header": "https://dd.dexscreener.com/ds-data/tokens/solana/ESBCnCXtEZDmX8QnHU6qMZXd9mvjSAZVoYaLKKADBAGS/header.png?key=582484",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/ESBCnCXtEZDmX8QnHU6qMZXd9mvjSAZVoYaLKKADBAGS?timestamp=1754864700000",
-          "websites": [],
-          "socials": [
-            {
-              "type": "twitter",
-              "url": "https://x.com/i/communities/1953347503736443163"
             }
           ]
         }
@@ -3874,49 +3824,49 @@
           "name": "USD Coin",
           "symbol": "USDC"
         },
-        "priceNative": "0.1660",
-        "priceUsd": "0.1660",
+        "priceNative": "0.1661",
+        "priceUsd": "0.1661",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 0,
-            "sells": 3
+            "buys": 1,
+            "sells": 0
           },
           "h6": {
             "buys": 10,
             "sells": 10
           },
           "h24": {
-            "buys": 76,
-            "sells": 70
+            "buys": 75,
+            "sells": 66
           }
         },
         "volume": {
-          "h24": 5863.1,
-          "h6": 705.08,
-          "h1": 61.88,
+          "h24": 5651.81,
+          "h6": 699.03,
+          "h1": 8.95,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.34,
-          "h6": 0.89,
-          "h24": -2.21
+          "h1": 0.05,
+          "h6": 0.86,
+          "h24": -1.1
         },
         "liquidity": {
-          "usd": 72331.63,
-          "base": 217824,
-          "quote": 36165
+          "usd": 72349.53,
+          "base": 217770,
+          "quote": 36174
         },
-        "fdv": 82967390,
-        "marketCap": 66103780,
+        "fdv": 83008408,
+        "marketCap": 66136461,
         "pairCreatedAt": 1640058621000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd.png?key=e54c05",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/header.png?key=e54c05",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -3961,8 +3911,8 @@
           "name": "Wrapped AVAX",
           "symbol": "WAVAX"
         },
-        "priceNative": "0.007021",
-        "priceUsd": "0.1661",
+        "priceNative": "0.007003",
+        "priceUsd": "0.1664",
         "txns": {
           "m5": {
             "buys": 0,
@@ -3973,37 +3923,37 @@
             "sells": 4
           },
           "h6": {
-            "buys": 26,
-            "sells": 14
+            "buys": 21,
+            "sells": 15
           },
           "h24": {
             "buys": 100,
-            "sells": 77
+            "sells": 79
           }
         },
         "volume": {
-          "h24": 8866.93,
-          "h6": 1819.92,
-          "h1": 94.76,
+          "h24": 8886.55,
+          "h6": 1637.64,
+          "h1": 179.16,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.67,
-          "h6": 0.74,
-          "h24": -2.09
+          "h1": 0.14,
+          "h6": 0.48,
+          "h24": -0.55
         },
         "liquidity": {
-          "usd": 68028.31,
-          "base": 398603,
-          "quote": 75.2409
+          "usd": 68126.06,
+          "base": 399682,
+          "quote": 67.6935
         },
-        "fdv": 83050795,
-        "marketCap": 66170233,
+        "fdv": 83164448,
+        "marketCap": 66260786,
         "pairCreatedAt": 1719389934000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd.png?key=e54c05",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd/header.png?key=e54c05",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x6e84a6216ea6dacc71ee8e6b0a5b7322eebc0fdd?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -4032,6 +3982,77 @@
       },
       {
         "chainId": "solana",
+        "dexId": "meteora",
+        "url": "https://dexscreener.com/solana/b7jo5zlpt16kkzkunn9farlsjoedbyctdtjxjmakg3as",
+        "pairAddress": "B7Jo5ZLpt16kKZkUnn9fArLSJoeDbyCTdtjXJmAkG3as",
+        "labels": [
+          "DLMM"
+        ],
+        "baseToken": {
+          "address": "ESBCnCXtEZDmX8QnHU6qMZXd9mvjSAZVoYaLKKADBAGS",
+          "name": "BUY THE HAT",
+          "symbol": "BTH"
+        },
+        "quoteToken": {
+          "address": "So11111111111111111111111111111111111111112",
+          "name": "Wrapped SOL",
+          "symbol": "SOL"
+        },
+        "priceNative": "0.00007571",
+        "priceUsd": "0.01383",
+        "txns": {
+          "m5": {
+            "buys": 0,
+            "sells": 1
+          },
+          "h1": {
+            "buys": 11,
+            "sells": 20
+          },
+          "h6": {
+            "buys": 89,
+            "sells": 92
+          },
+          "h24": {
+            "buys": 596,
+            "sells": 786
+          }
+        },
+        "volume": {
+          "h24": 133415.65,
+          "h6": 25222.93,
+          "h1": 3500.43,
+          "m5": 388.27
+        },
+        "priceChange": {
+          "m5": -1.35,
+          "h1": -6.35,
+          "h6": 0.76,
+          "h24": 15.09
+        },
+        "liquidity": {
+          "usd": 41274.05,
+          "base": 521070,
+          "quote": 186.4965
+        },
+        "fdv": 13830600,
+        "marketCap": 13830600,
+        "pairCreatedAt": 1754569431000,
+        "info": {
+          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/ESBCnCXtEZDmX8QnHU6qMZXd9mvjSAZVoYaLKKADBAGS.png?key=582484",
+          "header": "https://dd.dexscreener.com/ds-data/tokens/solana/ESBCnCXtEZDmX8QnHU6qMZXd9mvjSAZVoYaLKKADBAGS/header.png?key=582484",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/ESBCnCXtEZDmX8QnHU6qMZXd9mvjSAZVoYaLKKADBAGS?timestamp=1754868000000",
+          "websites": [],
+          "socials": [
+            {
+              "type": "twitter",
+              "url": "https://x.com/i/communities/1953347503736443163"
+            }
+          ]
+        }
+      },
+      {
+        "chainId": "solana",
         "dexId": "raydium",
         "url": "https://dexscreener.com/solana/evitup6ogaqrmyutsxsuom8kewlzd1pprj2rg7ayyghw",
         "pairAddress": "EvitUp6oGAqrmyUtsXsUom8kEWLZD1pPRJ2rG7AYyghW",
@@ -4046,48 +4067,48 @@
           "symbol": "SOL"
         },
         "priceNative": "0.000001134",
-        "priceUsd": "0.0002080",
+        "priceUsd": "0.0002077",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 4,
-            "sells": 2
+            "buys": 8,
+            "sells": 4
           },
           "h6": {
-            "buys": 32,
-            "sells": 16
+            "buys": 36,
+            "sells": 18
           },
           "h24": {
-            "buys": 207,
-            "sells": 104
+            "buys": 205,
+            "sells": 103
           }
         },
         "volume": {
-          "h24": 2447.09,
-          "h6": 351.21,
-          "h1": 35.92,
+          "h24": 2435.36,
+          "h6": 394.16,
+          "h1": 87.35,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.91,
-          "h6": 0.26,
-          "h24": -1.49
+          "h1": -0.18,
+          "h6": 0.67,
+          "h24": -0.61
         },
         "liquidity": {
-          "usd": 53232.23,
-          "base": 127760921,
-          "quote": 145.2657
+          "usd": 53135.82,
+          "base": 127766992,
+          "quote": 145.26
         },
-        "fdv": 208079,
-        "marketCap": 208079,
+        "fdv": 207710,
+        "marketCap": 207710,
         "pairCreatedAt": 1737816392000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/4yTZ41t1WUPJoEFwhmFFzrL3UbFWkdDRVUKJTtLwpump.png?key=d65b82",
           "header": "https://dd.dexscreener.com/ds-data/tokens/solana/4yTZ41t1WUPJoEFwhmFFzrL3UbFWkdDRVUKJTtLwpump/header.png?key=d65b82",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/4yTZ41t1WUPJoEFwhmFFzrL3UbFWkdDRVUKJTtLwpump?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/4yTZ41t1WUPJoEFwhmFFzrL3UbFWkdDRVUKJTtLwpump?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -4129,50 +4150,49 @@
           "name": "TON",
           "symbol": "TON"
         },
-        "priceNative": "0.0001083",
-        "priceUsd": "0.0003608",
+        "priceNative": "0.00006537",
+        "priceUsd": "0.0002184",
         "txns": {
           "m5": {
-            "buys": 1,
+            "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 1,
-            "sells": 1
+            "buys": 15,
+            "sells": 17
           },
           "h6": {
-            "buys": 24,
-            "sells": 13
+            "buys": 23,
+            "sells": 21
           },
           "h24": {
-            "buys": 83,
-            "sells": 48
+            "buys": 86,
+            "sells": 53
           }
         },
         "volume": {
-          "h24": 16146.37,
-          "h6": 5542.28,
-          "h1": 65.89,
-          "m5": 52.31
+          "h24": 14216.15,
+          "h6": 5234.27,
+          "h1": 5067.34,
+          "m5": 0
         },
         "priceChange": {
-          "m5": 0.77,
-          "h1": 0.56,
-          "h6": -21.04,
-          "h24": -46.9
+          "h1": -38.98,
+          "h6": -39.36,
+          "h24": -48.84
         },
         "liquidity": {
-          "usd": 37365.44,
-          "base": 51765808,
-          "quote": 5607.62
+          "usd": 29118.36,
+          "base": 66626601,
+          "quote": 4356.8631
         },
-        "fdv": 360872,
-        "marketCap": 360872,
+        "fdv": 218497,
+        "marketCap": 218497,
         "pairCreatedAt": 1734587770000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/ton/eqbgcpdjvh1poeqs5apq0yg_k_j8sc9pdamnlwpk7hjvclmq.png?key=75e36f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/ton/eqbgcpdjvh1poeqs5apq0yg_k_j8sc9pdamnlwpk7hjvclmq/header.png?key=75e36f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/ton/eqbgcpdjvh1poeqs5apq0yg_k_j8sc9pdamnlwpk7hjvclmq?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/ton/eqbgcpdjvh1poeqs5apq0yg_k_j8sc9pdamnlwpk7hjvclmq?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -4230,7 +4250,7 @@
             "sells": 0
           },
           "h6": {
-            "buys": 2,
+            "buys": 1,
             "sells": 0
           },
           "h24": {
@@ -4240,12 +4260,12 @@
         },
         "volume": {
           "h24": 321.68,
-          "h6": 94.54,
+          "h6": 3.63,
           "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h6": 1.14,
+          "h6": 0.26,
           "h24": -0.16
         },
         "liquidity": {
@@ -4259,7 +4279,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/5ycBARVYYau1CW8s1r6Ty439rbVvGm7x5DRkxGiGKmZ.png?key=2b3ff6",
           "header": "https://dd.dexscreener.com/ds-data/tokens/solana/5ycBARVYYau1CW8s1r6Ty439rbVvGm7x5DRkxGiGKmZ/header.png?key=2b3ff6",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/5ycBARVYYau1CW8s1r6Ty439rbVvGm7x5DRkxGiGKmZ?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/solana/5ycBARVYYau1CW8s1r6Ty439rbVvGm7x5DRkxGiGKmZ?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -4293,44 +4313,44 @@
           "name": "Wrapped Merit Circle",
           "symbol": "WMC"
         },
-        "priceNative": "2826.6675",
-        "priceUsd": "23.74",
+        "priceNative": "2818.07621",
+        "priceUsd": "23.82",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 4,
-            "sells": 0
+            "buys": 0,
+            "sells": 4
           },
           "h6": {
             "buys": 45,
-            "sells": 74
+            "sells": 69
           },
           "h24": {
-            "buys": 80,
-            "sells": 111
+            "buys": 72,
+            "sells": 114
           }
         },
         "volume": {
-          "h24": 20703.22,
-          "h6": 16245.93,
-          "h1": 654.82,
+          "h24": 20532.48,
+          "h6": 15746.29,
+          "h1": 209.74,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.11,
-          "h6": -1.02,
-          "h24": -3.84
+          "h1": 0.35,
+          "h6": -0.06,
+          "h24": -1.54
         },
         "liquidity": {
-          "usd": 275390.63,
-          "base": 5799.3033,
-          "quote": 16392702
+          "usd": 276781.61,
+          "base": 5808.1498,
+          "quote": 16367809
         },
-        "fdv": 216173,
-        "marketCap": 216173,
+        "fdv": 216934,
+        "marketCap": 216934,
         "pairCreatedAt": 1699003855000
       },
       {
@@ -4352,7 +4372,7 @@
           "symbol": "WETH"
         },
         "priceNative": "0.005635",
-        "priceUsd": "23.77",
+        "priceUsd": "23.84",
         "txns": {
           "m5": {
             "buys": 0,
@@ -4360,35 +4380,35 @@
           },
           "h1": {
             "buys": 1,
-            "sells": 1
+            "sells": 0
           },
           "h6": {
             "buys": 17,
             "sells": 2
           },
           "h24": {
-            "buys": 56,
-            "sells": 87
+            "buys": 57,
+            "sells": 85
           }
         },
         "volume": {
-          "h24": 6627.26,
-          "h6": 180.9,
-          "h1": 27.42,
+          "h24": 6271.12,
+          "h6": 178.71,
+          "h1": 0.47,
           "m5": 0
         },
         "priceChange": {
-          "h1": -1.24,
-          "h6": -0.74,
-          "h24": -2.61
+          "h1": 0.28,
+          "h6": -0.77,
+          "h24": -1.73
         },
         "liquidity": {
-          "usd": 163236.06,
-          "base": 3414.2034,
-          "quote": 19.4451
+          "usd": 163692.08,
+          "base": 3414.1836,
+          "quote": 19.4452
         },
-        "fdv": 103747,
-        "marketCap": 103747,
+        "fdv": 104037,
+        "marketCap": 104037,
         "pairCreatedAt": 1739569463000
       },
       {
@@ -4415,27 +4435,26 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 1
+            "sells": 0
           },
           "h6": {
             "buys": 7,
             "sells": 1
           },
           "h24": {
-            "buys": 22,
-            "sells": 74
+            "buys": 20,
+            "sells": 70
           }
         },
         "volume": {
-          "h24": 31820.09,
+          "h24": 29698.44,
           "h6": 59.92,
-          "h1": 26.09,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": -1.5,
           "h6": 0.37,
-          "h24": -4.67
+          "h24": -4.38
         },
         "liquidity": {
           "usd": 148757.7,
@@ -4527,8 +4546,8 @@
             "sells": 0
           },
           "h1": {
-            "buys": 1,
-            "sells": 1
+            "buys": 0,
+            "sells": 0
           },
           "h6": {
             "buys": 1,
@@ -4542,7 +4561,7 @@
         "volume": {
           "h24": 163983.23,
           "h6": 79991.88,
-          "h1": 79991.88,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {},
@@ -4578,49 +4597,49 @@
           "name": "Wrapped Ether",
           "symbol": "WETH"
         },
-        "priceNative": "0.00000002894",
-        "priceUsd": "0.0001221",
+        "priceNative": "0.00000002967",
+        "priceUsd": "0.0001259",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 3,
+            "buys": 1,
             "sells": 3
           },
           "h6": {
             "buys": 17,
-            "sells": 16
+            "sells": 19
           },
           "h24": {
-            "buys": 127,
-            "sells": 132
+            "buys": 112,
+            "sells": 124
           }
         },
         "volume": {
-          "h24": 39125.81,
-          "h6": 2995.09,
-          "h1": 397.96,
+          "h24": 34531.98,
+          "h6": 3397.6,
+          "h1": 469.74,
           "m5": 0
         },
         "priceChange": {
-          "h1": -1.76,
-          "h6": -12.09,
-          "h24": -24.94
+          "h1": 3.1,
+          "h6": -10.18,
+          "h24": -13.64
         },
         "liquidity": {
-          "usd": 43888.05,
-          "base": 179630522,
-          "quote": 5.1988
+          "usd": 44691.73,
+          "base": 177412421,
+          "quote": 5.2642
         },
-        "fdv": 120945,
-        "marketCap": 120945,
+        "fdv": 124700,
+        "marketCap": 124700,
         "pairCreatedAt": 1754693920000,
         "info": {
           "imageUrl": "https://cdn.dexscreener.com/cms/images/MeHfITkrImUz-g6e?width=64&height=64&quality=90",
           "header": "https://cdn.dexscreener.com/cms/images/hWAZOYB8yZ90NF0w?width=128&height=128&quality=90",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/abstract/0xd5cc17f92b41d57a4b34d4b08587bf55342d4bc1?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/abstract/0xd5cc17f92b41d57a4b34d4b08587bf55342d4bc1?timestamp=1754868000000",
           "websites": [
             {
               "url": "http://www.pangverse.com",
@@ -4657,48 +4676,49 @@
           "name": "Wrapped AVAX",
           "symbol": "WAVAX"
         },
-        "priceNative": "0.005940",
-        "priceUsd": "0.1406",
+        "priceNative": "0.005904",
+        "priceUsd": "0.1402",
         "txns": {
           "m5": {
-            "buys": 0,
+            "buys": 6,
             "sells": 0
           },
           "h1": {
-            "buys": 6,
-            "sells": 8
+            "buys": 14,
+            "sells": 4
           },
           "h6": {
-            "buys": 35,
-            "sells": 15
+            "buys": 40,
+            "sells": 19
           },
           "h24": {
-            "buys": 169,
-            "sells": 176
+            "buys": 180,
+            "sells": 163
           }
         },
         "volume": {
-          "h24": 53110.33,
-          "h6": 7411.59,
-          "h1": 2354.62,
-          "m5": 0
+          "h24": 56687.25,
+          "h6": 12378.25,
+          "h1": 6878.34,
+          "m5": 1101.51
         },
         "priceChange": {
-          "h1": 0.47,
-          "h6": 0.77,
-          "h24": -3.09
+          "m5": 0.37,
+          "h1": -0.23,
+          "h6": 0.39,
+          "h24": -2.54
         },
         "liquidity": {
-          "usd": 1180306.61,
-          "base": 4196653,
-          "quote": 24931
+          "usd": 1181243.17,
+          "base": 4209710,
+          "quote": 24855
         },
-        "fdv": 75564919,
-        "marketCap": 30990029,
+        "fdv": 75390333,
+        "marketCap": 30918430,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -4736,49 +4756,50 @@
           "name": "Wrapped AVAX",
           "symbol": "WAVAX"
         },
-        "priceNative": "0.005927",
-        "priceUsd": "0.1403",
+        "priceNative": "0.005921",
+        "priceUsd": "0.1407",
         "txns": {
           "m5": {
-            "buys": 0,
+            "buys": 3,
             "sells": 0
           },
           "h1": {
-            "buys": 4,
-            "sells": 15
+            "buys": 5,
+            "sells": 4
           },
           "h6": {
-            "buys": 26,
-            "sells": 51
+            "buys": 24,
+            "sells": 47
           },
           "h24": {
-            "buys": 169,
-            "sells": 180
+            "buys": 168,
+            "sells": 181
           }
         },
         "volume": {
-          "h24": 10448.92,
-          "h6": 1218.33,
-          "h1": 293.52,
-          "m5": 0
+          "h24": 10399.45,
+          "h6": 1084.55,
+          "h1": 169.39,
+          "m5": 59.74
         },
         "priceChange": {
-          "h1": 0.16,
-          "h6": 0.56,
-          "h24": -3.15
+          "m5": 0.32,
+          "h1": 0.29,
+          "h6": 0.39,
+          "h24": -2.54
         },
         "liquidity": {
-          "usd": 49465.09,
-          "base": 256886,
-          "quote": 567.00145
+          "usd": 49621.2,
+          "base": 257020,
+          "quote": 566.2203
         },
-        "fdv": 75396004,
-        "marketCap": 30920756,
+        "fdv": 75613308,
+        "marketCap": 31009875,
         "pairCreatedAt": 1753117084000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -4816,44 +4837,44 @@
           "name": "Wrapped Merit Circle",
           "symbol": "WMC"
         },
-        "priceNative": "2826.6675",
-        "priceUsd": "23.74",
+        "priceNative": "2818.07621",
+        "priceUsd": "23.82",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 4,
-            "sells": 0
+            "buys": 0,
+            "sells": 4
           },
           "h6": {
             "buys": 45,
-            "sells": 74
+            "sells": 69
           },
           "h24": {
-            "buys": 80,
-            "sells": 111
+            "buys": 72,
+            "sells": 114
           }
         },
         "volume": {
-          "h24": 20703.22,
-          "h6": 16245.93,
-          "h1": 654.82,
+          "h24": 20532.48,
+          "h6": 15746.29,
+          "h1": 209.74,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.11,
-          "h6": -1.02,
-          "h24": -3.84
+          "h1": 0.35,
+          "h6": -0.06,
+          "h24": -1.54
         },
         "liquidity": {
-          "usd": 275390.63,
-          "base": 5799.3033,
-          "quote": 16392702
+          "usd": 276781.61,
+          "base": 5808.1498,
+          "quote": 16367809
         },
-        "fdv": 216173,
-        "marketCap": 216173,
+        "fdv": 216934,
+        "marketCap": 216934,
         "pairCreatedAt": 1699003855000
       },
       {
@@ -4875,7 +4896,7 @@
           "symbol": "WETH"
         },
         "priceNative": "0.005635",
-        "priceUsd": "23.77",
+        "priceUsd": "23.84",
         "txns": {
           "m5": {
             "buys": 0,
@@ -4883,35 +4904,35 @@
           },
           "h1": {
             "buys": 1,
-            "sells": 1
+            "sells": 0
           },
           "h6": {
             "buys": 17,
             "sells": 2
           },
           "h24": {
-            "buys": 56,
-            "sells": 87
+            "buys": 57,
+            "sells": 85
           }
         },
         "volume": {
-          "h24": 6627.26,
-          "h6": 180.9,
-          "h1": 27.42,
+          "h24": 6271.12,
+          "h6": 178.71,
+          "h1": 0.47,
           "m5": 0
         },
         "priceChange": {
-          "h1": -1.24,
-          "h6": -0.74,
-          "h24": -2.61
+          "h1": 0.28,
+          "h6": -0.77,
+          "h24": -1.73
         },
         "liquidity": {
-          "usd": 163236.06,
-          "base": 3414.2034,
-          "quote": 19.4451
+          "usd": 163692.08,
+          "base": 3414.1836,
+          "quote": 19.4452
         },
-        "fdv": 103747,
-        "marketCap": 103747,
+        "fdv": 104037,
+        "marketCap": 104037,
         "pairCreatedAt": 1739569463000
       },
       {
@@ -4938,27 +4959,26 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 1
+            "sells": 0
           },
           "h6": {
             "buys": 7,
             "sells": 1
           },
           "h24": {
-            "buys": 22,
-            "sells": 74
+            "buys": 20,
+            "sells": 70
           }
         },
         "volume": {
-          "h24": 31820.09,
+          "h24": 29698.44,
           "h6": 59.92,
-          "h1": 26.09,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": -1.5,
           "h6": 0.37,
-          "h24": -4.67
+          "h24": -4.38
         },
         "liquidity": {
           "usd": 148757.7,
@@ -5155,7 +5175,7 @@
             "sells": 0
           },
           "h1": {
-            "buys": 2,
+            "buys": 0,
             "sells": 0
           },
           "h6": {
@@ -5163,20 +5183,19 @@
             "sells": 0
           },
           "h24": {
-            "buys": 20,
+            "buys": 17,
             "sells": 10
           }
         },
         "volume": {
-          "h24": 622.18,
+          "h24": 568.98,
           "h6": 87.9,
-          "h1": 32.39,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.33,
           "h6": 0.58,
-          "h24": -3.31
+          "h24": -2.45
         },
         "liquidity": {
           "usd": 24114.78,
@@ -5189,7 +5208,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -5227,8 +5246,8 @@
           "name": "Wrapped Ether",
           "symbol": "WETH"
         },
-        "priceNative": "0.004703",
-        "priceUsd": "19.82",
+        "priceNative": "0.004687",
+        "priceUsd": "19.88",
         "txns": {
           "m5": {
             "buys": 0,
@@ -5236,35 +5255,35 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 1
+            "sells": 4
           },
           "h6": {
-            "buys": 4,
-            "sells": 8
+            "buys": 3,
+            "sells": 7
           },
           "h24": {
             "buys": 9,
-            "sells": 54
+            "sells": 58
           }
         },
         "volume": {
-          "h24": 939.83,
-          "h6": 173.07,
-          "h1": 9.46,
+          "h24": 1006.26,
+          "h6": 166.71,
+          "h1": 66.43,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.42,
-          "h6": -0.34,
-          "h24": -3.78
+          "h1": 0.31,
+          "h6": -0.6,
+          "h24": -3.48
         },
         "liquidity": {
-          "usd": 83538.57,
-          "base": 2107.4298,
-          "quote": 9.9116
+          "usd": 83948.77,
+          "base": 2110.2463,
+          "quote": 9.9001
         },
-        "fdv": 618431,
-        "marketCap": 618431
+        "fdv": 620377,
+        "marketCap": 620377
       },
       {
         "chainId": "avalanche",
@@ -5281,48 +5300,48 @@
           "name": "Wrapped Ether",
           "symbol": "WETH.e"
         },
-        "priceNative": "0.00003330",
-        "priceUsd": "0.1401",
+        "priceNative": "0.00003316",
+        "priceUsd": "0.1406",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 1,
-            "sells": 0
+            "buys": 0,
+            "sells": 4
           },
           "h6": {
             "buys": 5,
-            "sells": 1
+            "sells": 5
           },
           "h24": {
-            "buys": 22,
-            "sells": 26
+            "buys": 20,
+            "sells": 29
           }
         },
         "volume": {
-          "h24": 480.08,
-          "h6": 39.32,
-          "h1": 11.58,
+          "h24": 463.71,
+          "h6": 56.16,
+          "h1": 16.84,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.26,
-          "h6": 0.58,
-          "h24": -3.14
+          "h1": 0.38,
+          "h6": 0.96,
+          "h24": -2.17
         },
         "liquidity": {
-          "usd": 16145.43,
-          "base": 57605,
-          "quote": 1.9183
+          "usd": 16240.5,
+          "base": 57725,
+          "quote": 1.9143
         },
-        "fdv": 75303730,
-        "marketCap": 30882913,
+        "fdv": 75589863,
+        "marketCap": 31000259,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -5360,49 +5379,49 @@
           "name": "USD Coin",
           "symbol": "USDC"
         },
-        "priceNative": "0.1400",
-        "priceUsd": "0.1400",
+        "priceNative": "0.1406",
+        "priceUsd": "0.1406",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 2,
-            "sells": 2
+            "buys": 3,
+            "sells": 0
           },
           "h6": {
-            "buys": 9,
+            "buys": 12,
             "sells": 5
           },
           "h24": {
-            "buys": 29,
-            "sells": 40
+            "buys": 31,
+            "sells": 37
           }
         },
         "volume": {
-          "h24": 483.07,
-          "h6": 85.5,
-          "h1": 28.44,
+          "h24": 459.76,
+          "h6": 98.49,
+          "h1": 12.98,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.06,
-          "h6": 0.38,
-          "h24": -3.2
+          "h1": 0.39,
+          "h6": 0.77,
+          "h24": -2.22
         },
         "liquidity": {
-          "usd": 13363.97,
-          "base": 47697,
-          "quote": 6681.9861
+          "usd": 13389.94,
+          "base": 47605,
+          "quote": 6694.9709
         },
-        "fdv": 75277452,
-        "marketCap": 30872136,
+        "fdv": 75569864,
+        "marketCap": 30992057,
         "pairCreatedAt": 1643452804000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -5440,49 +5459,49 @@
           "name": "USD Coin",
           "symbol": "USDC.e"
         },
-        "priceNative": "0.1403",
-        "priceUsd": "0.1403",
+        "priceNative": "0.1406",
+        "priceUsd": "0.1406",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 2,
+            "buys": 1,
             "sells": 0
           },
           "h6": {
-            "buys": 4,
+            "buys": 5,
             "sells": 0
           },
           "h24": {
             "buys": 15,
-            "sells": 23
+            "sells": 22
           }
         },
         "volume": {
-          "h24": 312.59,
-          "h6": 25.29,
-          "h1": 11.19,
+          "h24": 299.16,
+          "h6": 32.12,
+          "h1": 6.82,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.36,
-          "h6": 0.81,
-          "h24": -2.88
+          "h1": 0.22,
+          "h6": 1.02,
+          "h24": -2.61
         },
         "liquidity": {
-          "usd": 12624.01,
-          "base": 44987,
-          "quote": 6312.005709
+          "usd": 12637.66,
+          "base": 44939,
+          "quote": 6318.8334
         },
-        "fdv": 75392983,
-        "marketCap": 30919517,
+        "fdv": 75555933,
+        "marketCap": 30986344,
         "pairCreatedAt": 1629840570000,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -5529,11 +5548,11 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 3
+            "sells": 0
           },
           "h6": {
-            "buys": 1,
-            "sells": 9
+            "buys": 0,
+            "sells": 7
           },
           "h24": {
             "buys": 15,
@@ -5542,13 +5561,12 @@
         },
         "volume": {
           "h24": 373.98,
-          "h6": 86.86,
-          "h1": 26.56,
+          "h6": 61.47,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.45,
-          "h6": 0.24,
+          "h6": -1.5,
           "h24": -1.51
         },
         "liquidity": {
@@ -5562,7 +5580,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xacfb898cff266e53278cc0124fc2c7c94c8cb9a5.png?key=c4060b",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0xacfb898cff266e53278cc0124fc2c7c94c8cb9a5/header.png?key=c4060b",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xacfb898cff266e53278cc0124fc2c7c94c8cb9a5?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0xacfb898cff266e53278cc0124fc2c7c94c8cb9a5?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -5616,44 +5634,44 @@
           "name": "Wrapped Ether",
           "symbol": "WETH"
         },
-        "priceNative": "0.004677",
-        "priceUsd": "19.70",
+        "priceNative": "0.004661",
+        "priceUsd": "19.76",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 1,
-            "sells": 2
+            "buys": 5,
+            "sells": 4
           },
           "h6": {
-            "buys": 7,
-            "sells": 9
+            "buys": 11,
+            "sells": 11
           },
           "h24": {
-            "buys": 93,
-            "sells": 40
+            "buys": 96,
+            "sells": 41
           }
         },
         "volume": {
-          "h24": 2001.53,
-          "h6": 364.13,
-          "h1": 60.13,
+          "h24": 2079.86,
+          "h6": 462.9,
+          "h1": 181.36,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.05,
-          "h6": -0.93,
-          "h24": -5.94
+          "h1": 0.31,
+          "h6": -0.75,
+          "h24": -3.98
         },
         "liquidity": {
-          "usd": 63668.76,
-          "base": 1615.4796,
-          "quote": 7.5562
+          "usd": 63974.95,
+          "base": 1618.1688,
+          "quote": 7.5438
         },
-        "fdv": 614869,
-        "marketCap": 614869,
+        "fdv": 616799,
+        "marketCap": 616799,
         "pairCreatedAt": 1629780246000
       },
       {
@@ -5674,8 +5692,8 @@
           "name": "Tether USD",
           "symbol": "USDT"
         },
-        "priceNative": "23.6799",
-        "priceUsd": "23.67",
+        "priceNative": "23.7696",
+        "priceUsd": "23.76",
         "txns": {
           "m5": {
             "buys": 0,
@@ -5683,36 +5701,117 @@
           },
           "h1": {
             "buys": 10,
-            "sells": 6
+            "sells": 0
           },
           "h6": {
-            "buys": 34,
-            "sells": 33
+            "buys": 44,
+            "sells": 21
           },
           "h24": {
-            "buys": 260,
-            "sells": 189
+            "buys": 258,
+            "sells": 142
           }
         },
         "volume": {
-          "h24": 55359.14,
-          "h6": 4463.92,
-          "h1": 712.07,
+          "h24": 29337.78,
+          "h6": 4185.97,
+          "h1": 499.63,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.04,
-          "h6": -1.25,
-          "h24": -3.77
+          "h1": 0.38,
+          "h6": -0.21,
+          "h24": -2.24
         },
         "liquidity": {
-          "usd": 101874.63,
-          "base": 2321.4824,
-          "quote": 46902
+          "usd": 102083.27,
+          "base": 2299.5188,
+          "quote": 47424
         },
-        "fdv": 47359925,
-        "marketCap": 47359925,
+        "fdv": 47539396,
+        "marketCap": 47539396,
         "pairCreatedAt": 1702418132000
+      },
+      {
+        "chainId": "avalanche",
+        "dexId": "pangolin",
+        "url": "https://dexscreener.com/avalanche/0x9b8f8593cef5f4dd639df81ff40fc8710c251a58",
+        "pairAddress": "0x9b8F8593cef5F4Dd639Df81Ff40Fc8710C251A58",
+        "baseToken": {
+          "address": "0x60781C2586D68229fde47564546784ab3fACA982",
+          "name": "Pangolin",
+          "symbol": "PNG"
+        },
+        "quoteToken": {
+          "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+          "name": "Wrapped AVAX",
+          "symbol": "WAVAX"
+        },
+        "priceNative": "0.005920",
+        "priceUsd": "0.1406",
+        "txns": {
+          "m5": {
+            "buys": 1,
+            "sells": 0
+          },
+          "h1": {
+            "buys": 2,
+            "sells": 3
+          },
+          "h6": {
+            "buys": 45,
+            "sells": 44
+          },
+          "h24": {
+            "buys": 178,
+            "sells": 181
+          }
+        },
+        "volume": {
+          "h24": 2980.99,
+          "h6": 711.38,
+          "h1": 47.92,
+          "m5": 12.37
+        },
+        "priceChange": {
+          "m5": 0.49,
+          "h1": 0.13,
+          "h6": 0.8,
+          "h24": -2.75
+        },
+        "liquidity": {
+          "usd": 3028.36,
+          "base": 13188,
+          "quote": 49.3703
+        },
+        "fdv": 75591636,
+        "marketCap": 31000987,
+        "pairCreatedAt": 1744186566000,
+        "info": {
+          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
+          "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
+          "websites": [
+            {
+              "label": "Website",
+              "url": "https://www.pangolin.exchange/"
+            }
+          ],
+          "socials": [
+            {
+              "type": "twitter",
+              "url": "https://x.com/PangolinDex"
+            },
+            {
+              "type": "telegram",
+              "url": "https://t.me/pangolindexV3"
+            },
+            {
+              "type": "discord",
+              "url": "https://discord.com/pangolin"
+            }
+          ]
+        }
       },
       {
         "chainId": "bsc",
@@ -5733,7 +5832,7 @@
           "symbol": "WBNB"
         },
         "priceNative": "0.02953",
-        "priceUsd": "23.65",
+        "priceUsd": "23.77",
         "txns": {
           "m5": {
             "buys": 0,
@@ -5741,42 +5840,42 @@
           },
           "h1": {
             "buys": 3,
-            "sells": 5
+            "sells": 1
           },
           "h6": {
-            "buys": 16,
-            "sells": 26
+            "buys": 19,
+            "sells": 18
           },
           "h24": {
-            "buys": 124,
-            "sells": 149
+            "buys": 100,
+            "sells": 110
           }
         },
         "volume": {
-          "h24": 109422.97,
-          "h6": 8120.55,
-          "h1": 2234.14,
+          "h24": 40408.18,
+          "h6": 7099.59,
+          "h1": 1069.01,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.19,
-          "h6": -1.25,
-          "h24": -3.9
+          "h1": 0.5,
+          "h6": -0.09,
+          "h24": -2.19
         },
         "liquidity": {
-          "usd": 332558.31,
-          "base": 10487,
-          "quote": 105.4397
+          "usd": 334254.03,
+          "base": 10491,
+          "quote": 105.3325
         },
-        "fdv": 47314771,
-        "marketCap": 47314771,
+        "fdv": 47552813,
+        "marketCap": 47552813,
         "pairCreatedAt": 1680574343000
       },
       {
         "chainId": "avalanche",
-        "dexId": "pangolin",
-        "url": "https://dexscreener.com/avalanche/0x9b8f8593cef5f4dd639df81ff40fc8710c251a58",
-        "pairAddress": "0x9b8F8593cef5F4Dd639Df81Ff40Fc8710C251A58",
+        "dexId": "traderjoe",
+        "url": "https://dexscreener.com/avalanche/0x3daf1c6268362214ebb064647555438c6f365f96",
+        "pairAddress": "0x3dAF1C6268362214eBB064647555438c6f365F96",
         "baseToken": {
           "address": "0x60781C2586D68229fde47564546784ab3fACA982",
           "name": "Pangolin",
@@ -5787,49 +5886,47 @@
           "name": "Wrapped AVAX",
           "symbol": "WAVAX"
         },
-        "priceNative": "0.005935",
-        "priceUsd": "0.1404",
+        "priceNative": "0.005924",
+        "priceUsd": "0.1400",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 8,
-            "sells": 7
+            "buys": 0,
+            "sells": 0
           },
           "h6": {
-            "buys": 50,
-            "sells": 49
+            "buys": 2,
+            "sells": 0
           },
           "h24": {
-            "buys": 182,
-            "sells": 183
+            "buys": 24,
+            "sells": 22
           }
         },
         "volume": {
-          "h24": 3009.93,
-          "h6": 787.28,
-          "h1": 115.91,
+          "h24": 149.08,
+          "h6": 8.17,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.73,
-          "h6": 0.67,
-          "h24": -3.17
+          "h6": -0.1,
+          "h24": -2.71
         },
         "liquidity": {
-          "usd": 3021.24,
-          "base": 13142,
-          "quote": 49.6355
+          "usd": 3776.19,
+          "base": 13481,
+          "quote": 79.8747
         },
-        "fdv": 75491114,
-        "marketCap": 30959761,
-        "pairCreatedAt": 1744186566000,
+        "fdv": 75256283,
+        "marketCap": 30863455,
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -5870,8 +5967,8 @@
           "name": "Wrapped BNB",
           "symbol": "WBNB"
         },
-        "priceNative": "0.02952",
-        "priceUsd": "23.63",
+        "priceNative": "0.02953",
+        "priceUsd": "23.73",
         "txns": {
           "m5": {
             "buys": 0,
@@ -5879,115 +5976,36 @@
           },
           "h1": {
             "buys": 2,
-            "sells": 4
+            "sells": 2
           },
           "h6": {
-            "buys": 11,
-            "sells": 28
-          },
-          "h24": {
-            "buys": 151,
-            "sells": 141
-          }
-        },
-        "volume": {
-          "h24": 28001.08,
-          "h6": 1801.28,
-          "h1": 371.39,
-          "m5": 0
-        },
-        "priceChange": {
-          "h1": -0.36,
-          "h6": -1.29,
-          "h24": -3.85
-        },
-        "liquidity": {
-          "usd": 321899.23,
-          "base": 6810.8907,
-          "quote": 201.0888
-        },
-        "fdv": 47262427,
-        "marketCap": 47262427,
-        "pairCreatedAt": 1619649489000
-      },
-      {
-        "chainId": "avalanche",
-        "dexId": "traderjoe",
-        "url": "https://dexscreener.com/avalanche/0x3daf1c6268362214ebb064647555438c6f365f96",
-        "pairAddress": "0x3dAF1C6268362214eBB064647555438c6f365F96",
-        "baseToken": {
-          "address": "0x60781C2586D68229fde47564546784ab3fACA982",
-          "name": "Pangolin",
-          "symbol": "PNG"
-        },
-        "quoteToken": {
-          "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
-          "name": "Wrapped AVAX",
-          "symbol": "WAVAX"
-        },
-        "priceNative": "0.005924",
-        "priceUsd": "0.1400",
-        "txns": {
-          "m5": {
-            "buys": 0,
-            "sells": 0
-          },
-          "h1": {
-            "buys": 1,
-            "sells": 0
-          },
-          "h6": {
-            "buys": 5,
-            "sells": 0
-          },
-          "h24": {
-            "buys": 25,
+            "buys": 13,
             "sells": 23
+          },
+          "h24": {
+            "buys": 114,
+            "sells": 105
           }
         },
         "volume": {
-          "h24": 153.09,
-          "h6": 18.43,
-          "h1": 5.01,
+          "h24": 9925.52,
+          "h6": 1690.23,
+          "h1": 235.11,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.19,
-          "h6": 1.07,
-          "h24": -3.41
+          "h1": 0.43,
+          "h6": -0.43,
+          "h24": -2.43
         },
         "liquidity": {
-          "usd": 3776.19,
-          "base": 13481,
-          "quote": 79.8747
+          "usd": 323258.64,
+          "base": 6810.2416,
+          "quote": 201.1086
         },
-        "fdv": 75256283,
-        "marketCap": 30863455,
-        "info": {
-          "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
-          "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
-          "websites": [
-            {
-              "label": "Website",
-              "url": "https://www.pangolin.exchange/"
-            }
-          ],
-          "socials": [
-            {
-              "type": "twitter",
-              "url": "https://x.com/PangolinDex"
-            },
-            {
-              "type": "telegram",
-              "url": "https://t.me/pangolindexV3"
-            },
-            {
-              "type": "discord",
-              "url": "https://discord.com/pangolin"
-            }
-          ]
-        }
+        "fdv": 47466543,
+        "marketCap": 47466543,
+        "pairCreatedAt": 1619649489000
       },
       {
         "chainId": "avalanche",
@@ -6012,28 +6030,27 @@
             "sells": 0
           },
           "h1": {
-            "buys": 1,
+            "buys": 0,
             "sells": 0
           },
           "h6": {
-            "buys": 3,
+            "buys": 2,
             "sells": 0
           },
           "h24": {
-            "buys": 8,
-            "sells": 12
+            "buys": 6,
+            "sells": 9
           }
         },
         "volume": {
-          "h24": 70.39,
-          "h6": 7.28,
-          "h1": 2.29,
+          "h24": 48.79,
+          "h6": 4.52,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.29,
-          "h6": 0.93,
-          "h24": -3.05
+          "h6": 0.58,
+          "h24": -2.92
         },
         "liquidity": {
           "usd": 3139.33,
@@ -6045,7 +6062,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -6092,7 +6109,7 @@
           },
           "h1": {
             "buys": 0,
-            "sells": 1
+            "sells": 0
           },
           "h6": {
             "buys": 0,
@@ -6106,11 +6123,10 @@
         "volume": {
           "h24": 63.56,
           "h6": 5.62,
-          "h1": 5.62,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.22,
           "h6": -0.22,
           "h24": -3.82
         },
@@ -6125,7 +6141,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x4d6ec47118f807ace03d3b3a4ee6aa96cb2ab677.png?key=57a380",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x4d6ec47118f807ace03d3b3a4ee6aa96cb2ab677/header.png?key=57a380",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x4d6ec47118f807ace03d3b3a4ee6aa96cb2ab677?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x4d6ec47118f807ace03d3b3a4ee6aa96cb2ab677?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -6179,28 +6195,27 @@
             "sells": 0
           },
           "h1": {
-            "buys": 1,
+            "buys": 0,
             "sells": 0
           },
           "h6": {
-            "buys": 3,
+            "buys": 2,
             "sells": 0
           },
           "h24": {
-            "buys": 8,
+            "buys": 7,
             "sells": 9
           }
         },
         "volume": {
-          "h24": 76.08,
-          "h6": 6.41,
-          "h1": 1.34,
+          "h24": 70.09,
+          "h6": 4.4,
+          "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h1": 0.18,
-          "h6": 0.85,
-          "h24": -3.16
+          "h6": 0.58,
+          "h24": -2.94
         },
         "liquidity": {
           "usd": 3043.36,
@@ -6212,7 +6227,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982.png?key=76024f",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x60781c2586d68229fde47564546784ab3faca982/header.png?key=76024f",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x60781c2586d68229fde47564546784ab3faca982?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -6310,20 +6325,20 @@
           "name": "Wrapped Polygon Ecosystem Token",
           "symbol": "WPOL"
         },
-        "priceNative": "82.2722",
-        "priceUsd": "19.73",
+        "priceNative": "82.2337",
+        "priceUsd": "19.75",
         "txns": {
           "m5": {
             "buys": 0,
-            "sells": 0
+            "sells": 1
           },
           "h1": {
             "buys": 1,
             "sells": 1
           },
           "h6": {
-            "buys": 15,
-            "sells": 8
+            "buys": 9,
+            "sells": 6
           },
           "h24": {
             "buys": 80,
@@ -6331,23 +6346,24 @@
           }
         },
         "volume": {
-          "h24": 1493.6,
-          "h6": 361.97,
-          "h1": 40.39,
-          "m5": 0
+          "h24": 1461.48,
+          "h6": 237.98,
+          "h1": 24.47,
+          "m5": 14.67
         },
         "priceChange": {
-          "h1": -0.01,
-          "h6": -1.04,
-          "h24": -5.35
+          "m5": -0.28,
+          "h1": 0.15,
+          "h6": -0.56,
+          "h24": -3.47
         },
         "liquidity": {
-          "usd": 42044.6,
-          "base": 1065.4577,
-          "quote": 87657
+          "usd": 42116.05,
+          "base": 1065.7086,
+          "quote": 87637
         },
-        "fdv": 615646,
-        "marketCap": 615646,
+        "fdv": 616548,
+        "marketCap": 616548,
         "pairCreatedAt": 1627419006000
       },
       {
@@ -6380,23 +6396,23 @@
             "sells": 0
           },
           "h6": {
-            "buys": 9,
+            "buys": 8,
             "sells": 0
           },
           "h24": {
-            "buys": 63,
+            "buys": 59,
             "sells": 24
           }
         },
         "volume": {
-          "h24": 1961.84,
-          "h6": 43.59,
+          "h24": 1941.82,
+          "h6": 38.49,
           "h1": 0,
           "m5": 0
         },
         "priceChange": {
-          "h6": 0.49,
-          "h24": -0.8
+          "h6": 0.41,
+          "h24": -1.01
         },
         "liquidity": {
           "usd": 42250.28,
@@ -6515,7 +6531,7 @@
         "info": {
           "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x2121d5d36ac3e814b2bb15bb3fb57f94190fde75.png?key=cd593e",
           "header": "https://dd.dexscreener.com/ds-data/tokens/avalanche/0x2121d5d36ac3e814b2bb15bb3fb57f94190fde75/header.png?key=cd593e",
-          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x2121d5d36ac3e814b2bb15bb3fb57f94190fde75?timestamp=1754864700000",
+          "openGraph": "https://cdn.dexscreener.com/token-images/og/avalanche/0x2121d5d36ac3e814b2bb15bb3fb57f94190fde75?timestamp=1754868000000",
           "websites": [
             {
               "label": "Website",
@@ -6558,43 +6574,43 @@
           "symbol": "WBNB"
         },
         "priceNative": "0.02953",
-        "priceUsd": "23.63",
+        "priceUsd": "23.73",
         "txns": {
           "m5": {
             "buys": 0,
             "sells": 0
           },
           "h1": {
-            "buys": 9,
-            "sells": 3
+            "buys": 4,
+            "sells": 1
           },
           "h6": {
-            "buys": 19,
-            "sells": 23
+            "buys": 23,
+            "sells": 16
           },
           "h24": {
-            "buys": 136,
-            "sells": 90
+            "buys": 114,
+            "sells": 70
           }
         },
         "volume": {
-          "h24": 4982.11,
-          "h6": 352.22,
-          "h1": 92.14,
+          "h24": 1844.14,
+          "h6": 354.23,
+          "h1": 62.13,
           "m5": 0
         },
         "priceChange": {
-          "h1": -0.32,
-          "h6": -1.23,
-          "h24": -5.12
+          "h1": 0.43,
+          "h6": -0.41,
+          "h24": -2.45
         },
         "liquidity": {
-          "usd": 60829.35,
-          "base": 1286.9298,
-          "quote": 38.007417
+          "usd": 61093.19,
+          "base": 1286.9196,
+          "quote": 38.007872
         },
-        "fdv": 47267031,
-        "marketCap": 47267031,
+        "fdv": 47472423,
+        "marketCap": 47472423,
         "pairCreatedAt": 1621111416000
       }
     ]
