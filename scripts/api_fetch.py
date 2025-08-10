@@ -1,176 +1,126 @@
-# === scripts/api_fetch.py (fail-safe) ===
+# === scripts/api_fetch.py (DexScreener only; daily append) ===
 from pathlib import Path
-from datetime import datetime
-import json, math, requests, pandas as pd
+from datetime import datetime, timezone
+import json
+import requests
+import pandas as pd
 
-# Paths
 DATA_DIR = Path("data"); DATA_DIR.mkdir(parents=True, exist_ok=True)
 CSV_PATH = DATA_DIR / "black_data.csv"
 SUMMARY_PATH = DATA_DIR / "daily_summary.txt"
-RAW_PATH = DATA_DIR / "blackhole_raw.json"
+RAW_PATH = DATA_DIR / "dexscreener_raw.json"
 DEBUG_PATH = DATA_DIR / "debug_counts.txt"
-MATCHED_PATH = DATA_DIR / "matched_protocols.txt"
 
-# Endpoints
-BLACKHOLE_URL = "https://api.llama.fi/summary/dexs/blackhole-dex"  # AMM+CLMM combined object
-AVAX_OVERVIEW_URL = "https://api.llama.fi/overview/dexs/avalanche?excludeTotalDataChart=false&dataType=volumes"
+# DexScreener search endpoint (no key). We search for "blackhole avalanche".
+DEX_URL = "https://api.dexscreener.com/latest/dex/search?q=blackhole%20avalanche"
 
-# ---------------- utils ----------------
+def today_utc():
+    return datetime.now(timezone.utc).date().isoformat()
+
 def fetch_json(url, timeout=45):
-    try:
-        r = requests.get(url, timeout=timeout)
-        r.raise_for_status()
-        return r.json()
-    except requests.HTTPError as e:
-        print(f"⚠️ HTTP error fetching {url}: {e}")
-        return {}
-    except Exception as e:
-        print(f"⚠️ General error fetching {url}: {e}")
-        return {}
+    r = requests.get(url, timeout=timeout)
+    r.raise_for_status()
+    return r.json()
 
-def ts_to_date(ts):
-    try:
-        t = float(ts)
-        if t > 1_000_000_000_000: t /= 1000.0  # ms -> s
-        return datetime.utcfromtimestamp(int(t)).strftime("%Y-%m-%d")
-    except Exception:
-        return None
+def extract_total_24h_volume(payload):
+    """
+    Sum 24h volume across all Avalanche pairs that belong to Blackhole.
+    DexScreener can report volume in:
+      - pair['volume']['h24']
+      - or pair['volume24h']
+    We accept either. We match Blackhole by dexId or URL containing 'blackhole'.
+    """
+    pairs = (payload or {}).get("pairs") or []
+    total = 0.0
+    matched = 0
 
-def parse_chart_to_map(chart):
-    """Accept list[[ts,val],...] or dict{ts:val} -> {YYYY-MM-DD: float}"""
-    out = {}
-    if isinstance(chart, dict):
-        items = chart.items()
-    elif isinstance(chart, list):
-        items = chart
-    else:
-        return out
-    for itm in items:
-        if isinstance(itm, (list, tuple)) and len(itm) >= 2:
-            ts, val = itm[0], itm[1]
-        elif isinstance(chart, dict):
-            ts, val = itm[0], itm[1]
-        else:
+    for p in pairs:
+        chain = (p.get("chainId") or "").lower()
+        dexid = (p.get("dexId") or "").lower()
+        url   = (p.get("url") or "").lower()
+
+        if chain != "avalanche":
             continue
-        d = ts_to_date(ts)
-        if not d or val is None:
+        is_blackhole = ("blackhole" in dexid) or ("blackhole" in url)
+        if not is_blackhole:
             continue
+
+        vol = None
+        if isinstance(p.get("volume"), dict) and p["volume"].get("h24") is not None:
+            vol = p["volume"]["h24"]
+        elif p.get("volume24h") is not None:
+            vol = p["volume24h"]
+
         try:
-            out[d] = out.get(d, 0.0) + float(val)
-        except:
-            pass
-    return out
-
-# ---------------- sources ----------------
-def from_slug_summary():
-    """Try the Blackhole slug endpoint; sum parent + child charts if present."""
-    p = fetch_json(BLACKHOLE_URL)
-    # Save whatever we got for inspection (pretty)
-    try:
-        RAW_PATH.write_text(json.dumps(p, indent=2), encoding="utf-8")
-    except:
-        pass
-
-    totals = {}
-
-    parent = (p or {}).get("total24hChart")
-    if parent:
-        totals.update(parse_chart_to_map(parent))
-
-    for child in (p or {}).get("childProtocols", []) or []:
-        ch = child.get("total24hChart")
-        if not ch:
+            v = float(vol)
+        except Exception:
             continue
-        m = parse_chart_to_map(ch)
-        for d, v in m.items():
-            totals[d] = totals.get(d, 0.0) + v
 
-    if not totals:
-        return pd.DataFrame()
+        total += v
+        matched += 1
 
-    rows = [{"date": d, "dex": "Blackhole", "chain": "Avalanche", "volume_usd": v}
-            for d, v in sorted(totals.items())]
-    return pd.DataFrame(rows)
+    return total, matched, len(pairs)
 
-def from_overview_fallback():
-    """Fallback: list all protocol names/slugs from Avalanche overview."""
-    p = fetch_json(AVAX_OVERVIEW_URL)
-    protos = p.get("protocols", []) or []
-
-    lines = []
-    for proto in protos:
-        lines.append(f"{proto.get('name')} | {proto.get('slug')} | {proto.get('id')}")
-    
-    # Save the list of all available protocols in Avalanche overview
-    MATCHED_PATH.write_text("\n".join(lines), encoding="utf-8")
-
-    # Return empty DataFrame so downstream steps won't fail
-    return pd.DataFrame()
-
-def avalanche_totals_df():
-    """Chain-wide Avalanche DEX totals via overview (best-effort)."""
-    p = fetch_json(AVAX_OVERVIEW_URL)
-    protos = p.get("protocols", []) or []
-    totals = {}
-    for proto in protos:
-        for day, vol in (proto.get("dailyVolume") or {}).items():
-            if vol is None: 
-                continue
-            try:
-                totals[day] = totals.get(day, 0.0) + float(vol)
-            except:
-                pass
-    rows = [{"date": d, "chain_volume_usd": v} for d, v in sorted(totals.items())]
-    return pd.DataFrame(rows)
-
-# ---------------- main ----------------
-def main():
-    # 1) Try slug
-    bh = from_slug_summary()
-
-    # 2) Fallback if slug yields no rows
-    source = "slug"
-    if bh.empty:
-        bh = from_overview_fallback()
-        source = "overview"
-
-    # 3) Merge chain totals (but never fail the run)
-    avax = avalanche_totals_df()
-    if not bh.empty and not avax.empty:
-        out = pd.merge(bh, avax, on="date", how="left")
-        def share(row):
-            v, t = row.get("volume_usd"), row.get("chain_volume_usd")
-            if v is None or t in (None, 0) or (isinstance(t, float) and math.isnan(t)):
-                return None
-            return 100.0 * float(v) / float(t)
-        out["share_pct"] = out.apply(share, axis=1)
+def upsert_today(csv_path: Path, date_str: str, volume_usd: float):
+    """
+    Read existing CSV (if any), replace or add the row for `date_str`.
+    Columns: date,dex,chain,volume_usd
+    """
+    if csv_path.exists():
+        df = pd.read_csv(csv_path)
+        # ensure columns exist
+        for col in ["date", "dex", "chain", "volume_usd"]:
+            if col not in df.columns:
+                df[col] = None
     else:
-        out = bh.copy()
-        out["chain_volume_usd"] = None
-        out["share_pct"] = None
+        df = pd.DataFrame(columns=["date", "dex", "chain", "volume_usd"])
 
-    out.to_csv(CSV_PATH, index=False)
+    # drop any existing row for today, then append
+    df = df[df["date"] != date_str]
+    new_row = pd.DataFrame([{
+        "date": date_str,
+        "dex": "Blackhole",
+        "chain": "Avalanche",
+        "volume_usd": float(volume_usd)
+    }])
+    df = pd.concat([df, new_row], ignore_index=True).sort_values("date")
+    df.to_csv(csv_path, index=False)
+    return df
 
-    # Debug summary
-    DEBUG_PATH.write_text(
-        f"source={source}, bh_rows={len(bh)}, csv_rows={len(out)}, "
-        f"min_date={out['date'].min() if not out.empty else 'NA'}, "
-        f"max_date={out['date'].max() if not out.empty else 'NA'}",
+def main():
+    date_str = today_utc()
+    try:
+        payload = fetch_json(DEX_URL)
+    except Exception as e:
+        # Hard fail: keep action green, but record error
+        RAW_PATH.write_text(json.dumps({"error": str(e)}, indent=2), encoding="utf-8")
+        pd.DataFrame(columns=["date","dex","chain","volume_usd"]).to_csv(CSV_PATH, index=False)
+        SUMMARY_PATH.write_text(f"⚠️ DexScreener fetch failed: {e}", encoding="utf-8")
+        DEBUG_PATH.write_text("fetch_error=1", encoding="utf-8")
+        return
+
+    # Save raw (pretty) for visibility
+    RAW_PATH.write_text(json.dumps(payload, indent=2)[:300000], encoding="utf-8")
+
+    total24, matched, total_pairs = extract_total_24h_volume(payload)
+
+    # Update CSV (append/replace today's value)
+    df = upsert_today(CSV_PATH, date_str, total24)
+
+    # Write summary
+    SUMMARY_PATH.write_text(
+        f"📊 BlackholeDex Daily Stats ({date_str})\n\n"
+        f"🔸 24h DEX Volume: ${total24:,.0f}\n"
+        f"🔹 Pairs matched (Avalanche/Blackhole): {matched} of {total_pairs} returned\n\n"
+        f"Source: DexScreener (search)\n"
+        f"#Crypto #DEX #BlackholeDex",
         encoding="utf-8"
     )
 
-    # Human summary
-    if out.empty:
-        SUMMARY_PATH.write_text("⚠️ No Blackhole rows parsed from DefiLlama.", encoding="utf-8")
-        return
-    last = out.dropna(subset=["volume_usd"]).tail(1).iloc[0]
-    share_str = f"{last['share_pct']:.2f}%" if last.get('share_pct') is not None else "N/A"
-    SUMMARY_PATH.write_text(
-        f"📊 BlackholeDex Daily Stats ({last['date']})\n\n"
-        f"🔸 24h DEX Volume: ${last['volume_usd']:,.0f}\n"
-        f"🔸 Avalanche Share: {share_str}\n\n"
-        f"Track it live → https://defillama.com/dexs/chain/avalanche\n\n"
-        f"#Crypto #DEX #BlackholeDex",
+    # Debug counts
+    DEBUG_PATH.write_text(
+        f"date={date_str}, matched_pairs={matched}, pairs_returned={total_pairs}, "
+        f"total24={total24:.2f}, rows_after_upsert={len(df)}",
         encoding="utf-8"
     )
 
