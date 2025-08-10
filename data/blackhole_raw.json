@@ -102,7 +102,7 @@
   "total48hto24h": 252606548,
   "total7d": 1160284009,
   "total30d": 3621874393,
-  "totalAllTime": 3868293874,
+  "totalAllTime": 3869363929,
   "totalDataChart": [
     [
       1745539200,
@@ -534,7 +534,7 @@
     ],
     [
       1754784000,
-      246064612
+      247134667
     ]
   ],
   "totalDataChartBreakdown": [
@@ -1504,8 +1504,8 @@
       1754784000,
       {
         "Avalanche": {
-          "Blackhole AMM": 6972039,
-          "Blackhole CLMM": 239092573
+          "Blackhole AMM": 6861786,
+          "Blackhole CLMM": 240272881
         }
       }
     ]
