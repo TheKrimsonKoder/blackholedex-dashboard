@@ -1,1 +1,7 @@
-⚠️ No Blackhole rows parsed from DefiLlama.
+📊 BlackholeDex Daily Stats (2025-08-10)
+
+🔸 24h DEX Volume: $9,487,893
+🔹 Pairs matched (Avalanche/Blackhole): 21 of 30 returned
+
+Source: DexScreener (search)
+#Crypto #DEX #BlackholeDex

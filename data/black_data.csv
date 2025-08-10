@@ -1,1 +1,2 @@
-chain_volume_usd,share_pct
+chain_volume_usd,share_pct,date,dex,chain,volume_usd
+,,2025-08-10,Blackhole,Avalanche,9487893.479999997

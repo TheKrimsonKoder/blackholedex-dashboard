@@ -1,1 +1,1 @@
-source=overview, bh_rows=0, csv_rows=0, min_date=NA, max_date=NA
+date=2025-08-10, matched_pairs=21, pairs_returned=30, total24=9487893.48, rows_after_upsert=1
