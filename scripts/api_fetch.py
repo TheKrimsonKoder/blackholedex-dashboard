@@ -12,7 +12,7 @@ DEBUG_PATH = DATA_DIR / "debug_counts.txt"
 MATCHED_PATH = DATA_DIR / "matched_protocols.txt"
 
 # Endpoints
-BLACKHOLE_URL = "https://api.llama.fi/summary/dexs/blackhole"  # AMM+CLMM combined object
+BLACKHOLE_URL = "https://api.llama.fi/summary/dexs/blackhole-dex"  # AMM+CLMM combined object
 AVAX_OVERVIEW_URL = "https://api.llama.fi/overview/dexs/avalanche?excludeTotalDataChart=false&dataType=volumes"
 
 # ---------------- utils ----------------
