@@ -1,9 +1,9 @@
-# === scripts/api_fetch.py (final: slug first + overview fallback) ===
+# === scripts/api_fetch.py (fail-safe) ===
 from pathlib import Path
 from datetime import datetime
 import json, math, requests, pandas as pd
 
-# --- Paths
+# Paths
 DATA_DIR = Path("data"); DATA_DIR.mkdir(parents=True, exist_ok=True)
 CSV_PATH = DATA_DIR / "black_data.csv"
 SUMMARY_PATH = DATA_DIR / "daily_summary.txt"
@@ -11,21 +11,27 @@ RAW_PATH = DATA_DIR / "blackhole_raw.json"
 DEBUG_PATH = DATA_DIR / "debug_counts.txt"
 MATCHED_PATH = DATA_DIR / "matched_protocols.txt"
 
-# --- Endpoints
+# Endpoints
 BLACKHOLE_URL = "https://api.llama.fi/summary/dexs/blackhole"  # AMM+CLMM combined object
-# ✅ Correct Avalanche overview volumes endpoint
 AVAX_OVERVIEW_URL = "https://api.llama.fi/overview/dexs/avalanche?excludeTotalDataChart=false&dataType=volumes"
 
+# ---------------- utils ----------------
 def fetch_json(url, timeout=45):
-    r = requests.get(url, timeout=timeout)
-    r.raise_for_status()
-    return r.json()
+    try:
+        r = requests.get(url, timeout=timeout)
+        r.raise_for_status()
+        return r.json()
+    except requests.HTTPError as e:
+        print(f"⚠️ HTTP error fetching {url}: {e}")
+        return {}
+    except Exception as e:
+        print(f"⚠️ General error fetching {url}: {e}")
+        return {}
 
 def ts_to_date(ts):
     try:
         t = float(ts)
-        if t > 1_000_000_000_000:  # ms -> s
-            t /= 1000.0
+        if t > 1_000_000_000_000: t /= 1000.0  # ms -> s
         return datetime.utcfromtimestamp(int(t)).strftime("%Y-%m-%d")
     except Exception:
         return None
@@ -55,16 +61,15 @@ def parse_chart_to_map(chart):
             pass
     return out
 
+# ---------------- sources ----------------
 def from_slug_summary():
     """Try the Blackhole slug endpoint; sum parent + child charts if present."""
+    p = fetch_json(BLACKHOLE_URL)
+    # Save whatever we got for inspection (pretty)
     try:
-        p = fetch_json(BLACKHOLE_URL)
-    finally:
-        # Save whatever we got for inspection (pretty)
-        try:
-            RAW_PATH.write_text(json.dumps(p, indent=2), encoding="utf-8")  # type: ignore
-        except:
-            pass
+        RAW_PATH.write_text(json.dumps(p, indent=2), encoding="utf-8")
+    except:
+        pass
 
     totals = {}
 
@@ -88,7 +93,7 @@ def from_slug_summary():
     return pd.DataFrame(rows)
 
 def from_overview_fallback():
-    """Fallback: pull Avalanche overview and sum all protocols that contain 'blackhole' in name/slug."""
+    """Fallback: use Avalanche overview and sum all protocols that match 'blackhole'."""
     p = fetch_json(AVAX_OVERVIEW_URL)
     protos = p.get("protocols", []) or []
 
@@ -100,7 +105,7 @@ def from_overview_fallback():
         if "blackhole" in name or "blackhole" in slug:
             matched.append(proto.get("name") or slug or "unknown")
             for day, vol in (proto.get("dailyVolume") or {}).items():
-                if vol is None:
+                if vol is None: 
                     continue
                 try:
                     totals[day] = totals.get(day, 0.0) + float(vol)
@@ -117,12 +122,13 @@ def from_overview_fallback():
     return pd.DataFrame(rows)
 
 def avalanche_totals_df():
-    """Chain-wide Avalanche DEX totals, by summing all protocol dailyVolume."""
+    """Chain-wide Avalanche DEX totals via overview (best-effort)."""
     p = fetch_json(AVAX_OVERVIEW_URL)
+    protos = p.get("protocols", []) or []
     totals = {}
-    for proto in p.get("protocols", []) or []:
+    for proto in protos:
         for day, vol in (proto.get("dailyVolume") or {}).items():
-            if vol is None:
+            if vol is None: 
                 continue
             try:
                 totals[day] = totals.get(day, 0.0) + float(vol)
@@ -131,19 +137,20 @@ def avalanche_totals_df():
     rows = [{"date": d, "chain_volume_usd": v} for d, v in sorted(totals.items())]
     return pd.DataFrame(rows)
 
+# ---------------- main ----------------
 def main():
     # 1) Try slug
     bh = from_slug_summary()
 
-    # 2) Fallback to overview search if needed
+    # 2) Fallback if slug yields no rows
     source = "slug"
     if bh.empty:
         bh = from_overview_fallback()
         source = "overview"
 
-    # 3) Merge with chain totals (best-effort)
-    try:
-        avax = avalanche_totals_df()
+    # 3) Merge chain totals (but never fail the run)
+    avax = avalanche_totals_df()
+    if not bh.empty and not avax.empty:
         out = pd.merge(bh, avax, on="date", how="left")
         def share(row):
             v, t = row.get("volume_usd"), row.get("chain_volume_usd")
@@ -151,14 +158,14 @@ def main():
                 return None
             return 100.0 * float(v) / float(t)
         out["share_pct"] = out.apply(share, axis=1)
-    except Exception:
+    else:
         out = bh.copy()
         out["chain_volume_usd"] = None
         out["share_pct"] = None
 
     out.to_csv(CSV_PATH, index=False)
 
-    # 4) Debug summary
+    # Debug summary
     DEBUG_PATH.write_text(
         f"source={source}, bh_rows={len(bh)}, csv_rows={len(out)}, "
         f"min_date={out['date'].min() if not out.empty else 'NA'}, "
@@ -166,12 +173,12 @@ def main():
         encoding="utf-8"
     )
 
-    # 5) Human summary
+    # Human summary
     if out.empty:
         SUMMARY_PATH.write_text("⚠️ No Blackhole rows parsed from DefiLlama.", encoding="utf-8")
         return
     last = out.dropna(subset=["volume_usd"]).tail(1).iloc[0]
-    share_str = f"{last['share_pct']:.2f}%" if pd.notna(last.get('share_pct')) else "N/A"
+    share_str = f"{last['share_pct']:.2f}%" if last.get('share_pct') is not None else "N/A"
     SUMMARY_PATH.write_text(
         f"📊 BlackholeDex Daily Stats ({last['date']})\n\n"
         f"🔸 24h DEX Volume: ${last['volume_usd']:,.0f}\n"
