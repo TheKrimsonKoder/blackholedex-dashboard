@@ -1,14 +1,14 @@
-📊 BlackholeDex Daily Stats (2025-08-11)
+📊 BlackholeDex Daily Stats (2025-08-12)
 
-🔸 24h Volume: $6,555,250
-🔹 TVL: $267,601,931
-📈 7‑Day Avg (Blackhole): $7,181,679
+🔸 24h Volume: $6,082,796
+🔹 TVL: $263,408,098
+📈 7‑Day Avg (Blackhole): $6,815,385
 🧮 AVAX DEX share (24h): nan%
 
 💹 Comparison (24h Volume):
-• Blackhole: $6,555,250
-• Trader Joe: $205,881
-• Pangolin: $61,195
+• Blackhole: $6,082,796
+• Trader Joe: $335,342
+• Pangolin: $108,333
 
 Sources: DexScreener (volume & AVAX total), DeFiLlama (TVL)
 #DeFi #Avalanche #DEX #BlackholeDex
