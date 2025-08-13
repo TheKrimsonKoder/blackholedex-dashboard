@@ -1,6 +1,8 @@
 from pathlib import Path
 import os, textwrap
 
+pip install "tweepy>=4.14,<5" python-dotenv
+
 SUMMARY_PATH = Path("data/daily_summary.txt")
 
 # Env vars from repo secrets
