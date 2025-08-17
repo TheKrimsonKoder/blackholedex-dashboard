@@ -9,9 +9,10 @@ on:
         default: "true"
         type: choice
         options: ["true", "false"]
-  # Optional schedule (13:05 UTC):
-  # schedule:
-  #   - cron: "5 13 * * *"
+  
+  #Optional schedule (13:05 UTC):
+  schedule:
+     - cron: "5 13 * * *"
 
 jobs:
   post:
