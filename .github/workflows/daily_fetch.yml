@@ -2,7 +2,7 @@ name: Daily Fetch
 
 on:
   schedule:
-    - cron: "0 14 * * *"   # 14:00 UTC daily
+    - cron: "0 14 * * *"   # 14:00 UTC daily (adjust if you like)
   workflow_dispatch:
 
 permissions:
@@ -27,8 +27,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pandas
 
-      - name: ▶️ Run fetch script
+      - name: ▶️ Run your existing fetch
         run: python scripts/api_fetch.py
+
+      - name: 🧾 Build daily summary (auto-competitor)
+        run: python scripts/build_summary.py
 
       - name: 📤 Quick output preview
         run: |
