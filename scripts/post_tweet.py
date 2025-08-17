@@ -1,3 +1,4 @@
+# scripts/post_tweet.py
 from pathlib import Path
 import os
 import sys
@@ -16,23 +17,19 @@ MAX_LEN = 280
 def load_summary() -> str:
     if not SUMMARY_PATH.exists():
         return ""
-    txt = SUMMARY_PATH.read_text(encoding="utf-8").strip()
-    lines = [l.strip() for l in txt.splitlines() if l.strip()]
-
-    # Build up to ~240 chars from natural lines, then append hashtags if they fit.
-    keep = []
-    for L in lines:
-        candidate = ("\n".join(keep + [L])).strip()
-        if len(candidate) > 240:
-            break
-        keep.append(L)
-
-    core = "\n".join(keep) if keep else txt[:240].rstrip()
-
-    candidate = (core + "\n" + HASHTAGS).strip()
+    core = SUMMARY_PATH.read_text(encoding="utf-8").strip()
+    if not core:
+        return ""
+    candidate = f"{core}\n{HASHTAGS}".strip()
     if len(candidate) <= MAX_LEN:
         return candidate
-    return core[:MAX_LEN].rstrip()
+    # If it won't fit with hashtags, trim the core and keep hashtags
+    # Keep at least 2 chars for "\n" plus hashtags
+    keep = MAX_LEN - (len(HASHTAGS) + 1)
+    if keep < 0:
+        # Fallback: no hashtags if something goes very wrong
+        return core[:MAX_LEN]
+    return (core[:keep].rstrip() + "\n" + HASHTAGS).strip()
 
 def post_v2(text: str):
     import tweepy
@@ -63,20 +60,16 @@ def main():
         "X_ACCESS_SECRET": ACCESS_SECRET,
     }.items() if not v]
     if missing:
-        print(f"Missing secrets: {', '.join(missing)}. Set them in GitHub → Settings → Secrets and variables → Actions.")
+        print(f"Missing secrets: {', '.join(missing)}")
         sys.exit(1)
 
     try:
         result = post_v2(tweet)
         print(f"Tweet posted via {result['platform']}: {result['response']}")
     except Exception as e:
-        # Print a concise diagnostic so you know whether it's a permissions issue
         print("Tweet failed.")
         print("Error:", repr(e))
-        print("Common causes:\n"
-              "- App is not set to 'Read and write' (or higher) in X Developer Portal\n"
-              "- Access Token & Secret were not regenerated after enabling write\n"
-              "- Plan limits (Free/Basic) exhausted for the month/day")
+        print("Check: App permission is 'Read and write'; tokens regenerated after enabling write; tier limits.")
         sys.exit(1)
 
 if __name__ == "__main__":
