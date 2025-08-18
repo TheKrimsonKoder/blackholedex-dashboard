@@ -9,8 +9,9 @@ on:
         default: "true"
         type: choice
         options: ["true", "false"]
-  schedule:
-    - cron: "30 17 * * *"   # 17:30 UTC = 1:30 PM ET
+  # Optional schedule for auto-post time:
+  # schedule:
+  #   - cron: "30 17 * * *"   # 17:30 UTC
 
 jobs:
   post:
@@ -18,8 +19,6 @@ jobs:
     steps:
       - name: 📥 Checkout repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: 🐍 Set up Python
         uses: actions/setup-python@v5
@@ -31,17 +30,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install "tweepy>=4.14,<5" pandas
 
-
-      # Always rebuild summary so we never tweet stale text
-      - name: 🧾 Build daily summary (fresh)
-        run: python scripts/build_summary.py
-
-      - name: 🧪 Preview summary
+      - name: 🧪 Preview summary (for manual runs)
         run: |
           echo "---- data/daily_summary.txt ----"
           cat data/daily_summary.txt || true
 
-      - name: 🐦 Run poster
+      - name: 🐦 Post to X
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
