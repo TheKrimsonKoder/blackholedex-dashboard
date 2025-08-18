@@ -1,4 +1,5 @@
 chain_volume_usd,share_pct,date,dex,chain,volume_usd,tvl_usd,avg7d_volume,chain_total_24h,blackhole_share_pct,blackhole_volume_24h_usd,traderjoe_volume_24h_usd,pangolin_volume_24h_usd,volume_7d_avg_usd
+,,,,,,209904732.0,,,,,,,
 ,,2025-08-10 00:00:00,Blackhole,Avalanche,7808107.230000002,275611865.4085484,7808107.230000002,,,,,,
 ,,2025-08-10 00:00:00,Pangolin,Avalanche,72096.31,5588329.016306556,,,,,,,
 ,,2025-08-10 00:00:00,Trader Joe,Avalanche,165365.99,,,,,,,,
@@ -8,4 +9,4 @@ chain_volume_usd,share_pct,date,dex,chain,volume_usd,tvl_usd,avg7d_volume,chain_
 ,,2025-08-12 00:00:00,Blackhole,Avalanche,6082796.2700000005,263408097.82426035,6815384.533333335,,,,,,
 ,,2025-08-12 00:00:00,Pangolin,Avalanche,108332.69,5556751.388913671,,,,,,,
 ,,2025-08-12 00:00:00,Trader Joe,Avalanche,335342.49,,,,,,,,
-,,2025-08-18,,,,209904732.0,,,,,,,
+,,2025-08-18,,,,208484118.57784,,,,,,,

@@ -1,4 +1,4 @@
 📊 BlackholeDex Daily Stats (2025-08-18)
-🔹 TVL: $209,904,732
+🔹 TVL: $208,484,119
 
 Sources: DexScreener, DeFiLlama
