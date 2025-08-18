@@ -27,16 +27,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pandas
 
-      - name: ▶️ Run your existing fetch
+      - name: ▶️ Run fetch (writes CSV + summary)
         run: python scripts/api_fetch.py
 
-      - name: 🧾 Build daily summary (exact format)
-        run: python scripts/build_summary.py
-
-      - name: 📤 Preview output
+      - name: 📤 Preview outputs
         run: |
           echo "---- data/daily_summary.txt ----"
           cat data/daily_summary.txt || true
+          echo
+          echo "---- data/black_data.csv (tail) ----"
+          tail -n 10 data/black_data.csv || true
+          echo
+          echo "---- data/debug_counts.txt ----"
+          cat data/debug_counts.txt || true
 
       - name: 💾 Commit and push updated data
         run: |
