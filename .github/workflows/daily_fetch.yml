@@ -30,10 +30,10 @@ jobs:
       - name: ▶️ Run your existing fetch
         run: python scripts/api_fetch.py
 
-      - name: 🧾 Build daily summary (simple)
+      - name: 🧾 Build daily summary (exact format)
         run: python scripts/build_summary.py
 
-      - name: 📤 Quick output preview
+      - name: 📤 Preview output
         run: |
           echo "---- data/daily_summary.txt ----"
           cat data/daily_summary.txt || true
