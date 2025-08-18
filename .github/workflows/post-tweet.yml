@@ -29,11 +29,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install "tweepy>=4.14,<5"
 
-      - name: 🧪 Ensure summary file exists
-        run: |
-          mkdir -p data
-          [ -f data/daily_summary.txt ] || echo "Automated summary placeholder" > data/daily_summary.txt
-
       - name: 🐦 Run poster
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
