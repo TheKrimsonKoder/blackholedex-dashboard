@@ -2,7 +2,7 @@ name: Daily Fetch
 
 on:
   schedule:
-    - cron: "0 14 * * *"   # 14:00 UTC daily (adjust if you like)
+    - cron: "0 14 * * *"   # 14:00 UTC daily
   workflow_dispatch:
 
 permissions:
@@ -30,16 +30,13 @@ jobs:
       - name: ▶️ Run your existing fetch
         run: python scripts/api_fetch.py
 
-      - name: 🧾 Build daily summary (auto-competitor)
+      - name: 🧾 Build daily summary (simple)
         run: python scripts/build_summary.py
 
       - name: 📤 Quick output preview
         run: |
-          echo "---- daily_summary.txt ----"
+          echo "---- data/daily_summary.txt ----"
           cat data/daily_summary.txt || true
-          echo
-          echo "---- black_data.csv (tail) ----"
-          tail -n 10 data/black_data.csv || true
 
       - name: 💾 Commit and push updated data
         run: |
