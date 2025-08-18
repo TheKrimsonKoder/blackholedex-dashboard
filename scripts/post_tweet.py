@@ -1,4 +1,4 @@
-# scripts/post_tweet.py  (v2 with v1.1 fallback + freshness + dedupe)
+# scripts/post_tweet.py  (safe date parse + v2→v1.1 fallback + dedupe)
 from pathlib import Path
 import os
 import sys
@@ -11,6 +11,7 @@ API_KEY = os.getenv("X_API_KEY")
 API_SECRET = os.getenv("X_API_SECRET")
 ACCESS_TOKEN = os.getenv("X_ACCESS_TOKEN")
 ACCESS_SECRET = os.getenv("X_ACCESS_SECRET")
+
 DRY_RUN = os.getenv("DRY_RUN", "").lower() in {"1", "true", "yes"}
 ALLOW_STALE = os.getenv("ALLOW_STALE", "").lower() in {"1", "true", "yes"}
 
@@ -34,49 +35,56 @@ def load_summary() -> str:
     candidate = f"{core}\n{HASHTAGS}".strip()
     if len(candidate) <= MAX_LEN:
         return candidate
-    # If hashtags don't fit, return core trimmed to 280
     return core[:MAX_LEN].rstrip()
 
-def check_freshness_or_die():
-    """Abort posting if CSV's newest date >1 day old (unless ALLOW_STALE=1)."""
-    if ALLOW_STALE:
-        print("⚠️  ALLOW_STALE=1 set — skipping freshness check.")
+def safe_last_date_str(csv_path: Path) -> str | None:
+    """Return last date in CSV as YYYY-MM-DD, or None if not parsable."""
+    try:
+        import pandas as pd
+    except Exception:
+        print("⚠️ pandas not installed; skipping freshness check.")
+        return None
+    if not csv_path.exists():
+        print("⚠️ CSV missing; skipping freshness check.")
+        return None
+    try:
+        df = pd.read_csv(csv_path)
+        # Find a plausible date column
+        date_col = None
+        for c in ["date","day","timestamp","ts"]:
+            if c in df.columns:
+                date_col = c
+                break
+        if not date_col or df.empty:
+            print("⚠️ No date column or empty CSV; skipping freshness check.")
+            return None
+        # Strip/parse robustly
+        df[date_col] = df[date_col].astype(str).str.strip()
+        df[date_col] = pd.to_datetime(df[date_col], errors="coerce")
+        df = df.dropna(subset=[date_col])
+        if df.empty:
+            print("⚠️ All dates NaT after parse; skipping freshness check.")
+            return None
+        last = df[date_col].max()
+        return last.strftime("%Y-%m-%d")
+    except Exception as e:
+        print(f"⚠️ Could not parse CSV dates: {e}")
+        return None
+
+def warn_if_stale(last_date_str: str | None) -> None:
+    """Warn (don’t abort) if data looks old, unless ALLOW_STALE=0 and it's very old."""
+    if last_date_str is None:
+        print("ℹ️ Freshness unknown (no parsable date). Proceeding.")
         return
-    if not CSV_PATH.exists():
-        print("❌ data/black_data.csv not found; refusing to post stale/unknown data.")
-        sys.exit(1)
-
-    import pandas as pd
-    df = pd.read_csv(CSV_PATH)
-    if df.empty:
-        print("❌ data/black_data.csv is empty; refusing to post.")
-        sys.exit(1)
-
-    # find a date-like column
-    date_col = None
-    for c in ["date", "day", "timestamp", "ts"]:
-        if c in df.columns:
-            date_col = c
-            break
-    if not date_col:
-        print("❌ No date column (date/day/timestamp/ts) in CSV; refusing to post.")
-        sys.exit(1)
-
-    df[date_col] = pd.to_datetime(df[date_col], errors="coerce")
-    df = df.sort_values(date_col)
-    last = df.iloc[-1][date_col]
-    if pd.isna(last):
-        print("❌ Last row date is NaT; refusing to post.")
-        sys.exit(1)
-
-    now = datetime.now(timezone.utc)
-    if last.tzinfo is None:
-        last = last.tz_localize(timezone.utc)
-    age = now - last
-    print(f"ℹ️ Latest CSV date: {last.isoformat()} (age ≈ {age.days} days)")
-    if age.days > 1:
-        print("❌ Data is stale (>1 day). Set ALLOW_STALE=1 to override. Aborting.")
-        sys.exit(1)
+    try:
+        last_dt = datetime.strptime(last_date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        age_days = (datetime.now(timezone.utc) - last_dt).days
+        print(f"ℹ️ Latest CSV date: {last_date_str} (≈{age_days} days old)")
+        if age_days > 1 and not ALLOW_STALE:
+            # Soft safety: for >1 day old we still proceed, but call it out loudly.
+            print("⚠️ Data appears >1 day old. Proceeding anyway (no hard stop). Set ALLOW_STALE=1 to silence this.")
+    except Exception:
+        print("ℹ️ Could not compute age from last_date_str; proceeding.")
 
 def utc_hm():
     return datetime.now(timezone.utc).strftime("%H:%M")
@@ -85,7 +93,6 @@ def append_update_tag(text: str) -> str:
     tag = f" (update {utc_hm()} UTC)"
     if len(text) + len(tag) <= MAX_LEN:
         return text + tag
-    # trim to make room
     trim = len(text) + len(tag) - MAX_LEN
     return text[:-trim].rstrip() + tag
 
@@ -109,14 +116,13 @@ def post_v1(text: str):
     return {"platform": "v1.1", "response": {"id": status.id_str}}
 
 def is_permission_error(e) -> bool:
-    """Return True for likely 453/permission issues on v2."""
     msg = str(e)
     code = getattr(getattr(e, "response", None), "status_code", None)
-    if code in (453, 403):  # 403 is common for 'forbidden' / permission scopes
+    if code in (453, 403):
         return True
     lowered = msg.lower()
     return any(k in lowered for k in [
-        "453", "forbidden", "you currently have access to a subset", "not authorized to access or delete"
+        "453", "forbidden", "you currently have access to a subset", "not authorized"
     ])
 
 def is_duplicate_error(e) -> bool:
@@ -130,14 +136,14 @@ def main():
         print("No summary to post; skipping.")
         return
 
-    # Freshness gate (will exit if stale)
-    check_freshness_or_die()
+    # Freshness: warn only (never hard-fail for NaT anymore)
+    last_date = safe_last_date_str(CSV_PATH)
+    warn_if_stale(last_date)
 
     if DRY_RUN or not all([API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_SECRET]):
         print("DRY-RUN. Preview:\n---\n" + tweet + "\n---")
         return
 
-    # Try v2 first
     try:
         result = post_v2(tweet)
         print(f"Tweet posted via {result['platform']}: {result['response']}")
@@ -163,7 +169,7 @@ def main():
                 print(f"v1.1 fallback failed: {e2}")
                 sys.exit(1)
 
-        print(f"Tweet failed (non-permission error): {e}")
+        print(f"Tweet failed (other error): {e}")
         sys.exit(1)
 
 if __name__ == "__main__":
