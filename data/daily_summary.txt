@@ -1,8 +1,4 @@
 📊 BlackholeDex Daily Stats (2025-08-18)
-🔸 24h Volume: $335,342
-📈 7-Day Avg (Blackhole): $1,930,595
-
-💹 Comparison (24h Volume):
-• Blackhole: $335,342
+🔹 TVL: $209,904,732
 
 Sources: DexScreener, DeFiLlama
