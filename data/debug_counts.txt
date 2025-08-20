@@ -1,12 +1,12 @@
 {
-  "date": "2025-08-19",
+  "date": "2025-08-20",
   "volumes_24h": {
-    "Blackhole": 3610111.6199999996,
-    "Trader Joe": 78041.63,
-    "Pangolin": 112491.08999999998
+    "Blackhole": 6220969.5600000005,
+    "Trader Joe": 219540.21999999997,
+    "Pangolin": 82407.03
   },
   "matched_pairs": {
-    "Blackhole": 21,
+    "Blackhole": 20,
     "Trader Joe": 7,
     "Pangolin": 9
   },
@@ -17,9 +17,9 @@
   },
   "avax_total_24h": null,
   "tvls": {
-    "Blackhole": 202181759.74997032,
+    "Blackhole": 191942036.3178529,
     "Trader Joe": null,
-    "Pangolin": 5486394.365504579
+    "Pangolin": 5455892.631460384
   },
-  "rows_after_upsert": 17
+  "rows_after_upsert": 20
 }
