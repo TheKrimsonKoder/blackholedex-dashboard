@@ -1,7 +1,7 @@
 {
   "Blackhole": {
     "source": "tvl_simple",
-    "value": 174165770.62901556
+    "value": 170096521.57690102
   },
   "Trader Joe": {
     "source": "none",
@@ -9,6 +9,6 @@
   },
   "Pangolin": {
     "source": "tvl_simple",
-    "value": 5989995.368145673
+    "value": 5830371.830207229
   }
 }
