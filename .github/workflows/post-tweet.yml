@@ -11,7 +11,7 @@ on:
         options: ["true", "false"]
   # Optional schedule for auto-post time:
   # schedule:
-  #   - cron: "30 17 * * *"   # 17:30 UTC
+  #   - cron: "30 17 * * *"   # 17:30 UTC daily
 
 jobs:
   post:
@@ -33,7 +33,7 @@ jobs:
       - name: 🧪 Preview summary (for manual runs)
         run: |
           echo "---- data/daily_summary.txt ----"
-          cat data/daily_summary.txt || true
+          (test -f data/daily_summary.txt && cat data/daily_summary.txt) || echo "(missing)"
 
       - name: 🐦 Post to X
         env:
