@@ -11,6 +11,7 @@ permissions:
 jobs:
   fetch-and-commit:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: 📥 Checkout repo (main, full history)
         uses: actions/checkout@v4
@@ -33,13 +34,25 @@ jobs:
       - name: 📤 Preview outputs
         run: |
           echo "---- data/daily_summary.txt ----"
-          cat data/daily_summary.txt || true
+          (test -f data/daily_summary.txt && cat data/daily_summary.txt) || echo "(missing)"
           echo
-          echo "---- data/black_data.csv (tail) ----"
-          tail -n 10 data/black_data.csv || true
+          echo "---- data/black_metrics.csv (tail) ----"
+          (test -f data/black_metrics.csv && tail -n 10 data/black_metrics.csv) || echo "(missing)"
           echo
           echo "---- data/debug_counts.txt ----"
-          cat data/debug_counts.txt || true
+          (test -f data/debug_counts.txt && cat data/debug_counts.txt) || echo "(missing)"
+
+      - name: 📎 Upload artifacts (summary, csv, debug + raw json)
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-fetch-artifacts
+          path: |
+            data/daily_summary.txt
+            data/black_metrics.csv
+            data/debug_counts.txt
+            data/*.json
+          if-no-files-found: warn
+          retention-days: 7
 
       - name: 💾 Commit and push updated data
         run: |
