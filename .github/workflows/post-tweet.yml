@@ -35,11 +35,28 @@ jobs:
           echo "---- data/daily_summary.txt ----"
           (test -f data/daily_summary.txt && cat data/daily_summary.txt) || echo "(missing)"
 
+      # Create a date string we can reuse in artifact names/logs
+      - name: 🗓️ Capture UTC date
+        id: meta
+        run: echo "date=$(date -u +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
+
       - name: 🐦 Post to X
         env:
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_API_KEY:      ${{ secrets.X_API_KEY }}
+          X_API_SECRET:   ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          DRY_RUN:        ${{ github.event.inputs.dry_run }}
         run: python scripts/post_tweet.py
+
+      # Upload the exact inputs used for this post (runs even if tweet step fails)
+      - name: 📎 Upload artifacts (summary + csv)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tweet-inputs-${{ steps.meta.outputs.date }}-${{ github.run_number }}
+          path: |
+            data/daily_summary.txt
+            data/black_metrics.csv
+          if-no-files-found: warn
+          retention-days: 7
