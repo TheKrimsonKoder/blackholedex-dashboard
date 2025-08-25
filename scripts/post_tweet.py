@@ -1,11 +1,11 @@
-# scripts/post_tweet.py  (safe date parse + v2→v1.1 fallback + dedupe)
+# scripts/post_tweet.py  (Blackhole metrics edition)
 from pathlib import Path
 import os
 import sys
 from datetime import datetime, timezone
 
 SUMMARY_PATH = Path("data/daily_summary.txt")
-CSV_PATH = Path("data/black_data.csv")
+CSV_PATH = Path("data/black_metrics.csv")  # <- updated to match new collector
 
 API_KEY = os.getenv("X_API_KEY")
 API_SECRET = os.getenv("X_API_SECRET")
@@ -15,18 +15,30 @@ ACCESS_SECRET = os.getenv("X_ACCESS_SECRET")
 DRY_RUN = os.getenv("DRY_RUN", "").lower() in {"1", "true", "yes"}
 ALLOW_STALE = os.getenv("ALLOW_STALE", "").lower() in {"1", "true", "yes"}
 
+# Keep these consistent with your brand; edit if you change theme
 HASHTAGS = "#DeFi #Avalanche #DEX #BlackholeDex"
 MAX_LEN = 280
 
+def _squash_blank_lines(text: str) -> str:
+    lines = [l.rstrip() for l in text.splitlines()]
+    out = []
+    for l in lines:
+        if l.strip() == "" and (not out or out[-1] == ""):
+            continue
+        out.append(l)
+    return "\n".join(out).strip()
+
 def load_summary() -> str:
+    """Read the prebuilt summary and fit it into a tweet with hashtags if possible."""
     if not SUMMARY_PATH.exists():
         return ""
-    txt = SUMMARY_PATH.read_text(encoding="utf-8").strip()
-    lines = [l.strip() for l in txt.splitlines() if l.strip()]
+    txt = SUMMARY_PATH.read_text(encoding="utf-8")
+    txt = _squash_blank_lines(txt)
 
-    # Build up to ~240 chars from natural lines, then append hashtags if they fit.
+    lines = [l.strip() for l in txt.splitlines() if l.strip()]
     keep = []
     for L in lines:
+        # keep lines until we near the 240-char soft ceiling
         if len("\n".join(keep + [L])) > 240:
             break
         keep.append(L)
@@ -49,18 +61,18 @@ def safe_last_date_str(csv_path: Path) -> str | None:
         return None
     try:
         df = pd.read_csv(csv_path)
-        # Find a plausible date column
+        # plausible date column
         date_col = None
-        for c in ["date","day","timestamp","ts"]:
+        for c in ["date", "day", "timestamp", "ts"]:
             if c in df.columns:
                 date_col = c
                 break
         if not date_col or df.empty:
             print("⚠️ No date column or empty CSV; skipping freshness check.")
             return None
-        # Strip/parse robustly
+
         df[date_col] = df[date_col].astype(str).str.strip()
-        df[date_col] = pd.to_datetime(df[date_col], errors="coerce")
+        df[date_col] = pd.to_datetime(df[date_col], errors="coerce", utc=True)
         df = df.dropna(subset=[date_col])
         if df.empty:
             print("⚠️ All dates NaT after parse; skipping freshness check.")
@@ -72,7 +84,7 @@ def safe_last_date_str(csv_path: Path) -> str | None:
         return None
 
 def warn_if_stale(last_date_str: str | None) -> None:
-    """Warn (don’t abort) if data looks old, unless ALLOW_STALE=0 and it's very old."""
+    """Warn (don’t abort) if data looks old, unless ALLOW_STALE=1 to silence."""
     if last_date_str is None:
         print("ℹ️ Freshness unknown (no parsable date). Proceeding.")
         return
@@ -81,8 +93,7 @@ def warn_if_stale(last_date_str: str | None) -> None:
         age_days = (datetime.now(timezone.utc) - last_dt).days
         print(f"ℹ️ Latest CSV date: {last_date_str} (≈{age_days} days old)")
         if age_days > 1 and not ALLOW_STALE:
-            # Soft safety: for >1 day old we still proceed, but call it out loudly.
-            print("⚠️ Data appears >1 day old. Proceeding anyway (no hard stop). Set ALLOW_STALE=1 to silence this.")
+            print("⚠️ Data appears >1 day old. Proceeding anyway. Set ALLOW_STALE=1 to silence this.")
     except Exception:
         print("ℹ️ Could not compute age from last_date_str; proceeding.")
 
@@ -136,7 +147,7 @@ def main():
         print("No summary to post; skipping.")
         return
 
-    # Freshness: warn only (never hard-fail for NaT anymore)
+    # Freshness: warn only (never hard-fail)
     last_date = safe_last_date_str(CSV_PATH)
     warn_if_stale(last_date)
 
