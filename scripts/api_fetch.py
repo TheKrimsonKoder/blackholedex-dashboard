@@ -1,32 +1,41 @@
-# === scripts/api_fetch.py (DexScreener chain total for AVAX share) ===
+# === scripts/api_fetch.py — Blackhole-only: Volume, TVL, Fees, Bribes ===
 from __future__ import annotations
 
 from pathlib import Path
 from datetime import datetime, timezone
 from typing import List, Tuple, Dict, Optional, Any
-
 import json, time, requests, pandas as pd
 
-# Paths
+# ---------------- Paths ----------------
 DATA_DIR = Path("data"); DATA_DIR.mkdir(parents=True, exist_ok=True)
-CSV_PATH = DATA_DIR / "black_data.csv"
+CSV_PATH = DATA_DIR / "black_metrics.csv"
 SUMMARY_PATH = DATA_DIR / "daily_summary.txt"
-RAW_DS_PATH = DATA_DIR / "dexscreener_raw.json"        # per-DEX queries
+RAW_DS_PATH = DATA_DIR / "dexscreener_raw.json"
 RAW_TVL_PATH = DATA_DIR / "tvl_raw.json"
-RAW_AVAX_DS_PATH = DATA_DIR / "avax_chain_total_raw.json"  # new: DS chain-wide raw
+RAW_FEES_PATH = DATA_DIR / "fees_raw.json"
+RAW_INCENTIVES_PATH = DATA_DIR / "incentives_raw.json"
 DEBUG_PATH = DATA_DIR / "debug_counts.txt"
 
-# Config (DEX volumes via DexScreener, TVL via DeFiLlama)
-DEXES = [
-    {"name": "Blackhole",   "query": "blackhole avalanche",   "kw": ["blackhole"],                "tvl_slug": "blackhole"},
-    {"name": "Trader Joe",  "query": "trader joe avalanche",  "kw": ["traderjoe", "trader-joe"], "tvl_slug": "trader-joe"},
-    {"name": "Pangolin",    "query": "pangolin avalanche",    "kw": ["pangolin"],                 "tvl_slug": "pangolin"},
-]
+# ---------------- Config / Endpoints ----------------
+# DexScreener (pairs + search)
 DS_SEARCH = "https://api.dexscreener.com/latest/dex/search?q="
-DS_PAIRS_CHAIN = "https://api.dexscreener.com/latest/dex/pairs/avalanche"  # chain-wide pairs
-TVL_SIMPLE = "https://api.llama.fi/tvl/{slug}"
-TVL_PROTO  = "https://api.llama.fi/protocol/{slug}"
 
+# DeFiLlama — TVL
+TVL_SIMPLE = "https://api.llama.fi/tvl/{slug}"               # returns number or object
+TVL_PROTO  = "https://api.llama.fi/protocol/{slug}"          # returns protocol object w/ tvl series
+
+# DeFiLlama — Fees/Revenue summary (we sum AMM + CLMM)
+LL_FEES_SUMMARY = "https://api.llama.fi/summary/fees/{slug}" # expects keys like total24h/total7d/total30d
+
+# DeFiLlama — Incentives/Bribes (best-effort; schema may vary by project/day)
+LL_INCENTIVES = "https://api.llama.fi/incentives/{slug}"
+
+# Blackhole slugs on Llama
+SLUG_TVL_COMBINED = "blackhole"         # combined tvl/volume page
+SLUG_FEES_AMM = "blackhole-amm"         # AMM fees breakdown
+SLUG_FEES_CLMM = "blackhole-clmm"       # CLMM fees breakdown
+
+# ---------------- Helpers ----------------
 def today_utc() -> str:
     return datetime.now(timezone.utc).date().isoformat()
 
@@ -38,12 +47,27 @@ def safe_get_json(url: str, timeout: int = 45) -> Any:
     except Exception as e:
         return {"_error": str(e), "_url": url}
 
-# ---------- DexScreener per‑DEX volume ----------
-def get_dexscreener_volume(query: str, keywords: List[str]) -> Tuple[float, int, int, Any]:
+def to_float(x: Any) -> Optional[float]:
+    try:
+        if x is None: return None
+        return float(x)
+    except:
+        return None
+
+# ---------------- DexScreener: Blackhole Volume (24h) ----------------
+def get_blackhole_volume_24h() -> Tuple[Optional[float], Dict[str, Any]]:
+    """
+    Best-effort: query DexScreener search for 'blackhole avalanche',
+    sum h24 volumes for pairs where dexId/url mentions 'blackhole' on Avalanche.
+    """
+    query = "blackhole avalanche"
+    keywords = ["blackhole"]
     url = DS_SEARCH + requests.utils.quote(query)
     payload: Any = safe_get_json(url)
+
+    total = 0.0
+    matched = 0
     pairs = (payload or {}).get("pairs") or []
-    total = 0.0; matched = 0
     for p in pairs:
         if (p.get("chainId") or "").lower() != "avalanche":
             continue
@@ -53,165 +77,149 @@ def get_dexscreener_volume(query: str, keywords: List[str]) -> Tuple[float, int,
             continue
         vol = p.get("volume", {})
         v = vol.get("h24", p.get("volume24h"))
-        try: total += float(v); matched += 1
-        except: pass
-    return total, matched, len(pairs), payload
+        try:
+            total += float(v)
+            matched += 1
+        except:
+            pass
 
-# ---------- DexScreener chain‑wide AVAX total ----------
-def get_avalanche_total_24h_ds(max_pages: int = 5, delay: float = 0.6) -> Tuple[Optional[float], Dict[str, Any]]:
-    """
-    Sum h24 volume across all Avalanche pairs from DexScreener.
-    The chain endpoint may support paging via '?page=N'. We'll try a few pages.
-    """
-    grand_total = 0.0
-    raw_pages: Dict[str, Any] = {}
-    any_page = False
+    return (total if matched > 0 else None), {"search_query": query, "keywords": keywords, "matched_pairs": matched, "total_pairs_seen": len(pairs), "raw": payload}
 
-    for page in range(1, max_pages + 1):
-        url = DS_PAIRS_CHAIN + (f"?page={page}" if page > 1 else "")
-        j = safe_get_json(url)
-        raw_pages[str(page)] = j
-        pairs = (j or {}).get("pairs") or []
-        if not pairs:
-            # stop if the page is empty or errored
-            break
-        any_page = True
-        for p in pairs:
-            vol = p.get("volume", {})
-            v = vol.get("h24", p.get("volume24h"))
-            try: grand_total += float(v)
-            except: pass
-        time.sleep(delay)  # be gentle
+# ---------------- DeFiLlama: TVL (combined) ----------------
+def get_tvl_combined(slug: str = SLUG_TVL_COMBINED) -> Tuple[Optional[float], Dict[str, Any]]:
+    # Try simple first
+    j1 = safe_get_json(TVL_SIMPLE.format(slug=slug))
+    if isinstance(j1, (int, float)):
+        return float(j1), {"source": "tvl_simple_number", "value": j1}
+    if isinstance(j1, dict) and "tvl" in j1 and isinstance(j1["tvl"], (int, float)):
+        return float(j1["tvl"]), {"source": "tvl_simple_obj", "value": j1}
 
-    RAW_AVAX_DS_PATH.write_text(json.dumps(raw_pages, indent=2)[:300000], encoding="utf-8")
-    if not any_page:
-        return None, raw_pages
-    return grand_total, raw_pages
-
-# ---------- DeFiLlama TVL (best‑effort) ----------
-def get_tvl(slug: str) -> Tuple[Optional[float], Dict[str, Any]]:
-    j = safe_get_json(TVL_SIMPLE.format(slug=slug))
-    if isinstance(j, (int, float)):    return float(j), {"source": "tvl_simple", "value": j}
-    if isinstance(j, dict) and "tvl" in j and isinstance(j["tvl"], (int, float)):
-        return float(j["tvl"]), {"source": "tvl_simple_obj", "value": j}
-    j = safe_get_json(TVL_PROTO.format(slug=slug))
-    arr = (j or {}).get("tvl") or []
+    # Fallback to protocol timeseries
+    j2 = safe_get_json(TVL_PROTO.format(slug=slug))
+    arr = (j2 or {}).get("tvl") or []
     if isinstance(arr, list) and arr:
         last = arr[-1]
+        # can be [timestamp, value] or dicts; handle both
         if isinstance(last, (list, tuple)) and len(last) >= 2 and last[1] is not None:
-            try: return float(last[1]), {"source": "protocol", "last": last}
-            except: pass
-    return None, {"source": "none", "note": "no tvl value found"}
+            v = to_float(last[1])
+            if v is not None:
+                return v, {"source": "protocol_timeseries", "last": last}
+        if isinstance(last, dict) and "totalLiquidityUSD" in last:
+            v = to_float(last.get("totalLiquidityUSD"))
+            if v is not None:
+                return v, {"source": "protocol_timeseries_dict", "last": last}
+    return None, {"source": "none", "note": "no tvl value found", "raw": j2}
 
-# ---------- CSV upsert & 7‑day avg ----------
-def upsert_today_all(csv_path: Path, date_str: str, rows: List[Dict[str, Any]], chain_total_24h: Optional[float]) -> pd.DataFrame:
-    if csv_path.exists(): df = pd.read_csv(csv_path)
-    else: df = pd.DataFrame(columns=["date","dex","chain","volume_usd","tvl_usd","avg7d_volume","chain_total_24h","blackhole_share_pct"])
-    for col in ["date","dex","chain","volume_usd","tvl_usd","avg7d_volume","chain_total_24h","blackhole_share_pct"]:
-        if col not in df.columns: df[col] = None
+# ---------------- DeFiLlama: Fees/Revenue (AMM + CLMM) ----------------
+def get_fees_summary(slug: str) -> Tuple[Optional[float], Optional[float], Dict[str, Any]]:
+    """
+    Returns (fees_24h, fees_7d, raw). 'summary/fees' usually exposes total24h/total7d.
+    """
+    j = safe_get_json(LL_FEES_SUMMARY.format(slug=slug))
+    total24 = None
+    total7 = None
+    if isinstance(j, dict):
+        total24 = to_float(j.get("total24h"))
+        total7 = to_float(j.get("total7d"))
+        # some variants nest under "totalDataChart" or similar—best-effort grab latest if needed
+        if total24 is None and isinstance(j.get("totalDataChart"), list) and j["totalDataChart"]:
+            try:
+                total24 = to_float(j["totalDataChart"][-1][1])
+            except:
+                pass
+        if total7 is None and isinstance(j.get("totalDataChart7d"), list) and j["totalDataChart7d"]:
+            try:
+                total7 = to_float(j["totalDataChart7d"][-1][1])
+            except:
+                pass
+    return total24, total7, j
 
+def get_blackhole_fees_and_revenue() -> Tuple[Dict[str, Optional[float]], Dict[str, Any]]:
+    """
+    Sum AMM + CLMM 24h/7d fees. For 'revenue', many Llama summaries equate to fees for DEXs;
+    if revenue is explicitly provided later, adapt here (kept as same for now).
+    """
+    f24_amm, f7_amm, raw_amm = get_fees_summary(SLUG_FEES_AMM)
+    f24_clmm, f7_clmm, raw_clmm = get_fees_summary(SLUG_FEES_CLMM)
+
+    fees_24h = (f24_amm or 0.0) + (f24_clmm or 0.0) if (f24_amm or f24_clmm) is not None else None
+    fees_7d  = (f7_amm or 0.0) + (f7_clmm or 0.0) if (f7_amm or f7_clmm) is not None else None
+
+    # If you later want *revenue* specifically and Llama exposes it in summary, add a dedicated accessor.
+    result = {"fees_24h_usd": fees_24h, "fees_7d_usd": fees_7d, "revenue_24h_usd": None, "revenue_7d_usd": None}
+    raw = {"amm": raw_amm, "clmm": raw_clmm}
+    return result, raw
+
+# ---------------- DeFiLlama: Incentives / Bribes (best-effort) ----------------
+def extract_bribes_from_incentives_json(j: Any) -> Tuple[Optional[float], Optional[float]]:
+    """
+    Incentives schemas vary. We try common shapes:
+    - list of emissions/bribes entries with {type, valueUsd, window}
+    - totals keyed by 'bribes24hUsd'/'bribes7dUsd'
+    - projects/pools arrays with daily USD amounts
+    """
+    # Direct totals
+    if isinstance(j, dict):
+        for k in ["bribes24hUsd", "bribes_24h_usd", "bribes24h", "totalBribes24hUsd"]:
+            v = to_float(j.get(k))
+            if v is not None:
+                b24 = v
+                b7 = to_float(j.get("bribes7dUsd")) or to_float(j.get("totalBribes7dUsd"))
+                return b24, b7
+
+    # Walk arrays and sum
+    def sum_if_present(items, window_keys=("24h", "7d")):
+        b24 = 0.0; b7 = 0.0; seen24 = False; seen7 = False
+        for it in items:
+            if not isinstance(it, dict): continue
+            t = (it.get("type") or "").lower()
+            val = to_float(it.get("valueUsd") or it.get("usd") or it.get("value"))
+            w = (it.get("window") or it.get("period") or "").lower()
+            if t.startswith("bribe") or "bribe" in t:
+                if "24" in w:
+                    if val is not None: b24 += val; seen24 = True
+                elif "7" in w:
+                    if val is not None: b7 += val; seen7 = True
+        return (b24 if seen24 else None, b7 if seen7 else None)
+
+    if isinstance(j, list):
+        return sum_if_present(j)
+
+    # Nested
+    for key in ["data", "list", "entries", "items", "protocols", "pools"]:
+        if isinstance(j, dict) and isinstance(j.get(key), list):
+            return sum_if_present(j[key])
+
+    return None, None
+
+def get_blackhole_bribes(slug: str = SLUG_TVL_COMBINED) -> Tuple[Dict[str, Optional[float]], Dict[str, Any]]:
+    j = safe_get_json(LL_INCENTIVES.format(slug=slug))
+    b24, b7 = extract_bribes_from_incentives_json(j)
+    return {"bribes_24h_usd": b24, "bribes_7d_usd": b7}, j
+
+# ---------------- CSV Upsert & Rolling Avg ----------------
+def upsert_today(csv_path: Path, date_str: str, row: Dict[str, Any]) -> pd.DataFrame:
+    cols = [
+        "date", "volume_24h_usd", "tvl_usd",
+        "fees_24h_usd", "fees_7d_usd",
+        "revenue_24h_usd", "revenue_7d_usd",
+        "bribes_24h_usd", "bribes_7d_usd",
+        "avg7d_volume_usd"
+    ]
+    if csv_path.exists():
+        df = pd.read_csv(csv_path)
+    else:
+        df = pd.DataFrame(columns=cols)
+    for c in cols:
+        if c not in df.columns:
+            df[c] = None
+
+    # remove any existing for today, then append
     df = df[df["date"] != date_str]
-    add = pd.DataFrame(rows)
+    add = pd.DataFrame([row])
     df = pd.concat([df, add], ignore_index=True)
 
-    # 7-day avg for Blackhole
-    m = df["dex"] == "Blackhole"
-    bh = df[m].copy().sort_values("date")
-    if not bh.empty:
-        roll = pd.to_numeric(bh["volume_usd"], errors="coerce").rolling(window=7, min_periods=1).mean()
-        df.loc[bh.index, "avg7d_volume"] = roll.values
-
-    # share for Blackhole (today only)
-    if isinstance(chain_total_24h, (int, float)) and chain_total_24h > 0:
-        idx = df[(df["date"] == date_str) & (df["dex"] == "Blackhole")].index
-        if len(idx):
-            df.loc[idx, "chain_total_24h"] = float(chain_total_24h)
-            try:
-                vol_today = float(df.loc[idx, "volume_usd"].values[0])
-                df.loc[idx, "blackhole_share_pct"] = 100.0 * vol_today / float(chain_total_24h)
-            except: pass
-
-    df = df.sort_values(["date","dex"]).reset_index(drop=True)
-    df.to_csv(csv_path, index=False)
-    return df
-
-# ---------- Main ----------
-def main():
-    date_str = today_utc()
-
-    # per DEX volumes (DexScreener)
-    per_dex: Dict[str, float] = {}; matched_map: Dict[str, int] = {}; total_pairs_map: Dict[str, int] = {}; raw_out: Dict[str, Any] = {}
-    for d in DEXES:
-        vol, matched, total_pairs, raw = get_dexscreener_volume(d["query"], d["kw"])
-        per_dex[d["name"]] = vol; matched_map[d["name"]] = matched; total_pairs_map[d["name"]] = total_pairs; raw_out[d["name"]] = raw
-    RAW_DS_PATH.write_text(json.dumps(raw_out, indent=2)[:300000], encoding="utf-8")
-
-    # TVL (DeFiLlama)
-    tvl_map: Dict[str, Optional[float]] = {}; tvl_raw: Dict[str, Any] = {}
-    for d in DEXES:
-        tvl, rawt = get_tvl(d["tvl_slug"])
-        tvl_map[d["name"]] = tvl; tvl_raw[d["name"]] = rawt
-    RAW_TVL_PATH.write_text(json.dumps(tvl_raw, indent=2), encoding="utf-8")
-
-    # AVAX chain total 24h (DexScreener chain-wide)
-    avax_total_24h, avax_raw = get_avalanche_total_24h_ds()
-
-    # Build today's rows for CSV
-    today_rows = []
-    for d in DEXES:
-        tvl_val = tvl_map.get(d["name"])
-        today_rows.append({
-            "date": date_str,
-            "dex": d["name"],
-            "chain": "Avalanche",
-            "volume_usd": float(per_dex.get(d["name"], 0.0)),
-            "tvl_usd": float(tvl_val) if isinstance(tvl_val, (int, float)) else None,
-            "avg7d_volume": None,
-            "chain_total_24h": None,
-            "blackhole_share_pct": None
-        })
-
-    df = upsert_today_all(CSV_PATH, date_str, today_rows, avax_total_24h)
-
-    # Compose summary
-    today_df = df[df["date"] == date_str].copy()
-    today_df["volume_usd"] = pd.to_numeric(today_df["volume_usd"], errors="coerce").fillna(0.0)
-    comp = today_df.sort_values("volume_usd", ascending=False)[["dex","volume_usd"]].values.tolist()
-
-    bh_today = today_df[today_df["dex"] == "Blackhole"].head(1)
-    bh_vol = float(bh_today["volume_usd"].values[0]) if not bh_today.empty else 0.0
-    bh_tvl = tvl_map.get("Blackhole")
-    bh_hist = df[df["dex"] == "Blackhole"].sort_values("date")
-    bh_avg7 = float(bh_hist["avg7d_volume"].tail(1).values[0]) if not bh_hist.empty and pd.notna(bh_hist["avg7d_volume"].tail(1).values[0]) else None
-    share_val = bh_today["blackhole_share_pct"].values[0] if not bh_today.empty else None
-
-    tvl_line = f"🔹 TVL: ${bh_tvl:,.0f}\n" if isinstance(bh_tvl, (int, float)) else "🔹 TVL: N/A\n"
-    avg_line = f"📈 7‑Day Avg (Blackhole): ${bh_avg7:,.0f}\n" if isinstance(bh_avg7, (int, float)) else ""
-    share_line = f"🧮 AVAX DEX share (24h): {share_val:.2f}%\n" if isinstance(share_val, (int, float)) else "🧮 AVAX DEX share (24h): N/A\n"
-    comp_lines = "\n".join([f"• {name}: ${vol:,.0f}" for name, vol in comp])
-
-    SUMMARY_PATH.write_text(
-        f"📊 BlackholeDex Daily Stats ({date_str})\n\n"
-        f"🔸 24h Volume: ${bh_vol:,.0f}\n"
-        f"{tvl_line}"
-        f"{avg_line}"
-        f"{share_line}\n"
-        f"💹 Comparison (24h Volume):\n{comp_lines}\n\n"
-        f"Sources: DexScreener (volume & AVAX total), DeFiLlama (TVL)\n"
-        f"#DeFi #Avalanche #DEX #BlackholeDex",
-        encoding="utf-8"
-    )
-
-    # Debug snapshot
-    DEBUG_PATH.write_text(json.dumps({
-        "date": date_str,
-        "volumes_24h": per_dex,
-        "matched_pairs": matched_map,
-        "pairs_returned": total_pairs_map,
-        "avax_total_24h": avax_total_24h,
-        "tvls": tvl_map,
-        "rows_after_upsert": len(df)
-    }, indent=2), encoding="utf-8")
-
-if __name__ == "__main__":
-    main()
+    # rolling 7d avg on volume
+    df = df.sort_values("date").reset_index(drop=True)
+    s = pd.to_numeric(df["volume_24h_usd"], errors="coerce").rolling(window=7, min_periods=1).mean()
+    df
