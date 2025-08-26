@@ -220,3 +220,6 @@ def main():
         "Sources: DexScreener (volume), DeFiLlama (TVL, Fees, Incentives)",
         "#DeFi #Avalanche #DEX #BlackholeDex"
     ]
+    print(f"✅ Wrote CSV to: {CSV_PATH.resolve()}")
+    print(f"✅ Wrote summary to: {SUMMARY_PATH.resolve()}")
+
