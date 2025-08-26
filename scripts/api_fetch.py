@@ -206,9 +206,17 @@ def main():
         "avg7":float(latest["avg7d_volume_usd"].values[0]) if not latest.empty and pd.notna(latest["avg7d_volume_usd"].values[0]) else None
     }
 
-    asof=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    lines=[
-        f"📊 Blackhole Daily Snapshot ({date_str})","",
-        *(f"🔸 24h Volume: {money(vals['vol'])}",) if money(vals["vol"]) else (),
-        *(f"🔹 TVL: {money(vals['tvl'])}",) if money(vals["tvl"]) else (),
-        *(f"💸 24h Fees (AMM+CLMM): {money(val*
+       asof = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    lines = [
+        f"📊 Blackhole Daily Snapshot ({date_str})",
+        "",
+        *( (f"🔸 24h Volume: {money(vals['vol'])}",) if money(vals["vol"]) else () ),
+        *( (f"🔹 TVL: {money(vals['tvl'])}",) if money(vals["tvl"]) else () ),
+        *( (f"💸 24h Fees (AMM+CLMM): {money(vals['fees24'])}",) if money(vals["fees24"]) else () ),
+        *( (f"🎁 24h Bribes: {money(vals['bribes24'])}",) if money(vals["bribes24"]) else () ),
+        *( (f"📈 7-Day Avg Volume: {money(vals['avg7'])}",) if money(vals["avg7"]) else () ),
+        "",
+        f"⏱️ As of {asof}",
+        "Sources: DexScreener (volume), DeFiLlama (TVL, Fees, Incentives)",
+        "#DeFi #Avalanche #DEX #BlackholeDex"
+    ]
