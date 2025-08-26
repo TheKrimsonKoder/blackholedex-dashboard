@@ -31,6 +31,19 @@ jobs:
       - name: ▶️ Run fetch (writes CSV + summary)
         run: python scripts/api_fetch.py
 
+      # 🔎 DEBUG: show exactly where we are and what's in data/
+      - name: 📂 Where am I?
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Repo root contents:"
+          ls -la
+          echo
+          echo "data/ dir contents:"
+          ls -la data || true
+          echo
+          echo "Searching for black_metrics.csv anywhere in workspace..."
+          find "$GITHUB_WORKSPACE" -maxdepth 4 -type f -name 'black_metrics.csv' -print -exec ls -la {} \; || true
+
       - name: 📤 Preview outputs
         run: |
           echo "---- data/daily_summary.txt ----"
@@ -42,6 +55,10 @@ jobs:
           echo "---- data/debug_counts.txt ----"
           (test -f data/debug_counts.txt && cat data/debug_counts.txt) || echo "(missing)"
 
+      # ✅ Ensure there's always something new to commit (even if metrics don't change)
+      - name: 🕒 Write run stamp
+        run: date -u +"%Y-%m-%dT%H:%M:%SZ" > data/last_run_utc.txt
+
       - name: 📎 Upload artifacts (summary, csv, debug + raw json)
         uses: actions/upload-artifact@v4
         with:
@@ -50,6 +67,7 @@ jobs:
             data/daily_summary.txt
             data/black_metrics.csv
             data/debug_counts.txt
+            data/last_run_utc.txt
             data/*.json
           if-no-files-found: warn
           retention-days: 7
@@ -58,6 +76,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/*.csv data/*.txt data/*.json 2>/dev/null || true
+          # -f in case any patterns are ignored somewhere
+          git add -f data/*.csv data/*.txt data/*.json 2>/dev/null || true
           git commit -m "Daily update: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || echo "No changes to commit"
           git push
