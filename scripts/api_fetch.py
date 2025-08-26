@@ -206,7 +206,7 @@ def main():
         "avg7":float(latest["avg7d_volume_usd"].values[0]) if not latest.empty and pd.notna(latest["avg7d_volume_usd"].values[0]) else None
     }
 
-       asof = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    asof = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     lines = [
         f"📊 Blackhole Daily Snapshot ({date_str})",
         "",
