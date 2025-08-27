@@ -1,14 +1,4 @@
 {
-  "Blackhole": {
-    "source": "tvl_simple",
-    "value": 170096521.57690102
-  },
-  "Trader Joe": {
-    "source": "none",
-    "note": "no tvl value found"
-  },
-  "Pangolin": {
-    "source": "tvl_simple",
-    "value": 5830371.830207229
-  }
+  "source": "tvl_simple_number",
+  "value": 171999321.8301459
 }

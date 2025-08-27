@@ -1,25 +1,23 @@
 {
-  "date": "2025-08-24",
-  "volumes_24h": {
-    "Blackhole": 2306222.0,
-    "Trader Joe": 144589.59,
-    "Pangolin": 467964.20000000007
+  "date": "2025-08-27",
+  "values": {
+    "vol": 2336467.7499999995,
+    "tvl": 171999321.8301459,
+    "fees24": 91089.0,
+    "bribes24": null,
+    "avg7": 2336467.7499999995
   },
-  "matched_pairs": {
-    "Blackhole": 22,
-    "Trader Joe": 7,
-    "Pangolin": 9
+  "row": {
+    "date": "2025-08-27",
+    "volume_24h_usd": 2336467.7499999995,
+    "tvl_usd": 171999321.8301459,
+    "fees_24h_usd": 91089.0,
+    "fees_7d_usd": 800121.0,
+    "revenue_24h_usd": null,
+    "revenue_7d_usd": null,
+    "bribes_24h_usd": null,
+    "bribes_7d_usd": null,
+    "avg7d_volume_usd": null
   },
-  "pairs_returned": {
-    "Blackhole": 30,
-    "Trader Joe": 30,
-    "Pangolin": 30
-  },
-  "avax_total_24h": null,
-  "tvls": {
-    "Blackhole": 170096521.57690102,
-    "Trader Joe": null,
-    "Pangolin": 5830371.830207229
-  },
-  "rows_after_upsert": 32
+  "scrape_used": false
 }
