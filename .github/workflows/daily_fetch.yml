@@ -26,12 +26,11 @@ jobs:
       - name: 📦 Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests pandas
+          pip install requests pandas beautifulsoup4
 
       - name: ▶️ Run fetch (writes CSV + summary)
         run: python scripts/api_fetch.py
 
-      # 🔎 DEBUG: show exactly where we are and what's in data/
       - name: 📂 Where am I?
         run: |
           echo "PWD: $(pwd)"
@@ -42,7 +41,7 @@ jobs:
           ls -la data || true
           echo
           echo "Searching for black_metrics.csv anywhere in workspace..."
-          find "$GITHUB_WORKSPACE" -maxdepth 4 -type f -name 'black_metrics.csv' -print -exec ls -la {} \; || true
+          find "$GITHUB_WORKSPACE" -maxdepth 6 -type f -iname 'black_metrics*.csv' -print -exec ls -la {} \; || true
 
       - name: 📤 Preview outputs
         run: |
@@ -55,7 +54,7 @@ jobs:
           echo "---- data/debug_counts.txt ----"
           (test -f data/debug_counts.txt && cat data/debug_counts.txt) || echo "(missing)"
 
-      # ✅ Ensure there's always something new to commit (even if metrics don't change)
+      # Always have something to commit so runs aren't skipped
       - name: 🕒 Write run stamp
         run: date -u +"%Y-%m-%dT%H:%M:%SZ" > data/last_run_utc.txt
 
@@ -76,7 +75,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # -f in case any patterns are ignored somewhere
           git add -f data/*.csv data/*.txt data/*.json 2>/dev/null || true
           git commit -m "Daily update: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || echo "No changes to commit"
           git push
