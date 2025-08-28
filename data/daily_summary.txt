@@ -1,8 +1,8 @@
-📊 Blackhole Daily Snapshot (2025-08-27)
-🔸 24h Volume: $2,103,478
-🔹 TVL: $167,791,971
-💸 24h Fees (AMM+CLMM): $85,668
-📈 7-Day Avg Volume: $2,103,478
-⏱️ As of 2025-08-27 14:39 UTC
+📊 Blackhole Daily Snapshot (2025-08-28)
+🔸 24h Volume: $4,234,693
+🔹 TVL: $172,228,409
+💸 24h Fees (AMM+CLMM): $124,450
+📈 7-Day Avg Volume: $3,169,085
+⏱️ As of 2025-08-28 22:17 UTC
 Sources: DexScreener (volume), DeFiLlama (public page scrape for TVL/Fees/Bribes)
 #DeFi #Avalanche #DEX #BlackholeDex
