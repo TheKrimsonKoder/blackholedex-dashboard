@@ -51,11 +51,11 @@
       "Blackhole AMM",
       "Blackhole CLMM"
     ],
-    "total24h": 7273,
-    "total48hto24h": 6123,
-    "total7d": 54798,
-    "total30d": 418966,
-    "totalAllTime": 807089,
+    "total24h": 5338,
+    "total48hto24h": 5770,
+    "total7d": 48562,
+    "total30d": 402806,
+    "totalAllTime": 812437,
     "totalDataChart": [
       [
         1745539200,
@@ -559,7 +559,11 @@
       ],
       [
         1756339200,
-        7273
+        7283
+      ],
+      [
+        1756425600,
+        5338
       ]
     ],
     "totalDataChartBreakdown": [
@@ -1567,12 +1571,20 @@
         1756339200,
         {
           "Avalanche": {
-            "Blackhole AMM": 7273
+            "Blackhole AMM": 7283
+          }
+        }
+      ],
+      [
+        1756425600,
+        {
+          "Avalanche": {
+            "Blackhole AMM": 5338
           }
         }
       ]
     ],
-    "change_1d": 18.78
+    "change_1d": -7.49
   },
   "clmm": {
     "id": "6431",
@@ -1626,11 +1638,11 @@
       "Blackhole AMM",
       "Blackhole CLMM"
     ],
-    "total24h": 117177,
-    "total48hto24h": 97341,
-    "total7d": 688966,
-    "total30d": 3879050,
-    "totalAllTime": 4837078,
+    "total24h": 122905,
+    "total48hto24h": 82475,
+    "total7d": 714134,
+    "total30d": 3888771,
+    "totalAllTime": 4883758,
     "totalDataChart": [
       [
         1745539200,
@@ -2001,10 +2013,6 @@
         87512
       ],
       [
-        1753488000,
-        74505
-      ],
-      [
         1753574400,
         92613
       ],
@@ -2134,7 +2142,11 @@
       ],
       [
         1756339200,
-        117177
+        115457
+      ],
+      [
+        1756425600,
+        122905
       ]
     ],
     "totalDataChartBreakdown": [
@@ -2875,14 +2887,6 @@
         }
       ],
       [
-        1753488000,
-        {
-          "Avalanche": {
-            "Blackhole CLMM": 74505
-          }
-        }
-      ],
-      [
         1753574400,
         {
           "Avalanche": {
@@ -3142,11 +3146,19 @@
         1756339200,
         {
           "Avalanche": {
-            "Blackhole CLMM": 117177
+            "Blackhole CLMM": 115457
+          }
+        }
+      ],
+      [
+        1756425600,
+        {
+          "Avalanche": {
+            "Blackhole CLMM": 122905
           }
         }
       ]
     ],
-    "change_1d": 20.38
+    "change_1d": 49.02
   }
 }
