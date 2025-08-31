@@ -51,11 +51,11 @@
       "Blackhole AMM",
       "Blackhole CLMM"
     ],
-    "total24h": 3296,
-    "total48hto24h": 7283,
-    "total7d": 43916,
-    "total30d": 363572,
-    "totalAllTime": 814907,
+    "total24h": 2609,
+    "total48hto24h": 4512,
+    "total7d": 38530,
+    "total30d": 341939,
+    "totalAllTime": 816825,
     "totalDataChart": [
       [
         1745539200,
@@ -567,7 +567,11 @@
       ],
       [
         1756512000,
-        3296
+        2605
+      ],
+      [
+        1756598400,
+        2609
       ]
     ],
     "totalDataChartBreakdown": [
@@ -1591,12 +1595,20 @@
         1756512000,
         {
           "Avalanche": {
-            "Blackhole AMM": 3296
+            "Blackhole AMM": 2605
+          }
+        }
+      ],
+      [
+        1756598400,
+        {
+          "Avalanche": {
+            "Blackhole AMM": 2609
           }
         }
       ]
     ],
-    "change_1d": -54.74
+    "change_1d": -42.18
   },
   "clmm": {
     "id": "6431",
@@ -1650,11 +1662,11 @@
       "Blackhole AMM",
       "Blackhole CLMM"
     ],
-    "total24h": 78710,
-    "total48hto24h": 115457,
-    "total7d": 718882,
-    "total30d": 3882358,
-    "totalAllTime": 4952469,
+    "total24h": 44363,
+    "total48hto24h": 112906,
+    "total7d": 662714,
+    "total30d": 3750916,
+    "totalAllTime": 4968231,
     "totalDataChart": [
       [
         1745539200,
@@ -2162,7 +2174,11 @@
       ],
       [
         1756512000,
-        78710
+        50109
+      ],
+      [
+        1756598400,
+        44363
       ]
     ],
     "totalDataChartBreakdown": [
@@ -3178,11 +3194,19 @@
         1756512000,
         {
           "Avalanche": {
-            "Blackhole CLMM": 78710
+            "Blackhole CLMM": 50109
+          }
+        }
+      ],
+      [
+        1756598400,
+        {
+          "Avalanche": {
+            "Blackhole CLMM": 44363
           }
         }
       ]
     ],
-    "change_1d": -31.83
+    "change_1d": -60.71
   }
 }
