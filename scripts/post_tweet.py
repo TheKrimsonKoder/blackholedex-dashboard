@@ -16,7 +16,7 @@ DRY_RUN = os.getenv("DRY_RUN", "").lower() in {"1", "true", "yes"}
 ALLOW_STALE = os.getenv("ALLOW_STALE", "").lower() in {"1", "true", "yes"}
 
 # Keep these consistent with your brand; edit if you change theme
-HASHTAGS = "#DeFi #Avalanche #DEX #BlackholeDex"
+HASHTAGS = "$AVAX $AERO $UNI #Base #DEX #BlackholeDex"
 MAX_LEN = 280
 
 def _squash_blank_lines(text: str) -> str:
