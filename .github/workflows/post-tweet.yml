@@ -1,24 +1,22 @@
-name: Post Tweet (manual or scheduled)
+name: Daily Fetch + Post Tweet
 
 on:
+  schedule:
+    - cron: "0 14 * * *"
   workflow_dispatch:
-    inputs:
-      dry_run:
-        description: "Preview only (DRY_RUN)"
-        required: true
-        default: "true"
-        type: choice
-        options: ["true", "false"]
-  # Optional schedule for auto-post time:
-  # schedule:
-  #   - cron: "30 17 * * *"   # 17:30 UTC daily
+
+permissions:
+  contents: write
 
 jobs:
-  post:
+  fetch-post:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
-      - name: 📥 Checkout repo
+      - name: 📥 Checkout repo (main, full history)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 🐍 Set up Python
         uses: actions/setup-python@v5
@@ -28,35 +26,70 @@ jobs:
       - name: 📦 Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install "tweepy>=4.14,<5" pandas
+          pip install requests pandas beautifulsoup4 "tweepy>=4.14,<5"
 
-      - name: 🧪 Preview summary (for manual runs)
+      - name: ▶️ Run fetch (writes CSV + summary)
+        run: python scripts/api_fetch.py
+
+      - name: 📂 Where am I?
+        run: |
+          echo "PWD: $(pwd)"
+          ls -la
+          echo "---- data/ ----"
+          ls -la data || true
+          echo
+          echo "Find CSVs:"
+          find "$GITHUB_WORKSPACE" -maxdepth 6 -type f -iname '*metrics.csv' -print -exec ls -la {} \; || true
+
+      - name: 📤 Preview outputs
         run: |
           echo "---- data/daily_summary.txt ----"
           (test -f data/daily_summary.txt && cat data/daily_summary.txt) || echo "(missing)"
+          echo
+          echo "---- data/black_metrics.csv (tail) ----"
+          (test -f data/black_metrics.csv && tail -n 10 data/black_metrics.csv) || echo "(missing)"
+          echo
+          echo "---- data/aerodrome_metrics.csv (tail) ----"
+          (test -f data/aerodrome_metrics.csv && tail -n 10 data/aerodrome_metrics.csv) || echo "(missing)"
+          echo
+          echo "---- data/uniswap_metrics.csv (tail) ----"   # <-- NEW
+          (test -f data/uniswap_metrics.csv && tail -n 10 data/uniswap_metrics.csv) || echo "(missing)"
+          echo
+          echo "---- data/debug_counts.txt ----"
+          (test -f data/debug_counts.txt && cat data/debug_counts.txt) || echo "(missing)"
 
-      # Create a date string we can reuse in artifact names/logs
-      - name: 🗓️ Capture UTC date
-        id: meta
-        run: echo "date=$(date -u +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
+      - name: 🕒 Write run stamp
+        run: date -u +"%Y-%m-%dT%H:%M:%SZ" > data/last_run_utc.txt
+
+      - name: 📎 Upload artifacts (summary, csv, debug)
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-fetch-artifacts
+          path: |
+            data/daily_summary.txt
+            data/black_metrics.csv
+            data/aerodrome_metrics.csv
+            data/uniswap_metrics.csv      # <-- NEW
+            data/debug_counts.txt
+            data/last_run_utc.txt
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: 💾 Commit and push updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f data/*.csv data/*.txt 2>/dev/null || true
+          git commit -m "Daily update: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || echo "No changes to commit"
+          git push
 
       - name: 🐦 Post to X
+        continue-on-error: true
         env:
           X_API_KEY:      ${{ secrets.X_API_KEY }}
           X_API_SECRET:   ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          DRY_RUN:        ${{ github.event.inputs.dry_run }}
+          DRY_RUN:        "false"
+          ALLOW_STALE:    "1"
         run: python scripts/post_tweet.py
-
-      # Upload the exact inputs used for this post (runs even if tweet step fails)
-      - name: 📎 Upload artifacts (summary + csv)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: tweet-inputs-${{ steps.meta.outputs.date }}-${{ github.run_number }}
-          path: |
-            data/daily_summary.txt
-            data/black_metrics.csv
-          if-no-files-found: warn
-          retention-days: 7
