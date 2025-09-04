@@ -1,9 +1,9 @@
-# === scripts/api_fetch.py — Visible-page scrape (HTML) for Blackhole + Aerodrome + Uniswap ===
+# === scripts/api_fetch.py — Simplified visible scrape for Blackhole + Aerodrome + Uniswap ===
 from __future__ import annotations
 
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Any, Dict, Optional, Tuple
+from typing import Any, Dict, Optional
 import os, re, json
 import requests
 import pandas as pd
@@ -19,7 +19,7 @@ CSV_UNI   = DATA_DIR / "uniswap_metrics.csv"
 SUMMARY_PATH = DATA_DIR / "daily_summary.txt"
 DEBUG_PATH   = DATA_DIR / "debug_counts.txt"
 
-# ---------------- DeFiLlama public protocol pages ----------------
+# ---------------- DeFiLlama protocol pages ----------------
 LLAMA_PROTOCOL_URL = "https://defillama.com/protocol/{slug}"
 _HTTP_HEADERS = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -37,13 +37,8 @@ def utc_hm() -> str:
 _ABBR = {"K": 1_000, "M": 1_000_000, "B": 1_000_000_000, "T": 1_000_000_000_000}
 
 def parse_money(s: str) -> Optional[float]:
-    """
-    Convert strings like '$1,234', '1.2M', '$3.4 B' into float USD.
-    Returns None if no number is found.
-    """
     if not s: return None
     s = s.strip()
-    # pick the first number-like token with optional K/M/B/T
     m = re.search(r'(?i)\$?\s*([0-9][0-9,\.]*)\s*([KMBT]?)', s)
     if not m: return None
     num = m.group(1).replace(",", "")
@@ -53,61 +48,27 @@ def parse_money(s: str) -> Optional[float]:
     except Exception:
         return None
 
-def get_visible_text(slug: str) -> Optional[str]:
+# ---------------- Visible scrape ----------------
+def scrape_visible_protocol(slug: str) -> Dict[str, Optional[float]]:
     url = LLAMA_PROTOCOL_URL.format(slug=slug)
     try:
         r = requests.get(url, headers=_HTTP_HEADERS, timeout=45)
         r.raise_for_status()
     except Exception as e:
         print(f"[HTML] GET failed for {slug}: {e}")
-        return None
-    soup = BeautifulSoup(r.text, "html.parser")
-    # Get page text; keep newlines so label/value proximity is searchable
-    return soup.get_text("\n", strip=True)
-
-def extract_metrics_from_text(txt: str) -> Dict[str, Optional[float]]:
-    """
-    Heuristic extraction from visible page text. We look for common
-    label patterns and grab the nearest money-like number.
-    """
-    out: Dict[str, Optional[float]] = {"tvl_usd": None, "volume_24h_usd": None, "fees_24h_usd": None}
-
-    # Pre-narrow the text to reduce false positives: split to lines
-    lines = [l for l in txt.split("\n") if l.strip()]
-    joined = "\n".join(lines)
-
-    # Patterns (robust to spacing/casing)
-    # TVL
-    m = re.search(r'(?i)\bTVL\b.{0,40}?(\$?[0-9][0-9,\.]*\s*[KMBT]?)', joined)
-    if m:
-        out["tvl_usd"] = parse_money(m.group(1))
-
-    # Volume 24h / 24-hour volume
-    m = re.search(r'(?i)\b(24h\s*volume|volume\s*24h|24-hour\s*volume)\b.{0,40}?(\$?[0-9][0-9,\.]*\s*[KMBT]?)', joined)
-    if m:
-        out["volume_24h_usd"] = parse_money(m.group(2))
-    else:
-        # fallback: generic "Volume" near a number (may overmatch, but better than N/A)
-        m = re.search(r'(?i)\bvolume\b.{0,40}?(\$?[0-9][0-9,\.]*\s*[KMBT]?)', joined)
-        if m:
-            out["volume_24h_usd"] = parse_money(m.group(1))
-
-    # Fees 24h (or just "Fees" if 24h not labeled)
-    m = re.search(r'(?i)\b(24h\s*fees|fees\s*24h|24-hour\s*fees)\b.{0,40}?(\$?[0-9][0-9,\.]*\s*[KMBT]?)', joined)
-    if m:
-        out["fees_24h_usd"] = parse_money(m.group(2))
-    else:
-        m = re.search(r'(?i)\bfees\b.{0,40}?(\$?[0-9][0-9,\.]*\s*[KMBT]?)', joined)
-        if m:
-            out["fees_24h_usd"] = parse_money(m.group(1))
-
-    return out
-
-def scrape_visible_protocol(slug: str) -> Dict[str, Optional[float]]:
-    txt = get_visible_text(slug)
-    if not txt:
         return {}
-    return extract_metrics_from_text(txt)
+
+    soup = BeautifulSoup(r.text, "html.parser")
+
+    # Grab the main stats (usually TVL, Volume, Fees) at the top
+    stats = soup.select("div[class*=stats] div, div[class*=stats] span")
+    numbers = [parse_money(el.get_text()) for el in stats if parse_money(el.get_text())]
+
+    out = {"tvl_usd": None, "volume_24h_usd": None, "fees_24h_usd": None}
+    if len(numbers) > 0: out["tvl_usd"] = numbers[0]
+    if len(numbers) > 1: out["volume_24h_usd"] = numbers[1]
+    if len(numbers) > 2: out["fees_24h_usd"] = numbers[2]
+    return out
 
 # ---------------- CSV helpers ----------------
 def upsert_today(csv_path: Path, date_str: str, row: Dict[str, Any]) -> pd.DataFrame:
@@ -124,7 +85,7 @@ def upsert_today(csv_path: Path, date_str: str, row: Dict[str, Any]) -> pd.DataF
     df = df[df["date"] != date_str]
     df = pd.concat([df, pd.DataFrame([row])], ignore_index=True)
 
-    # 7-day rolling avg on volume (only if volume present)
+    # 7-day rolling avg on volume
     df = df.sort_values("date").reset_index(drop=True)
     s = pd.to_numeric(df["volume_24h_usd"], errors="coerce").rolling(window=7, min_periods=1).mean()
     df["avg7d_volume_usd"] = s.values
@@ -139,44 +100,29 @@ def money(v: Optional[float]) -> Optional[str]:
 def main():
     date_str = today_utc_date()
 
-    # Scrape visible metrics for each protocol
     bh = scrape_visible_protocol("blackhole")
     ae = scrape_visible_protocol("aerodrome")
     uni = scrape_visible_protocol("uniswap")
 
-    # Rows (we keep columns consistent; leave unknowns as None)
-    row_bh = {
-        "date": date_str,
-        "volume_24h_usd": bh.get("volume_24h_usd"),
-        "tvl_usd": bh.get("tvl_usd"),
-        "fees_24h_usd": bh.get("fees_24h_usd"),
-        "fees_7d_usd": None, "revenue_24h_usd": None, "revenue_7d_usd": None,
-        "bribes_24h_usd": None, "bribes_7d_usd": None, "avg7d_volume_usd": None
-    }
-    row_ae = {
-        "date": date_str,
-        "volume_24h_usd": ae.get("volume_24h_usd"),
-        "tvl_usd": ae.get("tvl_usd"),
-        "fees_24h_usd": ae.get("fees_24h_usd"),
-        "fees_7d_usd": None, "revenue_24h_usd": None, "revenue_7d_usd": None,
-        "bribes_24h_usd": None, "bribes_7d_usd": None, "avg7d_volume_usd": None
-    }
-    row_uni = {
-        "date": date_str,
-        "volume_24h_usd": uni.get("volume_24h_usd"),
-        "tvl_usd": uni.get("tvl_usd"),
-        "fees_24h_usd": uni.get("fees_24h_usd"),
-        "fees_7d_usd": None, "revenue_24h_usd": None, "revenue_7d_usd": None,
-        "bribes_24h_usd": None, "bribes_7d_usd": None, "avg7d_volume_usd": None
-    }
+    row_bh = {"date": date_str, "volume_24h_usd": bh.get("volume_24h_usd"),
+              "tvl_usd": bh.get("tvl_usd"), "fees_24h_usd": bh.get("fees_24h_usd"),
+              "fees_7d_usd": None, "revenue_24h_usd": None, "revenue_7d_usd": None,
+              "bribes_24h_usd": None, "bribes_7d_usd": None, "avg7d_volume_usd": None}
+    row_ae = {"date": date_str, "volume_24h_usd": ae.get("volume_24h_usd"),
+              "tvl_usd": ae.get("tvl_usd"), "fees_24h_usd": ae.get("fees_24h_usd"),
+              "fees_7d_usd": None, "revenue_24h_usd": None, "revenue_7d_usd": None,
+              "bribes_24h_usd": None, "bribes_7d_usd": None, "avg7d_volume_usd": None}
+    row_uni = {"date": date_str, "volume_24h_usd": uni.get("volume_24h_usd"),
+               "tvl_usd": uni.get("tvl_usd"), "fees_24h_usd": uni.get("fees_24h_usd"),
+               "fees_7d_usd": None, "revenue_24h_usd": None, "revenue_7d_usd": None,
+               "bribes_24h_usd": None, "bribes_7d_usd": None, "avg7d_volume_usd": None}
 
-    # Upsert CSVs
     df_bh = upsert_today(CSV_BLACK, date_str, row_bh)
     df_ae = upsert_today(CSV_AERO,  date_str, row_ae)
     df_uni = upsert_today(CSV_UNI,  date_str, row_uni)
 
-    # Compose concise 3-line tweet (no N/A if we can help it)
-    def line_proto(name: str, vol: Optional[float], tvl: Optional[float], fee: Optional[float], show_tvl_fee=True) -> str:
+    # Tweet summary (compact 3 lines)
+    def line_proto(name, vol, tvl, fee, show_tvl_fee=True):
         v = money(vol) or "N/A"
         if show_tvl_fee:
             t = money(tvl) or "N/A"
@@ -188,15 +134,14 @@ def main():
     lines = [
         f"📊 Daily Snapshot ({date_str})",
         "",
-        line_proto("Blackhole", row_bh["volume_24h_usd"], row_bh["tvl_usd"], row_bh["fees_24h_usd"], True),
-        line_proto("Aerodrome", row_ae["volume_24h_usd"], row_ae["tvl_usd"], row_ae["fees_24h_usd"], True),
-        line_proto("Uniswap",   row_uni["volume_24h_usd"], None, None, False),
+        line_proto("Blackhole", row_bh["volume_24h_usd"], row_bh["tvl_usd"], row_bh["fees_24h_usd"]),
+        line_proto("Aerodrome", row_ae["volume_24h_usd"], row_ae["tvl_usd"], row_ae["fees_24h_usd"]),
+        line_proto("Uniswap", row_uni["volume_24h_usd"], None, None, False),
         "",
         f"⏱️ As of {asof}",
     ]
     SUMMARY_PATH.write_text("\n".join(lines).strip(), encoding="utf-8")
 
-    # Debug snapshot
     DEBUG_PATH.write_text(json.dumps({
         "date": date_str,
         "blackhole": row_bh,
@@ -209,13 +154,10 @@ def main():
         "data_dir": str(DATA_DIR.resolve()),
     }, indent=2), encoding="utf-8")
 
-    # Log + asserts so we never silently fail
     print(f"✅ Wrote CSV: {CSV_BLACK.resolve()}")
     print(f"✅ Wrote CSV: {CSV_AERO.resolve()}")
     print(f"✅ Wrote CSV: {CSV_UNI.resolve()}")
     print(f"✅ Wrote summary: {SUMMARY_PATH.resolve()}")
-    for p in (CSV_BLACK, CSV_AERO, CSV_UNI, SUMMARY_PATH):
-        if not p.exists(): raise RuntimeError(f"Missing: {p}")
 
 if __name__ == "__main__":
     main()
