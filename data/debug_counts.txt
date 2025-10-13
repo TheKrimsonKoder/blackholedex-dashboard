@@ -1,7 +1,7 @@
 {
-  "date": "2025-10-12",
+  "date": "2025-10-13",
   "blackhole": {
-    "date": "2025-10-12",
+    "date": "2025-10-13",
     "volume_24h_usd": null,
     "tvl_usd": null,
     "fees_24h_usd": null,
@@ -13,7 +13,7 @@
     "avg7d_volume_usd": null
   },
   "aerodrome": {
-    "date": "2025-10-12",
+    "date": "2025-10-13",
     "volume_24h_usd": null,
     "tvl_usd": null,
     "fees_24h_usd": null,
@@ -25,7 +25,7 @@
     "avg7d_volume_usd": null
   },
   "uniswap": {
-    "date": "2025-10-12",
+    "date": "2025-10-13",
     "volume_24h_usd": null,
     "tvl_usd": null,
     "fees_24h_usd": null,
@@ -36,9 +36,9 @@
     "bribes_7d_usd": null,
     "avg7d_volume_usd": null
   },
-  "csv_black_rows": 47,
-  "csv_aero_rows": 42,
-  "csv_uni_rows": 42,
+  "csv_black_rows": 48,
+  "csv_aero_rows": 43,
+  "csv_uni_rows": 43,
   "cwd": "/home/runner/work/blackholedex-dashboard/blackholedex-dashboard",
   "data_dir": "/home/runner/work/blackholedex-dashboard/blackholedex-dashboard/data"
 }
