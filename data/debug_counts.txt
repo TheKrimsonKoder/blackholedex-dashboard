@@ -1,7 +1,7 @@
 {
-  "date": "2026-02-27",
+  "date": "2026-02-28",
   "blackhole": {
-    "date": "2026-02-27",
+    "date": "2026-02-28",
     "volume_24h_usd": null,
     "tvl_usd": null,
     "fees_24h_usd": null,
@@ -13,7 +13,7 @@
     "avg7d_volume_usd": null
   },
   "aerodrome": {
-    "date": "2026-02-27",
+    "date": "2026-02-28",
     "volume_24h_usd": null,
     "tvl_usd": null,
     "fees_24h_usd": null,
@@ -25,7 +25,7 @@
     "avg7d_volume_usd": null
   },
   "uniswap": {
-    "date": "2026-02-27",
+    "date": "2026-02-28",
     "volume_24h_usd": null,
     "tvl_usd": null,
     "fees_24h_usd": null,
@@ -36,9 +36,9 @@
     "bribes_7d_usd": null,
     "avg7d_volume_usd": null
   },
-  "csv_black_rows": 185,
-  "csv_aero_rows": 180,
-  "csv_uni_rows": 180,
+  "csv_black_rows": 186,
+  "csv_aero_rows": 181,
+  "csv_uni_rows": 181,
   "cwd": "/home/runner/work/blackholedex-dashboard/blackholedex-dashboard",
   "data_dir": "/home/runner/work/blackholedex-dashboard/blackholedex-dashboard/data"
 }
